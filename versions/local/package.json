@@ -1,0 +1,15 @@
+{
+  "name": "rspack-bench-local",
+  "private": true,
+  "scripts": {
+    "bench": "zx ../../bench.mjs --versions local",
+    "smoke": "zx ../../bench.mjs --versions local --modules 24 --runs 1 --supplement always",
+    "smoke:mixed": "zx ../../bench.mjs --versions local --experiment mixed --modules 24 --runs 1"
+  },
+  "dependencies": {
+    "@rspack/core": "link:../../../../rstack/rspack/packages/rspack",
+    "css-loader": "7.1.5",
+    "less-loader": "13.0.0",
+    "less": "4.9.1"
+  }
+}

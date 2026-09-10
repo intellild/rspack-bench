@@ -1,10 +1,13 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, readdir, realpath } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { runInNewContext } from 'node:vm';
+import { componentDependencies } from './fixture.mjs';
+import { validateCore, localRepository } from './versions.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const job = JSON.parse(await readFile(process.argv[2], 'utf8'));
@@ -14,14 +17,27 @@ const coreReq = createRequire(corePath);
 const rspack = req('@rspack/core');
 const coreVersion = req('@rspack/core/package.json').version;
 const bindingVersion = coreReq('@rspack/binding/package.json').version;
-assert.equal(coreVersion, { v1: '1.7.11', v2: '2.2.3' }[job.version]);
+validateCore(job.version, req);
 assert.equal(bindingVersion, coreVersion);
 const nativeBindings = Object.keys(req.cache).filter(p => p.endsWith('.node') && p.includes('rspack'));
 assert.equal(nativeBindings.length, 1, 'Exactly one native Rspack binding must be loaded');
 const nativePackage = JSON.parse(await readFile(path.join(path.dirname(nativeBindings[0]), 'package.json')));
 assert.equal(nativePackage.version, coreVersion);
+let localBuild = null;
+if (job.version === 'local') {
+  const repository = localRepository();
+  const bindingPath = await realpath(coreReq.resolve('@rspack/binding'));
+  assert.equal(bindingPath, path.join(repository, 'crates/node_binding/binding.js'));
+  assert.equal(await realpath(path.dirname(nativeBindings[0])), path.join(repository, 'crates/node_binding'),
+    'Local group must load the locally compiled native binding, not a published fallback');
+  localBuild = { repository, artifactHashes: {} };
+  for (const filename of [corePath, bindingPath, nativeBindings[0]]) {
+    localBuild.artifactHashes[filename] = createHash('sha256').update(await readFile(filename)).digest('hex');
+  }
+}
 const fixture = path.join(root, 'fixture');
 const styleRoot = path.join(fixture, 'styles') + path.sep;
+const componentRoot = path.join(fixture, 'components') + path.sep;
 const noopPath = path.join(root, 'loaders/noop.cjs');
 const isLess = job.styles === 'less';
 const extension = isLess ? 'less' : 'css';
@@ -35,6 +51,7 @@ let lessLoaderCalls = 0;
 let lessCompiles = 0;
 const compiledLessResources = new Set();
 const builtCssResources = new Set();
+const lessThreadIds = new Set();
 const marks = {};
 if (job.verify && job.mode === 'noop') {
   const original = req(noopPath);
@@ -43,7 +60,7 @@ if (job.verify && job.mode === 'noop') {
     return original.apply(this, args);
   };
 }
-if (job.verify && isLess) {
+if (job.verify && isLess && !job.case) {
   const originalLoader = req(lessLoaderPath);
   const countedLoader = function (...args) {
     lessLoaderCalls++;
@@ -113,6 +130,7 @@ const config = {
     uniqueName: 'rspack-css-bench',
     clean: false,
     pathinfo: false,
+    library: { type: 'commonjs2' },
   },
   optimization: {
     minimize: false,
@@ -139,14 +157,15 @@ const config = {
   module: {
     rules: [{
       test: isLess ? /\.less$/ : /\.css$/,
-      type: extract ? 'javascript/auto' : 'css',
+      type: extract ? 'javascript/auto' : 'css/module',
       ...(extract ? {
         use: [{ loader: rspack.CssExtractRspackPlugin.loader }, {
           loader: req.resolve('css-loader'),
-          options: { modules: false, import: false, url: false, sourceMap: false, esModule: true },
+          options: { modules: { localIdentName: 'scoped_[local]', namedExport: true, exportLocalsConvention: 'as-is' },
+            import: false, url: false, sourceMap: false, esModule: true },
         }],
       } : {
-        generator: { exportsOnly: false, esModule: true },
+        generator: { exportsOnly: false, esModule: true, localIdentName: 'scoped_[local]', exportsConvention: 'as-is' },
         use: job.mode === 'noop' ? [{ loader: noopPath }] : [],
       }),
     }],
@@ -158,6 +177,10 @@ const config = {
   stats: 'none',
   infrastructureLogging: { level: 'error' },
 };
+if (job.builtin) {
+  assert(extract && isLess);
+  config.module.rules[0].use.push({ loader: 'builtin:lightningcss-loader', options: { minify: false } });
+}
 if (isLess) {
   // Loaders run right-to-left: Less always compiles before noop or css-loader.
   config.module.rules[0].use.push({
@@ -175,15 +198,27 @@ if (job.version === 'v1') {
   config.experiments.cache = false;
   config.experiments.inlineConst = false;
   config.experiments.inlineEnum = false;
-  config.experiments.parallelLoader = false;
+  config.experiments.parallelLoader = Boolean(job.lessParallel);
   config.experiments.css = !extract;
   config.experiments.incremental = false;
 } else {
   config.experiments.newCache = false;
   config.experiments.pureFunctions = false;
   config.incremental = false;
-  for (const loader of config.module.rules[0].use) loader.parallel = false;
 }
+for (const loader of config.module.rules[0].use) {
+  loader.parallel = loader.loader === lessLoaderPath && Boolean(job.lessParallel);
+}
+config.module.rules.push({
+  test: /\.jsx$/,
+  type: 'javascript/auto',
+  use: [{ loader: 'builtin:swc-loader', parallel: false, options: {
+    jsc: { parser: { syntax: 'ecmascript', jsx: true }, target: 'es2020',
+      transform: { react: { runtime: 'automatic', development: true, refresh: false } } },
+    minify: false,
+    sourceMaps: false,
+  } }],
+});
 
 const setupStart = now();
 const compiler = rspack.rspack(config);
@@ -230,12 +265,39 @@ function visit(modules = []) {
   }
 }
 visit(details.modules);
-const cssModules = flatModules.filter(module => module.moduleType === (extract ? 'css/mini-extract' : 'css'));
+const cssModules = flatModules.filter(module => module.moduleType === (extract ? 'css/mini-extract' : 'css/module'));
 assert.equal(cssModules.length, job.modules, 'CSS module count in final stats');
+const reactModules = flatModules.filter(module => module.identifier?.includes(componentRoot) && module.identifier.endsWith('.jsx'));
+assert.equal(reactModules.length, job.modules, 'React component module count in final stats');
+assert.equal(new Set(reactModules.map(module => module.identifier.split('!').at(-1))).size, job.modules);
+for (const module of reactModules) assert(module.identifier.includes('builtin:swc-loader'));
+if (job.case) {
+  const styleModules = flatModules.filter(module => module.moduleType === 'javascript/auto'
+    && module.identifier?.endsWith('.less') && module.identifier.includes(styleRoot));
+  assert.equal(styleModules.length, job.modules);
+  for (const module of styleModules) assert.equal(module.identifier.includes('builtin:lightningcss-loader'), job.builtin);
+}
 if (job.verify) {
+  if (job.case) {
+    const loaderResources = new Set();
+    for (const file of await readdir(job.auditDir)) {
+      const events = (await readFile(path.join(job.auditDir, file), 'utf8')).trim().split('\n').map(JSON.parse);
+      for (const event of events) {
+        assert.equal(event.threadId > 0, job.lessParallel, 'Less must execute on the configured thread');
+        lessThreadIds.add(event.threadId);
+        if (event.event === 'loader') { lessLoaderCalls++; loaderResources.add(event.filename); }
+        else {
+          assert.equal(event.event, 'render');
+          lessCompiles++;
+          compiledLessResources.add(event.filename);
+        }
+      }
+    }
+    assert.equal(loaderResources.size, job.modules);
+  }
   assert.equal(builtCssResources.size, job.modules, 'Unique CSS resources observed in succeedModule');
   for (let i = 0; i < job.modules; i++) {
-    const filename = path.join(styleRoot, `style-${String(i).padStart(5, '0')}.${extension}`);
+    const filename = path.join(styleRoot, `style-${String(i).padStart(5, '0')}.module.${extension}`);
     assert(builtCssResources.has(filename));
     if (isLess) assert(compiledLessResources.has(filename), `Less did not compile ${filename}`);
   }
@@ -251,7 +313,7 @@ for (const asset of details.assets ?? []) {
   const bytes = await readFile(path.join(job.output, asset.name));
   const text = bytes.toString();
   if (job.verify) {
-    const classes = new Set([...text.matchAll(/\.bench_(\d+)\b/g)].map(match => Number(match[1])));
+    const classes = new Set([...text.matchAll(/\.scoped_bench_(\d+)\b/g)].map(match => Number(match[1])));
     assert.equal(classes.size, job.modules, 'All unique classes must be emitted');
     for (let i = 0; i < job.modules; i++) assert(classes.has(i), `Missing class ${i}`);
     // Inspect declarations, not just class names: uncompiled Less can retain its
@@ -263,7 +325,7 @@ for (const asset of details.assets ?? []) {
       const selector = rawSelector.trim().replace(/\s+/g, ' ');
       assert(!seenSelectors.has(selector), `Duplicate selector ${selector}`);
       seenSelectors.add(selector);
-      assert.match(selector, /^\.bench_\d+(?::hover| > span)?$/);
+      assert.match(selector, /^\.scoped_bench_\d+(?::hover| > span)?$/);
       const expected = selector.endsWith(':hover') ? { color: '#654321', margin: '1px', padding: '0' }
         : selector.endsWith(' > span') ? { display: 'block', width: '10px', height: '10px' }
         : { color: '#123456', margin: '0', padding: '1px' };
@@ -277,6 +339,39 @@ for (const asset of details.assets ?? []) {
   cssAssets[asset.name] = { bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') };
 }
 assert.deepEqual(Object.keys(cssAssets), ['main.css']);
+let renderedComponents = null;
+let componentReferences = null;
+if (job.verify) {
+  const module = { exports: {} };
+  const runtimeMessages = [];
+  const capture = (...args) => runtimeMessages.push(args.map(String).join(' '));
+  runInNewContext(await readFile(path.join(job.output, 'main.js'), 'utf8'), {
+    module, exports: module.exports, console: { ...console, warn: capture, error: capture },
+    process: { env: { NODE_ENV: 'development' } },
+  }, { filename: path.join(job.output, 'main.js'), timeout: 30000 });
+  const { components } = module.exports;
+  assert.equal(components.length, job.modules);
+  assert.equal(new Set(components).size, job.modules);
+  componentReferences = 0;
+  for (let i = 0; i < job.modules; i++) {
+    const element = components[i]({ depth: 1 });
+    assert.equal(element.$$typeof, Symbol.for('react.transitional.element'));
+    assert.equal(element.type, 'section');
+    assert.equal(element.props['data-component'], i);
+    assert.equal(element.props.className, `scoped_bench_${i}`, 'CSS Modules export must reach the React element');
+    const children = [].concat(element.props.children);
+    const references = children.filter(child => typeof child?.type === 'function');
+    const expected = componentDependencies(i, job.modules);
+    assert.equal(references.length, expected.length);
+    references.forEach((child, index) => {
+      assert.equal(child.type, components[expected[index]], 'Component dependency must resolve to its actual export');
+      assert.equal(child.props.depth, 0);
+      componentReferences++;
+    });
+  }
+  assert.deepEqual(runtimeMessages, [], 'React runtime warnings or errors');
+  renderedComponents = components.length;
+}
 for (const key of ['make', 'finishMake', 'seal', 'afterSeal', 'emit', 'afterEmit']) assert(marks[key], `Missing ${key}`);
 const stages = {
   makeMs: elapsed(marks.make, marks.finishMake),
@@ -292,28 +387,32 @@ const configRecord = { ...config,
 const result = {
   ...job,
   packageVersions: { core: coreVersion, binding: bindingVersion, nativeBinding: nativePackage.version,
+    compiledCore: rspack.rspackVersion,
     nativeBindingName: nativePackage.name, cssLoader: extract ? req('css-loader/package.json').version : null,
     lessLoader: isLess ? req('less-loader/package.json').version : null,
-    less: isLess ? req(lessPath).version.join('.') : null },
+    less: isLess ? req(lessPath).version.join('.') : null, react: req('react/package.json').version },
   loadedPaths: { core: corePath, binding: coreReq.resolve('@rspack/binding'), nativeBinding: nativeBindings[0],
     ...(isLess ? { lessLoader: lessLoaderPath, less: lessPath } : {}) },
+  localBuild,
   environment: { node: process.version, execPath: process.execPath, platform: os.platform(),
     release: os.release(), arch: os.arch(), cpu: os.cpus()[0]?.model, logicalCpus: os.cpus().length,
     availableParallelism: os.availableParallelism(), totalMemoryBytes: os.totalmem(),
     loadAverage: os.loadavg(), execArgv: process.execArgv,
     env: Object.fromEntries(['NODE_OPTIONS', 'RAYON_NUM_THREADS', 'UV_THREADPOOL_SIZE', 'RSPACK_NUM_THREADS']
-      .map(key => [key, process.env[key] ?? null])) },
+      .concat(['RSPACK_LOADER_WORKER_THREADS']).map(key => [key, process.env[key] ?? null])) },
   timings: { buildMs, ...stages, compilerSetupMs, statsMs },
   validation: { cssModuleCount: cssModules.length, builtCssResources: job.verify ? builtCssResources.size : null,
+    reactModuleCount: reactModules.length, renderedComponents, componentReferences,
     noopCalls: job.verify ? noopCalls : null, importModuleCalls: job.verify ? importModuleCalls : null,
     lessLoaderCalls: job.verify ? lessLoaderCalls : null, lessCompiles: job.verify ? lessCompiles : null,
     compiledLessResources: job.verify ? compiledLessResources.size : null,
+    lessThreadIds: job.verify && job.case ? [...lessThreadIds].sort((a, b) => a - b) : null,
     errors: 0, warnings: 0, cssAssets },
   config: configRecord,
   effectiveConfig,
 };
 if (isLess) {
-  assert(req.cache[lessLoaderPath], 'Configured less-loader was not loaded');
+  if (!job.lessParallel) assert(req.cache[lessLoaderPath], 'Configured less-loader was not loaded');
   assert(req.cache[lessPath], 'Configured Less implementation was not loaded');
   assert.equal(result.packageVersions.lessLoader, '13.0.0');
   assert.equal(result.packageVersions.less, '4.9.1');
