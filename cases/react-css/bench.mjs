@@ -9,9 +9,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { generateFixture, fingerprintFixture } from './fixture.mjs';
-import { availableVersions, validateCore } from './versions.mjs';
+import { availableVersions, validateCore } from '../../versions.mjs';
 
-const root = path.dirname(fileURLToPath(import.meta.url));
+const root = fileURLToPath(new URL('../../', import.meta.url));
 const scriptIndex = process.argv.findIndex((arg, index) => index > 0 && path.resolve(arg) === fileURLToPath(import.meta.url));
 assert(scriptIndex > 0, 'Cannot locate benchmark script in argv');
 const { values } = parseArgs({ args: process.argv.slice(scriptIndex + 1), options: {
@@ -67,7 +67,7 @@ try {
 async function main() {
   if (values['generate-only']) {
     const fixture = await generateFixture({ modules, styles: values.styles });
-    console.log(`Generated ${modules} React components and CSS Modules files in fixture/. SHA-256: ${fixture.sha256}`);
+    console.log(`Generated ${modules} React components and CSS Modules files in cases/react-css/fixture/. SHA-256: ${fixture.sha256}`);
     return;
   }
   const session = new Date().toISOString().replaceAll(':', '-').replaceAll('.', '-') + `-${process.pid}`;
@@ -91,7 +91,7 @@ async function main() {
     conditions: 'Development mode; all exposed optimization switches disabled and checked against compiler.options; natural module/chunk IDs; serial fresh Node processes; cache/incremental disabled; no OS file cache flush; no per-module instrumentation outside validation.',
     artifactHashes: {},
   };
-  for (const name of ['bench.mjs', 'fixture.mjs', 'versions.mjs', 'run-build.mjs', 'loaders/noop.cjs', 'loaders/verify-less.cjs', 'package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml',
+  for (const name of ['cases/react-css/bench.mjs', 'cases/react-css/fixture.mjs', 'versions.mjs', 'cases/react-css/run-build.mjs', 'loaders/noop.cjs', 'loaders/verify-less.cjs', 'package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml',
     ...versions.map(version => `versions/${version}/package.json`)]) {
     metadata.artifactHashes[name] = hash(await readFile(path.join(root, name)));
   }
@@ -204,7 +204,7 @@ function runWorker(jobFile, job) {
     const start = process.hrtime.bigint();
     const preload = job.verify && job.case;
     const child = spawn(process.execPath, [...(preload ? ['--require', path.join(root, 'loaders/verify-less.cjs')] : []),
-      path.join(root, 'run-build.mjs'), jobFile], {
+      fileURLToPath(new URL('./run-build.mjs', import.meta.url)), jobFile], {
       cwd: root, stdio: ['ignore', 'pipe', 'pipe'],
       env: { ...process.env, ...(preload ? { RSPACK_BENCH_VERIFY_JOB: jobFile } : {}) },
     });

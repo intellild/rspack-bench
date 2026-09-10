@@ -2,9 +2,9 @@
   "name": "rspack-bench-local",
   "private": true,
   "scripts": {
-    "bench": "zx ../../bench.mjs --versions local",
-    "smoke": "zx ../../bench.mjs --versions local --modules 24 --runs 1 --supplement always",
-    "smoke:mixed": "zx ../../bench.mjs --versions local --experiment mixed --modules 24 --runs 1"
+    "bench": "zx ../../cases/react-css/bench.mjs --versions local",
+    "smoke": "zx ../../cases/react-css/bench.mjs --versions local --modules 24 --runs 1 --supplement always",
+    "smoke:mixed": "zx ../../cases/react-css/bench.mjs --versions local --experiment mixed --modules 24 --runs 1"
   },
   "dependencies": {
     "@rspack/core": "link:../../../../rstack/rspack/packages/rspack",

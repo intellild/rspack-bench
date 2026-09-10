@@ -7,9 +7,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runInNewContext } from 'node:vm';
 import { componentDependencies } from './fixture.mjs';
-import { validateCore, localRepository } from './versions.mjs';
+import { validateCore, localRepository } from '../../versions.mjs';
 
-const root = path.dirname(fileURLToPath(import.meta.url));
+const root = fileURLToPath(new URL('../../', import.meta.url));
 const job = JSON.parse(await readFile(process.argv[2], 'utf8'));
 const req = createRequire(path.join(root, 'versions', job.version, 'package.json'));
 const corePath = req.resolve('@rspack/core');
@@ -35,7 +35,7 @@ if (job.version === 'local') {
     localBuild.artifactHashes[filename] = createHash('sha256').update(await readFile(filename)).digest('hex');
   }
 }
-const fixture = path.join(root, 'fixture');
+const fixture = fileURLToPath(new URL('./fixture/', import.meta.url));
 const styleRoot = path.join(fixture, 'styles') + path.sep;
 const componentRoot = path.join(fixture, 'components') + path.sep;
 const noopPath = path.join(root, 'loaders/noop.cjs');

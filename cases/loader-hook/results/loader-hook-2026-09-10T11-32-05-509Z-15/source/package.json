@@ -1,0 +1,19 @@
+{
+  "name": "rspack-css-loader-bench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bench": "zx bench.mjs",
+    "smoke": "zx bench.mjs --modules 24 --runs 1 --supplement always",
+    "smoke:css": "zx bench.mjs --styles css --modules 24 --runs 1 --supplement always",
+    "generate": "zx bench.mjs --generate-only",
+    "smoke:mixed": "zx bench.mjs --experiment mixed --modules 24 --runs 1",
+    "bench:loader-hook": "zx cases/loader-hook/bench.mjs",
+    "smoke:loader-hook": "zx cases/loader-hook/bench.mjs --modules 24 --runs 1"
+  },
+  "devDependencies": {
+    "zx": "8.8.5",
+    "react": "19.1.0"
+  },
+  "packageManager": "pnpm@10.12.4"
+}

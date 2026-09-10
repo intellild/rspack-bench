@@ -54,7 +54,7 @@ Each pipeline runs against every selected Rspack version:
 | Noop | less-loader → noop → native CSS | noop → native CSS |
 | Extract | less-loader → css-loader → CssExtractRspackPlugin | css-loader → CssExtractRspackPlugin |
 
-The extraction comparison also supports a layered entry with shared component dependencies: entry → sections → groups → React components → CSS Modules. Every run regenerates `fixture/`.
+The extraction comparison also supports a layered entry with shared component dependencies: entry → sections → groups → React components → CSS Modules. Every run regenerates `cases/react-css/fixture/`.
 
 `--experiment mixed` runs four groups per selected version: builtin Lightning CSS on/off × Less parallel on/off (twelve groups by default). It requires Less input and ignores `--supplement`.
 
