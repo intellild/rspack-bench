@@ -1,0 +1,11 @@
+{
+  "name": "rspack-css-loader-bench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bench": "zx bench.mjs",
+    "smoke": "zx bench.mjs --modules 24 --runs 1 --supplement always",
+    "smoke:css": "zx bench.mjs --styles css --modules 24 --runs 1 --supplement always"
+  },
+  "devDependencies": { "zx": "8.8.5" }
+}
