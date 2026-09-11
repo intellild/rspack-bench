@@ -1,0 +1,11 @@
+{
+  "name": "rspack-bench-worktree-0385",
+  "private": true,
+  "dependencies": {
+    "@rspack/core": "link:/data00/home/jinzhixin/.codex/worktrees/0385/rspack/packages/rspack",
+    "babel-loader": "10.1.1",
+    "@babel/core": "7.29.7",
+    "less-loader": "13.0.0",
+    "less": "4.9.1"
+  }
+}

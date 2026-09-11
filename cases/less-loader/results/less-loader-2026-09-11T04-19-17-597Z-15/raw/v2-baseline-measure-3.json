@@ -1,0 +1,170 @@
+{
+  "version": "v2",
+  "loaded": false,
+  "caseName": "less-loader",
+  "id": "v2-baseline-measure-3",
+  "phase": "measure",
+  "round": 3,
+  "verify": false,
+  "modules": 10000,
+  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/fixture",
+  "fixtureSha256": "739a3f11c1fa2f9647cbb2bfdfb68809745d8964e4d52be50fc9e15e51790787",
+  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/output/v2-baseline-measure-3",
+  "statsFile": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/stats/v2-baseline-measure-3.json",
+  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/raw/v2-baseline-measure-3.json",
+  "timings": {
+    "buildMs": 312.639802,
+    "compilerSetupMs": 10.27193,
+    "makeMs": 96.877553,
+    "finishMakeMs": 13.739991,
+    "sealMs": 168.485266,
+    "emitMs": 6.786488,
+    "processMs": 1188.31091
+  },
+  "packageVersion": "2.2.3",
+  "compiledVersion": "2.2.3",
+  "dependencies": {
+    "less-loader": {
+      "version": "13.0.0",
+      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/less-loader@13.0.0_@rspack+core@2.2.3_less@4.9.1/node_modules/less-loader/dist/cjs/index.js",
+      "sha256": "1253263daa9caf510ca8c5a2f6c3bbb4acc67c15b1547652f2d6a489110ccce9"
+    },
+    "less": {
+      "version": "4.9.1",
+      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/less@4.9.1/node_modules/less/lib/less-node/index.js",
+      "sha256": "4b2357a041cee4468c534121ca55f7dab567dd2dc61d7e41276a6b59c0076839"
+    }
+  },
+  "loadedPaths": {
+    "core": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js",
+    "binding": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.2.3/node_modules/@rspack/binding/binding.js",
+    "nativeBinding": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.2.3/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node"
+  },
+  "artifacts": {
+    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js": "5b8a8e7a063ef63ee0a709a284792537ea8d544b2f8e7e67a83ba36ef42c32ba",
+    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.2.3/node_modules/@rspack/binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.2.3/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node": "5842ccdf40d67f08781ac217dd63288da0facdb86e6797ba2c255583abd29661"
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "release": "5.15.120.bsk.3-amd64",
+    "arch": "x64",
+    "cpu": "Intel(R) Xeon(R) Platinum 8336C CPU @ 2.30GHz",
+    "availableParallelism": 32,
+    "loadAverage": [
+      1.33,
+      0.96,
+      1.14
+    ],
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=8192",
+      "RAYON_NUM_THREADS": null,
+      "UV_THREADPOOL_SIZE": null,
+      "RSPACK_NUM_THREADS": null,
+      "RSPACK_LOADER_WORKER_THREADS": null
+    }
+  },
+  "validation": {
+    "modules": 10000,
+    "loaderCalls": null,
+    "compilerCalls": null,
+    "exportedValue": 10000,
+    "cssRules": 30000,
+    "outputHashes": {
+      "main.css": "27f5e3449e07514d07eb5cd98d585502f17ed50b731fad57146ca23b142de198",
+      "main.js": "6b28c12631dc7836f80fbe5dacc40cac5f2820adec91d52ef4acd611562eefc0"
+    },
+    "errors": 0,
+    "warnings": 0
+  },
+  "config": {
+    "context": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/fixture",
+    "entry": "./index-css.js",
+    "mode": "development",
+    "target": [
+      "web",
+      "es2020"
+    ],
+    "devtool": false,
+    "cache": false,
+    "incremental": false,
+    "lazyCompilation": false,
+    "experiments": {
+      "newCache": false,
+      "pureFunctions": false
+    },
+    "output": {
+      "path": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/output/v2-baseline-measure-3",
+      "filename": "main.js",
+      "publicPath": "",
+      "pathinfo": false,
+      "library": {
+        "type": "commonjs2"
+      },
+      "uniqueName": "less-loader-bench",
+      "clean": false,
+      "cssFilename": "main.css"
+    },
+    "optimization": {
+      "minimize": false,
+      "minimizer": [],
+      "concatenateModules": false,
+      "splitChunks": false,
+      "runtimeChunk": false,
+      "moduleIds": "natural",
+      "chunkIds": "natural",
+      "usedExports": false,
+      "sideEffects": false,
+      "providedExports": false,
+      "innerGraph": false,
+      "mangleExports": false,
+      "inlineExports": false,
+      "removeEmptyChunks": false,
+      "mergeDuplicateChunks": false,
+      "realContentHash": false,
+      "avoidEntryIife": false,
+      "nodeEnv": false,
+      "emitOnErrors": false
+    },
+    "module": {
+      "rules": [
+        {
+          "test": "/\\.(?:less|css)$/",
+          "include": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/fixture",
+          "type": "css",
+          "use": []
+        }
+      ]
+    },
+    "plugins": [
+      "BenchmarkClock"
+    ],
+    "stats": "none",
+    "infrastructureLogging": {
+      "level": "error"
+    }
+  },
+  "effectiveOptimization": {
+    "minimize": false,
+    "minimizer": [],
+    "concatenateModules": false,
+    "splitChunks": false,
+    "runtimeChunk": false,
+    "moduleIds": "natural",
+    "chunkIds": "natural",
+    "usedExports": false,
+    "sideEffects": false,
+    "providedExports": false,
+    "innerGraph": false,
+    "mangleExports": false,
+    "inlineExports": false,
+    "removeEmptyChunks": false,
+    "mergeDuplicateChunks": false,
+    "realContentHash": false,
+    "avoidEntryIife": false,
+    "nodeEnv": false,
+    "emitOnErrors": false
+  },
+  "executionOrder": 18
+}

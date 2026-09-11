@@ -1,0 +1,37 @@
+{
+  "caseName": "less-loader",
+  "modules": 10000,
+  "runs": 5,
+  "versions": [
+    "v2",
+    "worktree-0385"
+  ],
+  "startedAt": "2026-09-11T04:19:23.836Z",
+  "fixtureSha256": "739a3f11c1fa2f9647cbb2bfdfb68809745d8964e4d52be50fc9e15e51790787",
+  "worktree": {
+    "path": "/data00/home/jinzhixin/.codex/worktrees/0385/rspack",
+    "head": "0c244ef4114d0209bea0e40a684b6fd777609562",
+    "status": ""
+  },
+  "validationPerGroup": 1,
+  "warmupsPerGroup": 1,
+  "artifactHashes": {
+    "lib/loader-overhead/bench.mjs": "8d7169b741163bf0356b535b4366d1c1885d8650b4384583ecd938a62cd06c13",
+    "lib/loader-overhead/run-build.mjs": "d2c5540e37962fedc604f0132cf35e98604a03dcd84fa28c9e953aaf1c6a69d0",
+    "cases/less-loader/bench.mjs": "68f3179009de257b8e34fde80031f9559a24596693cdd706f01da52091814394",
+    "cases/less-loader/case.mjs": "9bd4a76e3e4f2f1b3d35722bae5003c3c4ca45b4b2e370ab214bd6a2111a7f69",
+    "cases/noop-loader/config.mjs": "9fe152b1e446ade1717ee2942ffadb2c652da0eec7e520e420a6dbe63d6d3a7b",
+    "cases/noop-loader/versions.mjs": "0a9a0df0a22473c4fcb945df55d312fb4cfe3724db4966bde4daacaac99c763c",
+    "versions.mjs": "9cd422ac19a83351896a9ef61a05d88721a7d14765c7927ba0e2493d57a0c5a9",
+    "package.json": "50b9a817a520727ff037f59cc8889d6cd81e5a631f1ac090b4c522cdbcaf10f0",
+    "pnpm-lock.yaml": "a45a1433ed9c8c3d17ec93637d5df29a4570bd52a71a9bbcefa269911b06d85c",
+    "pnpm-workspace.yaml": "3683dba8459c7d46338a6ef8da45b72deb09389214805efdfa065d8c91ba9b09",
+    "versions/v2/package.json": "20740da705d24b5a20a9b97fce5c06417d942ba08c331e9dc8bc84862ecfc0f8",
+    "versions/worktree-0385/package.json": "7dda971a41bd3f85606bdbe7fab7c6ed3a105930957e1810ade12ee3578d519e"
+  },
+  "conditions": "Development; all optimization flags disabled; no cache/incremental; serial loaders; no NormalModule loader hook taps. Serial fresh Node processes; rotating measurement order; OS cache retained.",
+  "workload": "10,000 Less/CSS workload modules by default, plus one JS entry importing every stylesheet. Less variables, mixins, nesting and arithmetic compile through less-loader to native CSS; baseline uses equivalent CSS precompiled outside build timers.",
+  "buildBoundary": "compiler.run invocation to callback, excluding setup/close, stats, bundle execution and artifact hashing",
+  "finishedAt": "2026-09-11T04:21:26.106Z",
+  "fixtureUnchanged": true
+}

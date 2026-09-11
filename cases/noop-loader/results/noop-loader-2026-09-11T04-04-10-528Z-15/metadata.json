@@ -1,0 +1,34 @@
+{
+  "modules": 10000,
+  "runs": 5,
+  "versions": [
+    "v2",
+    "worktree-0385"
+  ],
+  "startedAt": "2026-09-11T04:04:10.948Z",
+  "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+  "worktree": {
+    "path": "/data00/home/jinzhixin/.codex/worktrees/0385/rspack",
+    "head": "0c244ef4114d0209bea0e40a684b6fd777609562",
+    "status": ""
+  },
+  "validationPerGroup": 1,
+  "warmupsPerGroup": 1,
+  "artifactHashes": {
+    "cases/noop-loader/bench.mjs": "388094c046586c09cd0601fb2a6c55797fbf53d1b1e261331d88145c5f710f50",
+    "cases/noop-loader/run-build.mjs": "03d7f0e2106f4c2f1fecc77b8a5e1149253e8b06afb76849dfc2dbde5a25d755",
+    "cases/noop-loader/config.mjs": "9fe152b1e446ade1717ee2942ffadb2c652da0eec7e520e420a6dbe63d6d3a7b",
+    "cases/noop-loader/versions.mjs": "0a9a0df0a22473c4fcb945df55d312fb4cfe3724db4966bde4daacaac99c763c",
+    "loaders/noop.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f",
+    "versions.mjs": "9cd422ac19a83351896a9ef61a05d88721a7d14765c7927ba0e2493d57a0c5a9",
+    "package.json": "0e1710a2df5468a47fbbed9299c4bdd7d9b803a34476b27e033ca013c8310331",
+    "pnpm-lock.yaml": "8f5498f9d5b2736dbc6b69c6cf47b812d7c16f85ca0fb704698b1ce94cfb0431",
+    "pnpm-workspace.yaml": "3683dba8459c7d46338a6ef8da45b72deb09389214805efdfa065d8c91ba9b09",
+    "versions/v2/package.json": "81fbd7c6e87f3c63ef078819d3661041536d7024c71e8ad0d5a6318d1b2d6815",
+    "versions/worktree-0385/package.json": "a93bbcb234740a2698c77ec852d22bdf09a59ce8da2c0ad4335c3cbc918a61ca"
+  },
+  "conditions": "Development; all optimization flags disabled; no cache/incremental; no loader versus one noop.cjs, parallel:false. No loader hook taps, React, CSS or builtin loaders. Serial fresh Node processes; rotating measurement order; OS cache retained.",
+  "buildBoundary": "compiler.run invocation to callback, excluding setup/close, stats, bundle execution and artifact hashing",
+  "finishedAt": "2026-09-11T04:05:20.217Z",
+  "fixtureUnchanged": true
+}

@@ -1,0 +1,7 @@
+{
+  "name": "rspack-bench-v2-1-0",
+  "private": true,
+  "dependencies": {
+    "@rspack/core": "2.1.0"
+  }
+}

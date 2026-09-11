@@ -1,0 +1,204 @@
+{
+  "version": "v2-1-0",
+  "mode": "callback",
+  "id": "v2-1-0-callback-measure-3",
+  "phase": "measure",
+  "round": 3,
+  "verify": false,
+  "modules": 10000,
+  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-name-2026-09-11T14-29-44-848Z-15/output/v2-1-0-callback-measure-3",
+  "statsFile": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-name-2026-09-11T14-29-44-848Z-15/stats/v2-1-0-callback-measure-3.json",
+  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-name-2026-09-11T14-29-44-848Z-15/raw/v2-1-0-callback-measure-3.json",
+  "timings": {
+    "buildMs": 768.376124,
+    "compilerSetupMs": 10.067702,
+    "makeMs": 137.369169,
+    "finishMakeMs": 14.942627,
+    "sealMs": 565.689917,
+    "emitMs": 26.600558,
+    "processMs": 3460.18457
+  },
+  "packageVersion": "2.1.0",
+  "compiledVersion": "2.1.0",
+  "loadedPaths": {
+    "core": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/index.js",
+    "binding": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.1.0/node_modules/@rspack/binding/binding.js",
+    "nativeBinding": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.1.0/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node"
+  },
+  "artifacts": {
+    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/index.js": "58f125ccdaf373c66b870f45ddcb0631b7dab6e8769c4b780c00b05f0f755233",
+    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.1.0/node_modules/@rspack/binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.1.0/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node": "3b68a1e171a9649a8f56294f5a610817dba644d428aa39212dd5078825a592fd"
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "release": "5.15.120.bsk.3-amd64",
+    "arch": "x64",
+    "cpu": "Intel(R) Xeon(R) Platinum 8336C CPU @ 2.30GHz",
+    "availableParallelism": 32,
+    "loadAverage": [
+      1.77,
+      1.45,
+      1.29
+    ],
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=8192",
+      "RAYON_NUM_THREADS": null,
+      "UV_THREADPOOL_SIZE": null,
+      "RSPACK_NUM_THREADS": null,
+      "RSPACK_LOADER_WORKER_THREADS": null
+    }
+  },
+  "validation": {
+    "modules": 10000,
+    "workerAudit": null,
+    "nameCalls": null,
+    "callbackTurns": null,
+    "nameResources": null,
+    "exportedValue": 49995000,
+    "sharedModules": 10000,
+    "chunks": 2,
+    "outputHashes": {
+      "shared.js": "63125df5ef41db855940528ced7b1edde0cd15550c171734408e06a9aa158742",
+      "main.js": "27920500aad8355fb6bfe9ae7db06940d61735105f782fe9bb9be13c29400b0a"
+    },
+    "errors": 0,
+    "warnings": 0
+  },
+  "config": {
+    "context": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+    "entry": "./module-00000.js",
+    "mode": "development",
+    "target": "node",
+    "devtool": false,
+    "cache": false,
+    "incremental": false,
+    "lazyCompilation": false,
+    "experiments": {
+      "newCache": false,
+      "pureFunctions": false
+    },
+    "output": {
+      "path": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-name-2026-09-11T14-29-44-848Z-15/output/v2-1-0-callback-measure-3",
+      "filename": "[name].js",
+      "publicPath": "",
+      "pathinfo": false,
+      "library": {
+        "type": "commonjs2"
+      },
+      "uniqueName": "split-chunks-name-bench",
+      "clean": false,
+      "chunkFilename": "[name].js"
+    },
+    "optimization": {
+      "minimize": false,
+      "minimizer": [],
+      "concatenateModules": false,
+      "splitChunks": {
+        "name": {
+          "type": "function",
+          "source": "() => 'shared'"
+        },
+        "chunks": "all",
+        "minSize": 0,
+        "minChunks": 1,
+        "maxAsyncRequests": "Infinity",
+        "maxInitialRequests": "Infinity",
+        "cacheGroups": {
+          "default": false,
+          "defaultVendors": false,
+          "benchmark": {
+            "test": "/module-\\d+\\.js$/",
+            "enforce": true,
+            "reuseExistingChunk": false
+          }
+        }
+      },
+      "runtimeChunk": false,
+      "moduleIds": "natural",
+      "chunkIds": "natural",
+      "usedExports": false,
+      "sideEffects": false,
+      "providedExports": false,
+      "innerGraph": false,
+      "mangleExports": false,
+      "inlineExports": false,
+      "removeEmptyChunks": false,
+      "mergeDuplicateChunks": false,
+      "realContentHash": false,
+      "avoidEntryIife": false,
+      "nodeEnv": false,
+      "emitOnErrors": false
+    },
+    "module": {
+      "rules": [
+        {
+          "test": "/\\.js$/",
+          "include": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+          "type": "javascript/auto",
+          "use": []
+        }
+      ]
+    },
+    "plugins": [
+      "BenchmarkClock"
+    ],
+    "stats": "none",
+    "infrastructureLogging": {
+      "level": "error"
+    }
+  },
+  "effectiveOptimization": {
+    "minimize": false,
+    "minimizer": [],
+    "concatenateModules": false,
+    "splitChunks": {
+      "name": {
+        "type": "function",
+        "source": "() => 'shared'"
+      },
+      "chunks": "all",
+      "minSize": 0,
+      "minChunks": 1,
+      "maxAsyncRequests": "Infinity",
+      "maxInitialRequests": "Infinity",
+      "cacheGroups": {
+        "default": false,
+        "defaultVendors": false,
+        "benchmark": {
+          "test": "/module-\\d+\\.js$/",
+          "enforce": true,
+          "reuseExistingChunk": false
+        }
+      },
+      "defaultSizeTypes": [
+        "javascript",
+        "css",
+        "unknown"
+      ],
+      "hidePathInfo": false,
+      "usedExports": false,
+      "enforceSizeThreshold": 30000,
+      "automaticNameDelimiter": "-"
+    },
+    "runtimeChunk": false,
+    "moduleIds": "natural",
+    "chunkIds": "natural",
+    "usedExports": false,
+    "sideEffects": false,
+    "providedExports": false,
+    "innerGraph": false,
+    "mangleExports": false,
+    "inlineExports": false,
+    "removeEmptyChunks": false,
+    "mergeDuplicateChunks": false,
+    "realContentHash": false,
+    "avoidEntryIife": false,
+    "nodeEnv": false,
+    "emitOnErrors": false
+  },
+  "executionOrder": 29
+}

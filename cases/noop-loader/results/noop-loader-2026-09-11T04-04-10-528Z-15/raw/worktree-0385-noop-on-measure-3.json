@@ -1,0 +1,156 @@
+{
+  "version": "worktree-0385",
+  "noop": true,
+  "id": "worktree-0385-noop-on-measure-3",
+  "phase": "measure",
+  "round": 3,
+  "verify": false,
+  "modules": 10000,
+  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/output/worktree-0385-noop-on-measure-3",
+  "statsFile": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/stats/worktree-0385-noop-on-measure-3.json",
+  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/raw/worktree-0385-noop-on-measure-3.json",
+  "timings": {
+    "buildMs": 1444.914912,
+    "compilerSetupMs": 10.372135,
+    "makeMs": 1252.780271,
+    "finishMakeMs": 14.621562,
+    "sealMs": 127.223873,
+    "emitMs": 23.16963,
+    "processMs": 2993.619098
+  },
+  "packageVersion": "2.2.3",
+  "compiledVersion": "2.2.3",
+  "loadedPaths": {
+    "core": "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/packages/rspack/dist/index.js",
+    "binding": "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/crates/node_binding/binding.js",
+    "nativeBinding": "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/crates/node_binding/rspack.linux-x64-gnu.node"
+  },
+  "artifacts": {
+    "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/packages/rspack/dist/index.js": "92a63dac856dc284b9424a70ba6065864913d7598624cf18628958caf2d691f2",
+    "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/crates/node_binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/crates/node_binding/rspack.linux-x64-gnu.node": "038cab23095d431e1554c3521f89b3ca44948a8e82c84ef39a6eea6a36fbc41e"
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "release": "5.15.120.bsk.3-amd64",
+    "arch": "x64",
+    "cpu": "Intel(R) Xeon(R) Platinum 8336C CPU @ 2.30GHz",
+    "availableParallelism": 32,
+    "loadAverage": [
+      1.62,
+      0.97,
+      1.75
+    ],
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=8192",
+      "RAYON_NUM_THREADS": null,
+      "UV_THREADPOOL_SIZE": null,
+      "RSPACK_NUM_THREADS": null,
+      "RSPACK_LOADER_WORKER_THREADS": null
+    }
+  },
+  "validation": {
+    "modules": 10000,
+    "noopCalls": null,
+    "exportedValue": 49995000,
+    "bundleSha256": "7baf5a8779e0e65ec3d59228728fba73882db5351cc63cd694ccefce7888e1d3",
+    "errors": 0,
+    "warnings": 0
+  },
+  "config": {
+    "context": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+    "entry": "./module-00000.js",
+    "mode": "development",
+    "target": [
+      "web",
+      "es2020"
+    ],
+    "devtool": false,
+    "cache": false,
+    "incremental": false,
+    "lazyCompilation": false,
+    "experiments": {
+      "newCache": false,
+      "pureFunctions": false
+    },
+    "output": {
+      "path": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/output/worktree-0385-noop-on-measure-3",
+      "filename": "main.js",
+      "publicPath": "",
+      "pathinfo": false,
+      "library": {
+        "type": "commonjs2"
+      },
+      "uniqueName": "noop-loader-bench",
+      "clean": false
+    },
+    "optimization": {
+      "minimize": false,
+      "minimizer": [],
+      "concatenateModules": false,
+      "splitChunks": false,
+      "runtimeChunk": false,
+      "moduleIds": "natural",
+      "chunkIds": "natural",
+      "usedExports": false,
+      "sideEffects": false,
+      "providedExports": false,
+      "innerGraph": false,
+      "mangleExports": false,
+      "inlineExports": false,
+      "removeEmptyChunks": false,
+      "mergeDuplicateChunks": false,
+      "realContentHash": false,
+      "avoidEntryIife": false,
+      "nodeEnv": false,
+      "emitOnErrors": false
+    },
+    "module": {
+      "rules": [
+        {
+          "test": "/\\.js$/",
+          "include": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+          "type": "javascript/auto",
+          "use": [
+            {
+              "loader": "/data00/home/jinzhixin/projects/rspack-bench/loaders/noop.cjs",
+              "parallel": false
+            }
+          ]
+        }
+      ]
+    },
+    "plugins": [
+      "BenchmarkClock"
+    ],
+    "stats": "none",
+    "infrastructureLogging": {
+      "level": "error"
+    }
+  },
+  "effectiveOptimization": {
+    "minimize": false,
+    "minimizer": [],
+    "concatenateModules": false,
+    "splitChunks": false,
+    "runtimeChunk": false,
+    "moduleIds": "natural",
+    "chunkIds": "natural",
+    "usedExports": false,
+    "sideEffects": false,
+    "providedExports": false,
+    "innerGraph": false,
+    "mangleExports": false,
+    "inlineExports": false,
+    "removeEmptyChunks": false,
+    "mergeDuplicateChunks": false,
+    "realContentHash": false,
+    "avoidEntryIife": false,
+    "nodeEnv": false,
+    "emitOnErrors": false
+  },
+  "executionOrder": 17
+}

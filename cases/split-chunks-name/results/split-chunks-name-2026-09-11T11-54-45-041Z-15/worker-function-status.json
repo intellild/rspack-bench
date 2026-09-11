@@ -1,0 +1,28 @@
+{
+  "version": "worktree-a77f",
+  "mode": "worker",
+  "id": "worktree-a77f-worker-verify-0",
+  "phase": "verify",
+  "round": 0,
+  "verify": true,
+  "modules": 10000,
+  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-name-2026-09-11T11-54-45-041Z-15/output/worktree-a77f-worker-verify-0",
+  "statsFile": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-name-2026-09-11T11-54-45-041Z-15/stats/worktree-a77f-worker-verify-0.json",
+  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-name-2026-09-11T11-54-45-041Z-15/raw/worktree-a77f-worker-verify-0.json",
+  "status": "unsupported",
+  "error": "Error:   × caused by plugins in Compilation.hooks.optimizeChunks\n  ╰─▶   × Error: workerFunction must be prepared by Rspack before use; hook scheduling only supports NormalModuleFactory.beforeResolve.tapPromise\n        │     at placeholder (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/index.js:889:15)\n        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/index.js:3587:90\n        │\n      \n",
+  "packageVersion": "2.2.1",
+  "compiledVersion": "2.2.1",
+  "artifacts": {
+    "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/index.js": "550a3379ad946f04638f789feb9940ca612b6857eac2b7aa7cfe1c9b10e98a14",
+    "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/rspack.linux-x64-gnu.node": "cb8aff7e7e3eeb9703738edb16009cbb7dd596a15b41f162726cad3893b2bb68"
+  },
+  "loadedPaths": {
+    "core": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/index.js",
+    "binding": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/binding.js",
+    "nativeBinding": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/rspack.linux-x64-gnu.node"
+  }
+}

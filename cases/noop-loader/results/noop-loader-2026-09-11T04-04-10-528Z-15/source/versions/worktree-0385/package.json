@@ -1,0 +1,7 @@
+{
+  "name": "rspack-bench-worktree-0385",
+  "private": true,
+  "dependencies": {
+    "@rspack/core": "link:/data00/home/jinzhixin/.codex/worktrees/0385/rspack/packages/rspack"
+  }
+}

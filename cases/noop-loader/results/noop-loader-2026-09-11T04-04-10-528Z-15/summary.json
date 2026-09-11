@@ -1,0 +1,471 @@
+{
+  "metadata": {
+    "modules": 10000,
+    "runs": 5,
+    "versions": [
+      "v2",
+      "worktree-0385"
+    ],
+    "startedAt": "2026-09-11T04:04:10.948Z",
+    "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+    "worktree": {
+      "path": "/data00/home/jinzhixin/.codex/worktrees/0385/rspack",
+      "head": "0c244ef4114d0209bea0e40a684b6fd777609562",
+      "status": ""
+    },
+    "validationPerGroup": 1,
+    "warmupsPerGroup": 1,
+    "artifactHashes": {
+      "cases/noop-loader/bench.mjs": "388094c046586c09cd0601fb2a6c55797fbf53d1b1e261331d88145c5f710f50",
+      "cases/noop-loader/run-build.mjs": "03d7f0e2106f4c2f1fecc77b8a5e1149253e8b06afb76849dfc2dbde5a25d755",
+      "cases/noop-loader/config.mjs": "9fe152b1e446ade1717ee2942ffadb2c652da0eec7e520e420a6dbe63d6d3a7b",
+      "cases/noop-loader/versions.mjs": "0a9a0df0a22473c4fcb945df55d312fb4cfe3724db4966bde4daacaac99c763c",
+      "loaders/noop.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f",
+      "versions.mjs": "9cd422ac19a83351896a9ef61a05d88721a7d14765c7927ba0e2493d57a0c5a9",
+      "package.json": "0e1710a2df5468a47fbbed9299c4bdd7d9b803a34476b27e033ca013c8310331",
+      "pnpm-lock.yaml": "8f5498f9d5b2736dbc6b69c6cf47b812d7c16f85ca0fb704698b1ce94cfb0431",
+      "pnpm-workspace.yaml": "3683dba8459c7d46338a6ef8da45b72deb09389214805efdfa065d8c91ba9b09",
+      "versions/v2/package.json": "81fbd7c6e87f3c63ef078819d3661041536d7024c71e8ad0d5a6318d1b2d6815",
+      "versions/worktree-0385/package.json": "a93bbcb234740a2698c77ec852d22bdf09a59ce8da2c0ad4335c3cbc918a61ca"
+    },
+    "conditions": "Development; all optimization flags disabled; no cache/incremental; no loader versus one noop.cjs, parallel:false. No loader hook taps, React, CSS or builtin loaders. Serial fresh Node processes; rotating measurement order; OS cache retained.",
+    "buildBoundary": "compiler.run invocation to callback, excluding setup/close, stats, bundle execution and artifact hashing",
+    "finishedAt": "2026-09-11T04:05:20.217Z",
+    "fixtureUnchanged": true
+  },
+  "rows": [
+    {
+      "version": "v2",
+      "noop": false,
+      "timings": {
+        "buildMs": {
+          "median": 295.216558,
+          "min": 289.646716,
+          "max": 317.489356,
+          "samples": [
+            317.489356,
+            294.345884,
+            289.646716,
+            304.098029,
+            295.216558
+          ]
+        },
+        "compilerSetupMs": {
+          "median": 10.483112,
+          "min": 10.324629,
+          "max": 10.751468,
+          "samples": [
+            10.751468,
+            10.483112,
+            10.324629,
+            10.45764,
+            10.613034
+          ]
+        },
+        "makeMs": {
+          "median": 107.010783,
+          "min": 104.291601,
+          "max": 123.943208,
+          "samples": [
+            123.943208,
+            108.776477,
+            104.291601,
+            107.010783,
+            105.346815
+          ]
+        },
+        "finishMakeMs": {
+          "median": 14.578523,
+          "min": 14.365101,
+          "max": 15.084567,
+          "samples": [
+            14.490094,
+            15.084567,
+            14.365101,
+            14.578523,
+            14.6041
+          ]
+        },
+        "sealMs": {
+          "median": 121.105925,
+          "min": 115.519088,
+          "max": 125.056461,
+          "samples": [
+            125.056461,
+            115.519088,
+            118.881285,
+            123.064175,
+            121.105925
+          ]
+        },
+        "emitMs": {
+          "median": 27.089714,
+          "min": 25.014814,
+          "max": 31.093082,
+          "samples": [
+            26.012842,
+            27.870486,
+            25.014814,
+            31.093082,
+            27.089714
+          ]
+        },
+        "processMs": {
+          "median": 1829.945357,
+          "min": 1725.290595,
+          "max": 1861.925083,
+          "samples": [
+            1829.945357,
+            1836.024981,
+            1725.290595,
+            1861.925083,
+            1815.775875
+          ]
+        }
+      }
+    },
+    {
+      "version": "worktree-0385",
+      "noop": false,
+      "timings": {
+        "buildMs": {
+          "median": 324.571014,
+          "min": 315.547957,
+          "max": 329.000734,
+          "samples": [
+            324.571014,
+            329.000734,
+            319.37398,
+            328.899187,
+            315.547957
+          ]
+        },
+        "compilerSetupMs": {
+          "median": 10.669875,
+          "min": 10.459226,
+          "max": 11.042175,
+          "samples": [
+            10.49625,
+            10.459226,
+            10.89615,
+            10.669875,
+            11.042175
+          ]
+        },
+        "makeMs": {
+          "median": 127.399033,
+          "min": 122.019398,
+          "max": 131.740219,
+          "samples": [
+            130.312954,
+            127.399033,
+            124.435572,
+            131.740219,
+            122.019398
+          ]
+        },
+        "finishMakeMs": {
+          "median": 15.091512,
+          "min": 14.402473,
+          "max": 16.31722,
+          "samples": [
+            15.091512,
+            15.009287,
+            15.570265,
+            14.402473,
+            16.31722
+          ]
+        },
+        "sealMs": {
+          "median": 125.293302,
+          "min": 124.9649,
+          "max": 132.312474,
+          "samples": [
+            125.293302,
+            132.312474,
+            125.260121,
+            128.098019,
+            124.9649
+          ]
+        },
+        "emitMs": {
+          "median": 26.504826,
+          "min": 24.785428,
+          "max": 26.742092,
+          "samples": [
+            26.551543,
+            26.504826,
+            26.235232,
+            26.742092,
+            24.785428
+          ]
+        },
+        "processMs": {
+          "median": 1834.935295,
+          "min": 1804.785561,
+          "max": 1852.799336,
+          "samples": [
+            1815.774767,
+            1804.785561,
+            1834.935295,
+            1852.799336,
+            1836.969802
+          ]
+        }
+      }
+    },
+    {
+      "version": "v2",
+      "noop": true,
+      "timings": {
+        "buildMs": {
+          "median": 1411.836819,
+          "min": 1397.225076,
+          "max": 1417.218445,
+          "samples": [
+            1411.836819,
+            1397.225076,
+            1410.095486,
+            1412.752245,
+            1417.218445
+          ]
+        },
+        "compilerSetupMs": {
+          "median": 10.345794,
+          "min": 10.073778,
+          "max": 10.54522,
+          "samples": [
+            10.196832,
+            10.428413,
+            10.073778,
+            10.345794,
+            10.54522
+          ]
+        },
+        "makeMs": {
+          "median": 1217.490342,
+          "min": 1205.697503,
+          "max": 1225.433074,
+          "samples": [
+            1221.999796,
+            1205.697503,
+            1210.429543,
+            1217.490342,
+            1225.433074
+          ]
+        },
+        "finishMakeMs": {
+          "median": 15.400419,
+          "min": 14.694467,
+          "max": 15.559541,
+          "samples": [
+            15.400419,
+            14.694467,
+            15.541248,
+            15.559541,
+            14.95435
+          ]
+        },
+        "sealMs": {
+          "median": 126.491416,
+          "min": 122.588687,
+          "max": 135.581527,
+          "samples": [
+            126.663835,
+            124.766415,
+            135.581527,
+            122.588687,
+            126.491416
+          ]
+        },
+        "emitMs": {
+          "median": 23.455982,
+          "min": 21.822555,
+          "max": 29.648987,
+          "samples": [
+            21.822555,
+            25.794512,
+            22.397448,
+            29.648987,
+            23.455982
+          ]
+        },
+        "processMs": {
+          "median": 2979.85491,
+          "min": 2939.74855,
+          "max": 3018.564328,
+          "samples": [
+            2987.683188,
+            2939.74855,
+            2960.880264,
+            2979.85491,
+            3018.564328
+          ]
+        }
+      }
+    },
+    {
+      "version": "worktree-0385",
+      "noop": true,
+      "timings": {
+        "buildMs": {
+          "median": 1444.914912,
+          "min": 1429.191875,
+          "max": 1461.629283,
+          "samples": [
+            1430.982947,
+            1429.191875,
+            1444.914912,
+            1461.629283,
+            1451.978469
+          ]
+        },
+        "compilerSetupMs": {
+          "median": 10.372135,
+          "min": 10.264141,
+          "max": 10.572161,
+          "samples": [
+            10.264141,
+            10.549781,
+            10.372135,
+            10.284982,
+            10.572161
+          ]
+        },
+        "makeMs": {
+          "median": 1250.331582,
+          "min": 1233.934693,
+          "max": 1265.75833,
+          "samples": [
+            1236.643945,
+            1233.934693,
+            1252.780271,
+            1265.75833,
+            1250.331582
+          ]
+        },
+        "finishMakeMs": {
+          "median": 15.763467,
+          "min": 14.621562,
+          "max": 16.305989,
+          "samples": [
+            16.078614,
+            14.757655,
+            14.621562,
+            15.763467,
+            16.305989
+          ]
+        },
+        "sealMs": {
+          "median": 129.491119,
+          "min": 127.223873,
+          "max": 132.629115,
+          "samples": [
+            127.978589,
+            130.196295,
+            127.223873,
+            129.491119,
+            132.629115
+          ]
+        },
+        "emitMs": {
+          "median": 23.322247,
+          "min": 22.903811,
+          "max": 24.933652,
+          "samples": [
+            23.322247,
+            23.865997,
+            23.16963,
+            22.903811,
+            24.933652
+          ]
+        },
+        "processMs": {
+          "median": 3022.748504,
+          "min": 2993.619098,
+          "max": 3072.27528,
+          "samples": [
+            3022.748504,
+            3022.026711,
+            2993.619098,
+            3072.27528,
+            3054.764371
+          ]
+        }
+      }
+    }
+  ],
+  "overheads": {
+    "v2": {
+      "buildMs": {
+        "differenceMs": 1116.620261,
+        "ratio": 4.78237680353959
+      },
+      "compilerSetupMs": {
+        "differenceMs": -0.1373180000000005,
+        "ratio": 0.9869010270995864
+      },
+      "makeMs": {
+        "differenceMs": 1110.479559,
+        "ratio": 11.377267859071734
+      },
+      "finishMakeMs": {
+        "differenceMs": 0.8218959999999988,
+        "ratio": 1.0563771789501584
+      },
+      "sealMs": {
+        "differenceMs": 5.385491000000002,
+        "ratio": 1.0444692611034514
+      },
+      "emitMs": {
+        "differenceMs": -3.633732000000002,
+        "ratio": 0.8658630356894871
+      },
+      "processMs": {
+        "differenceMs": 1149.909553,
+        "ratio": 1.6283846392469083
+      }
+    },
+    "worktree-0385": {
+      "buildMs": {
+        "differenceMs": 1120.343898,
+        "ratio": 4.451768179151081
+      },
+      "compilerSetupMs": {
+        "differenceMs": -0.2977399999999992,
+        "ratio": 0.9720952682201057
+      },
+      "makeMs": {
+        "differenceMs": 1122.932549,
+        "ratio": 9.814294132044157
+      },
+      "finishMakeMs": {
+        "differenceMs": 0.6719550000000005,
+        "ratio": 1.0445253596856299
+      },
+      "sealMs": {
+        "differenceMs": 4.197817000000001,
+        "ratio": 1.033503921861681
+      },
+      "emitMs": {
+        "differenceMs": -3.1825790000000005,
+        "ratio": 0.8799245465712546
+      },
+      "processMs": {
+        "differenceMs": 1187.8132090000001,
+        "ratio": 1.6473324766473578
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "noop": false,
+      "localOverPublished": 1.099433636781308
+    },
+    {
+      "noop": true,
+      "localOverPublished": 1.023429119112667
+    }
+  ],
+  "overheadDifferenceMs": 3.7236370000000534
+}
