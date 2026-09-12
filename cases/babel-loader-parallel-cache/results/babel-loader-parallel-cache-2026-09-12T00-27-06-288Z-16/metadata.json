@@ -1,0 +1,66 @@
+{
+  "modules": 10000,
+  "runs": 5,
+  "versions": [
+    "v2-1-0",
+    "v2",
+    "worktree-a77f"
+  ],
+  "startedAt": "2026-09-12T00:27:07.361Z",
+  "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+  "worktree": {
+    "path": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack",
+    "head": "bbb58b8516649f14c896399db802031151bb0057",
+    "status": "M crates/node_binding/napi-binding.d.ts\n M crates/rspack_binding_api/src/raw_options/raw_split_chunks/mod.rs\n M crates/rspack_binding_api/src/raw_options/raw_split_chunks/raw_split_chunk_name.rs\n M crates/rspack_binding_api/src/worker.rs\n M packages/rspack/src/Compiler.ts\n M packages/rspack/src/builtin-plugin/SplitChunksPlugin.ts\n M packages/rspack/src/loader-runner/service.ts\n M packages/rspack/src/loader-runner/worker.ts\n M packages/rspack/src/workerFunction.ts\n M website/docs/en/api/javascript-api/worker-function.mdx\n M website/docs/zh/api/javascript-api/worker-function.mdx\n?? tests/rspack-test/compilerCases/fixtures/worker-function-split-chunks/\n?? tests/rspack-test/compilerCases/worker-function-split-chunks.js",
+    "patchSha256": "64d122da4e4b293a9a050486961ec7d64d6992001eb6cae74aafc8201e8b8811"
+  },
+  "artifactHashes": {
+    "cases/babel-loader-parallel-cache/bench.mjs": "b6bc29c7f1e03e75f10f691f9925677b062e4eba741c02bb7ee714fc20033ab3",
+    "cases/babel-loader-parallel-cache/run-build.mjs": "ad61348ef41dc1d1f6051ad0e65eb5ef3305582d8bff5eaae0004f124a25c137",
+    "cases/babel-loader-parallel-cache/config.mjs": "ae3403efba7abe178bcbc4c3414ca70270d571eb743edffa2ca32db29128fbf5",
+    "cases/babel-loader-parallel-cache/audit-preload.cjs": "7766eabe6a26a4126e5460ba178c11907773b065720d6dc031e0195da3b77b4f",
+    "cases/babel-loader/case.mjs": "c5ccd648255411df09fc4c883d2c701fd5a725e26211457ef8b576aafe8e3249",
+    "cases/noop-loader/config.mjs": "9fe152b1e446ade1717ee2942ffadb2c652da0eec7e520e420a6dbe63d6d3a7b",
+    "cases/split-chunks-name/versions.mjs": "ceba01e5173984c7b358de6290f9ecbc03b2f6481bd3bf5da73469387bad28cf",
+    "package.json": "2222c202382143f6c1c0bd19193e9aaa9ead479a1e7c79dfb55ed31ab715c11b",
+    "pnpm-lock.yaml": "6a3717ec5f4a98a9c9778b3d3c1a49b7a3deb1b9fb579eeda2706adf29d11e77",
+    "pnpm-workspace.yaml": "3683dba8459c7d46338a6ef8da45b72deb09389214805efdfa065d8c91ba9b09",
+    "versions/v2-1-0/package.json": "9effc3c8f62c8c6d56f1c4a12f2616a6fb6c6e0fbc0680218ffadd50e2a74820",
+    "versions/v2/package.json": "20740da705d24b5a20a9b97fce5c06417d942ba08c331e9dc8bc84862ecfc0f8",
+    "versions/worktree-a77f/package.json": "d19e5689c0e9969fc85ca849f1f24eae1111788ab78b45c0a890046a5fc242d1"
+  },
+  "validationPairsPerGroup": 1,
+  "warmupPairsPerGroup": 1,
+  "conditions": "Development; all optimizations and incremental disabled. Babel disk/config caches off. Rspack 2.2.3/local use memory storage with only newCache.loader enabled; module/codeGeneration/devtool/minimize caches off. Rspack 2.1.0 legacy cache off; loader cache on unsupported. Parallel uses default worker count unless overridden in environment.",
+  "sequence": "Each fresh process creates one compiler: cold build, then full rebuild with unchanged contents and all resources marked modified. Each measured pair starts with empty loader cache and a fresh worker pool. Serial processes; rotating group order; OS cache retained.",
+  "buildBoundary": "compiler.run invocation to callback; setup/close, stats, audits, bundle evaluation and hashing excluded. Process timing covers the entire two-build child process.",
+  "resumptions": [
+    {
+      "at": "2026-09-12T00:40:47.060Z",
+      "sourceRevision": "source-resumed-2026-09-12T00-40-47-053Z",
+      "artifactHashes": {
+        "cases/babel-loader-parallel-cache/bench.mjs": "650ab82d3e682ca8c0852e016be5ffa087bf367b39fae0b90fb173c461501ec5",
+        "cases/babel-loader-parallel-cache/run-build.mjs": "56a04ef647dfbfc0bdfc93ca06ca3c71e41c4b609095ba37373122be1bc04afd",
+        "cases/babel-loader-parallel-cache/config.mjs": "ae3403efba7abe178bcbc4c3414ca70270d571eb743edffa2ca32db29128fbf5",
+        "cases/babel-loader-parallel-cache/audit-preload.cjs": "7766eabe6a26a4126e5460ba178c11907773b065720d6dc031e0195da3b77b4f",
+        "cases/babel-loader/case.mjs": "c5ccd648255411df09fc4c883d2c701fd5a725e26211457ef8b576aafe8e3249",
+        "cases/noop-loader/config.mjs": "9fe152b1e446ade1717ee2942ffadb2c652da0eec7e520e420a6dbe63d6d3a7b",
+        "cases/split-chunks-name/versions.mjs": "ceba01e5173984c7b358de6290f9ecbc03b2f6481bd3bf5da73469387bad28cf",
+        "package.json": "2222c202382143f6c1c0bd19193e9aaa9ead479a1e7c79dfb55ed31ab715c11b",
+        "pnpm-lock.yaml": "6a3717ec5f4a98a9c9778b3d3c1a49b7a3deb1b9fb579eeda2706adf29d11e77",
+        "pnpm-workspace.yaml": "3683dba8459c7d46338a6ef8da45b72deb09389214805efdfa065d8c91ba9b09",
+        "versions/v2-1-0/package.json": "9effc3c8f62c8c6d56f1c4a12f2616a6fb6c6e0fbc0680218ffadd50e2a74820",
+        "versions/v2/package.json": "20740da705d24b5a20a9b97fce5c06417d942ba08c331e9dc8bc84862ecfc0f8",
+        "versions/worktree-a77f/package.json": "d19e5689c0e9969fc85ca849f1f24eae1111788ab78b45c0a890046a5fc242d1"
+      },
+      "reason": "Continue unattempted pairs after recording the original failed attempt; no failed pair is retried. Only failure recording/resume/reporting changed."
+    }
+  ],
+  "finishedAt": "2026-09-12T00:45:19.741Z",
+  "fixtureUnchanged": true,
+  "supportedGroups": 10,
+  "unsupportedGroups": 2,
+  "successfulBuilds": 136,
+  "failedPairs": 2,
+  "attemptedPairs": 70
+}

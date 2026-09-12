@@ -1,0 +1,25 @@
+{
+  "purpose": "Count bridge messages, not measure performance. Instrumented timings are excluded from benchmark results.",
+  "scenario": {
+    "version": "worktree-a77f",
+    "parallel": true,
+    "use.cache": false,
+    "modules": 10000,
+    "builds": [
+      "cold",
+      "full rebuild"
+    ]
+  },
+  "status": "passed",
+  "messages": {
+    "worker:loader-options-request": 20001,
+    "main:loader-options-response": 20001
+  },
+  "optionHandles": {
+    "1": 20001
+  },
+  "limitations": [
+    "Counts exclude native-to-main loader runner calls; these are established by source inspection.",
+    "Synchronous logging perturbs execution; no timing conclusion is drawn from this diagnostic."
+  ]
+}

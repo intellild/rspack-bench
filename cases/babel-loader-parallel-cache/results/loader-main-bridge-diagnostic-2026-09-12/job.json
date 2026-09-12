@@ -1,0 +1,16 @@
+{
+  "version": "worktree-a77f",
+  "parallel": true,
+  "cache": false,
+  "id": "loader-main-bridge-diagnostic-2026-09-12",
+  "phase": "diagnostic",
+  "round": 0,
+  "verify": false,
+  "modules": 10000,
+  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/loader-main-bridge-diagnostic-2026-09-12/output",
+  "statsDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/loader-main-bridge-diagnostic-2026-09-12/stats",
+  "auditDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/loader-main-bridge-diagnostic-2026-09-12/audit",
+  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/loader-main-bridge-diagnostic-2026-09-12/result.json"
+}

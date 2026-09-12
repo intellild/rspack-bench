@@ -1,0 +1,231 @@
+{
+  "version": "worktree-a77f",
+  "parallel": true,
+  "cache": false,
+  "id": "worktree-a77f-parallel-on-cache-off-measure-4",
+  "phase": "measure",
+  "round": 4,
+  "sourceRevision": "source-resumed-2026-09-12T00-40-47-053Z",
+  "verify": false,
+  "modules": 10000,
+  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/output/worktree-a77f-parallel-on-cache-off-measure-4",
+  "statsDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/stats/worktree-a77f-parallel-on-cache-off-measure-4",
+  "auditDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/audit/worktree-a77f-parallel-on-cache-off-measure-4",
+  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/raw/worktree-a77f-parallel-on-cache-off-measure-4.json",
+  "packageVersion": "2.2.1",
+  "compiledVersion": "2.2.1",
+  "artifacts": {
+    "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/index.js": "a66312b48a2cad7d478780562aad2277980136f291b488556417aaa45b1968dc",
+    "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/rspack.linux-x64-gnu.node": "02601bac3e4a59961f1d54bfa634c6b0c44383b65335ac9c56020c3b590bb0bf",
+    "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js": "540b11111c736d12000ab7f2ad7f02455409a3e103d21b26427910eb198b1506"
+  },
+  "dependencies": {
+    "babel-loader": {
+      "version": "10.1.1",
+      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js",
+      "sha256": "8155bcb44c0309254de8d44c8b15be22ad025554b025c3e71bdd50cdf4a77a39"
+    },
+    "@babel/core": {
+      "version": "7.29.7",
+      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@babel+core@7.29.7/node_modules/@babel/core/lib/index.js",
+      "sha256": "dba868255b447218cd421b30fb5289c118f265817088e7106053cf962057dd26"
+    }
+  },
+  "loadedPaths": {
+    "core": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/index.js",
+    "binding": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/binding.js",
+    "native": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/rspack.linux-x64-gnu.node",
+    "loader": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js"
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "arch": "x64",
+    "release": "5.15.120.bsk.3-amd64",
+    "cpu": "Intel(R) Xeon(R) Platinum 8336C CPU @ 2.30GHz",
+    "cpus": 32,
+    "availableParallelism": 32,
+    "loadAverage": [
+      2.13,
+      2.24,
+      1.78
+    ],
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=8192",
+      "RSPACK_LOADER_WORKER_THREADS": null,
+      "RAYON_NUM_THREADS": null,
+      "UV_THREADPOOL_SIZE": null,
+      "RSPACK_NUM_THREADS": null
+    }
+  },
+  "status": "passed",
+  "compilerSetupMs": 11.035261,
+  "builds": [
+    {
+      "state": "cold",
+      "timings": {
+        "buildMs": 4287.441937,
+        "makeMs": 3989.09351,
+        "finishMakeMs": 15.528399,
+        "sealMs": 133.470565,
+        "emitMs": 24.697188
+      },
+      "validation": {
+        "modules": 10000,
+        "builtModules": 10000,
+        "audit": null,
+        "exportedValue": 49995000,
+        "outputSha256": "5f1024db687d1f82953956585045a3ed7acd52f467aeb6526635ea70cd890125",
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "state": "warm",
+      "timings": {
+        "buildMs": 2335.249318,
+        "makeMs": 2181.740922,
+        "finishMakeMs": 12.917947,
+        "sealMs": 108.696478,
+        "emitMs": 17.021772
+      },
+      "validation": {
+        "modules": 10000,
+        "builtModules": 10000,
+        "audit": null,
+        "exportedValue": 49995000,
+        "outputSha256": "5f1024db687d1f82953956585045a3ed7acd52f467aeb6526635ea70cd890125",
+        "errors": 0,
+        "warnings": 0
+      }
+    }
+  ],
+  "failures": [],
+  "config": {
+    "context": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+    "entry": "./module-00000.js",
+    "mode": "development",
+    "target": [
+      "web",
+      "es2020"
+    ],
+    "devtool": false,
+    "cache": {
+      "type": "memory"
+    },
+    "incremental": false,
+    "lazyCompilation": false,
+    "experiments": {
+      "newCache": {
+        "module": false,
+        "codeGeneration": false,
+        "devtool": false,
+        "minimize": false,
+        "loader": true
+      },
+      "pureFunctions": false
+    },
+    "output": {
+      "path": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/output/worktree-a77f-parallel-on-cache-off-measure-4",
+      "filename": "main.js",
+      "publicPath": "",
+      "pathinfo": false,
+      "library": {
+        "type": "commonjs2"
+      },
+      "uniqueName": "babel-loader-parallel-cache-bench",
+      "clean": false
+    },
+    "optimization": {
+      "minimize": false,
+      "minimizer": [],
+      "concatenateModules": false,
+      "splitChunks": false,
+      "runtimeChunk": false,
+      "moduleIds": "natural",
+      "chunkIds": "natural",
+      "usedExports": false,
+      "sideEffects": false,
+      "providedExports": false,
+      "innerGraph": false,
+      "mangleExports": false,
+      "inlineExports": false,
+      "removeEmptyChunks": false,
+      "mergeDuplicateChunks": false,
+      "realContentHash": false,
+      "avoidEntryIife": false,
+      "nodeEnv": false,
+      "emitOnErrors": false
+    },
+    "module": {
+      "rules": [
+        {
+          "test": "/\\.js$/",
+          "include": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+          "type": "javascript/auto",
+          "use": [
+            {
+              "loader": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js",
+              "parallel": true,
+              "options": {
+                "babelrc": false,
+                "configFile": false,
+                "cacheDirectory": false,
+                "sourceMaps": false,
+                "presets": [],
+                "plugins": [],
+                "comments": false,
+                "compact": false,
+                "minified": false
+              },
+              "cache": false
+            }
+          ]
+        }
+      ]
+    },
+    "plugins": [
+      "BenchmarkClock"
+    ],
+    "stats": "none",
+    "infrastructureLogging": {
+      "level": "error"
+    }
+  },
+  "effectiveCache": {
+    "type": "memory"
+  },
+  "effectiveNewCache": {
+    "module": false,
+    "codeGeneration": false,
+    "devtool": false,
+    "minimize": false,
+    "loader": true
+  },
+  "effectiveOptimization": {
+    "minimize": false,
+    "minimizer": [],
+    "concatenateModules": false,
+    "splitChunks": false,
+    "runtimeChunk": false,
+    "moduleIds": "natural",
+    "chunkIds": "natural",
+    "usedExports": false,
+    "sideEffects": false,
+    "providedExports": false,
+    "innerGraph": false,
+    "mangleExports": false,
+    "inlineExports": false,
+    "removeEmptyChunks": false,
+    "mergeDuplicateChunks": false,
+    "realContentHash": false,
+    "avoidEntryIife": false,
+    "nodeEnv": false,
+    "emitOnErrors": false
+  },
+  "processMs": 10315.658741,
+  "executionOrder": 54
+}

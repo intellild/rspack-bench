@@ -1,0 +1,64 @@
+{
+  "version": "worktree-a77f",
+  "parallel": true,
+  "cache": true,
+  "id": "worktree-a77f-parallel-on-cache-on-measure-3",
+  "phase": "measure",
+  "round": 3,
+  "verify": false,
+  "modules": 10000,
+  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/output/worktree-a77f-parallel-on-cache-on-measure-3",
+  "statsDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/stats/worktree-a77f-parallel-on-cache-on-measure-3",
+  "auditDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/audit/worktree-a77f-parallel-on-cache-on-measure-3",
+  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/raw/worktree-a77f-parallel-on-cache-on-measure-3.json",
+  "sourceRevision": "source",
+  "status": "failed",
+  "exitCode": 1,
+  "reason": "Cold build failed: WeakReference<JsCompilation> points to a dropped reference (427 modules). Original failure retained; no retry.",
+  "failures": [
+    {
+      "state": "cold",
+      "errorCount": 427,
+      "errors": [
+        {
+          "message": "  \u00d7 Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  \u2570\u2500\u25b6   \u00d7 Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        \u2502     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        \u2502     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+          "code": "ModuleBuildError",
+          "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00020.js",
+          "moduleName": "./module-00020.js"
+        },
+        {
+          "message": "  \u00d7 Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  \u2570\u2500\u25b6   \u00d7 Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        \u2502     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        \u2502     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+          "code": "ModuleBuildError",
+          "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00022.js",
+          "moduleName": "./module-00022.js"
+        },
+        {
+          "message": "  \u00d7 Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  \u2570\u2500\u25b6   \u00d7 Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        \u2502     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        \u2502     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+          "code": "ModuleBuildError",
+          "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00032.js",
+          "moduleName": "./module-00032.js"
+        },
+        {
+          "message": "  \u00d7 Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  \u2570\u2500\u25b6   \u00d7 Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        \u2502     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        \u2502     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+          "code": "ModuleBuildError",
+          "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00043.js",
+          "moduleName": "./module-00043.js"
+        },
+        {
+          "message": "  \u00d7 Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  \u2570\u2500\u25b6   \u00d7 Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        \u2502     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        \u2502     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+          "code": "ModuleBuildError",
+          "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00075.js",
+          "moduleName": "./module-00075.js"
+        }
+      ]
+    }
+  ],
+  "recoveredFromOriginalFailure": true,
+  "logFile": "results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/logs/worktree-a77f-parallel-on-cache-on-measure-3.log",
+  "statsEvidence": {
+    "path": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/stats/worktree-a77f-parallel-on-cache-on-measure-3/cold.json",
+    "sha256": "fbc6cf2fdf942f6d3b1df3ebd103b6c462161cc6002d90c1a63a31b71939bffe"
+  }
+}

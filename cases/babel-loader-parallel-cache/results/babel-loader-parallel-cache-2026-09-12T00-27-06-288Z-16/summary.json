@@ -1,0 +1,1924 @@
+{
+  "metadata": {
+    "modules": 10000,
+    "runs": 5,
+    "versions": [
+      "v2-1-0",
+      "v2",
+      "worktree-a77f"
+    ],
+    "startedAt": "2026-09-12T00:27:07.361Z",
+    "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+    "worktree": {
+      "path": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack",
+      "head": "bbb58b8516649f14c896399db802031151bb0057",
+      "status": "M crates/node_binding/napi-binding.d.ts\n M crates/rspack_binding_api/src/raw_options/raw_split_chunks/mod.rs\n M crates/rspack_binding_api/src/raw_options/raw_split_chunks/raw_split_chunk_name.rs\n M crates/rspack_binding_api/src/worker.rs\n M packages/rspack/src/Compiler.ts\n M packages/rspack/src/builtin-plugin/SplitChunksPlugin.ts\n M packages/rspack/src/loader-runner/service.ts\n M packages/rspack/src/loader-runner/worker.ts\n M packages/rspack/src/workerFunction.ts\n M website/docs/en/api/javascript-api/worker-function.mdx\n M website/docs/zh/api/javascript-api/worker-function.mdx\n?? tests/rspack-test/compilerCases/fixtures/worker-function-split-chunks/\n?? tests/rspack-test/compilerCases/worker-function-split-chunks.js",
+      "patchSha256": "64d122da4e4b293a9a050486961ec7d64d6992001eb6cae74aafc8201e8b8811"
+    },
+    "artifactHashes": {
+      "cases/babel-loader-parallel-cache/bench.mjs": "b6bc29c7f1e03e75f10f691f9925677b062e4eba741c02bb7ee714fc20033ab3",
+      "cases/babel-loader-parallel-cache/run-build.mjs": "ad61348ef41dc1d1f6051ad0e65eb5ef3305582d8bff5eaae0004f124a25c137",
+      "cases/babel-loader-parallel-cache/config.mjs": "ae3403efba7abe178bcbc4c3414ca70270d571eb743edffa2ca32db29128fbf5",
+      "cases/babel-loader-parallel-cache/audit-preload.cjs": "7766eabe6a26a4126e5460ba178c11907773b065720d6dc031e0195da3b77b4f",
+      "cases/babel-loader/case.mjs": "c5ccd648255411df09fc4c883d2c701fd5a725e26211457ef8b576aafe8e3249",
+      "cases/noop-loader/config.mjs": "9fe152b1e446ade1717ee2942ffadb2c652da0eec7e520e420a6dbe63d6d3a7b",
+      "cases/split-chunks-name/versions.mjs": "ceba01e5173984c7b358de6290f9ecbc03b2f6481bd3bf5da73469387bad28cf",
+      "package.json": "2222c202382143f6c1c0bd19193e9aaa9ead479a1e7c79dfb55ed31ab715c11b",
+      "pnpm-lock.yaml": "6a3717ec5f4a98a9c9778b3d3c1a49b7a3deb1b9fb579eeda2706adf29d11e77",
+      "pnpm-workspace.yaml": "3683dba8459c7d46338a6ef8da45b72deb09389214805efdfa065d8c91ba9b09",
+      "versions/v2-1-0/package.json": "9effc3c8f62c8c6d56f1c4a12f2616a6fb6c6e0fbc0680218ffadd50e2a74820",
+      "versions/v2/package.json": "20740da705d24b5a20a9b97fce5c06417d942ba08c331e9dc8bc84862ecfc0f8",
+      "versions/worktree-a77f/package.json": "d19e5689c0e9969fc85ca849f1f24eae1111788ab78b45c0a890046a5fc242d1"
+    },
+    "validationPairsPerGroup": 1,
+    "warmupPairsPerGroup": 1,
+    "conditions": "Development; all optimizations and incremental disabled. Babel disk/config caches off. Rspack 2.2.3/local use memory storage with only newCache.loader enabled; module/codeGeneration/devtool/minimize caches off. Rspack 2.1.0 legacy cache off; loader cache on unsupported. Parallel uses default worker count unless overridden in environment.",
+    "sequence": "Each fresh process creates one compiler: cold build, then full rebuild with unchanged contents and all resources marked modified. Each measured pair starts with empty loader cache and a fresh worker pool. Serial processes; rotating group order; OS cache retained.",
+    "buildBoundary": "compiler.run invocation to callback; setup/close, stats, audits, bundle evaluation and hashing excluded. Process timing covers the entire two-build child process.",
+    "resumptions": [
+      {
+        "at": "2026-09-12T00:40:47.060Z",
+        "sourceRevision": "source-resumed-2026-09-12T00-40-47-053Z",
+        "artifactHashes": {
+          "cases/babel-loader-parallel-cache/bench.mjs": "650ab82d3e682ca8c0852e016be5ffa087bf367b39fae0b90fb173c461501ec5",
+          "cases/babel-loader-parallel-cache/run-build.mjs": "56a04ef647dfbfc0bdfc93ca06ca3c71e41c4b609095ba37373122be1bc04afd",
+          "cases/babel-loader-parallel-cache/config.mjs": "ae3403efba7abe178bcbc4c3414ca70270d571eb743edffa2ca32db29128fbf5",
+          "cases/babel-loader-parallel-cache/audit-preload.cjs": "7766eabe6a26a4126e5460ba178c11907773b065720d6dc031e0195da3b77b4f",
+          "cases/babel-loader/case.mjs": "c5ccd648255411df09fc4c883d2c701fd5a725e26211457ef8b576aafe8e3249",
+          "cases/noop-loader/config.mjs": "9fe152b1e446ade1717ee2942ffadb2c652da0eec7e520e420a6dbe63d6d3a7b",
+          "cases/split-chunks-name/versions.mjs": "ceba01e5173984c7b358de6290f9ecbc03b2f6481bd3bf5da73469387bad28cf",
+          "package.json": "2222c202382143f6c1c0bd19193e9aaa9ead479a1e7c79dfb55ed31ab715c11b",
+          "pnpm-lock.yaml": "6a3717ec5f4a98a9c9778b3d3c1a49b7a3deb1b9fb579eeda2706adf29d11e77",
+          "pnpm-workspace.yaml": "3683dba8459c7d46338a6ef8da45b72deb09389214805efdfa065d8c91ba9b09",
+          "versions/v2-1-0/package.json": "9effc3c8f62c8c6d56f1c4a12f2616a6fb6c6e0fbc0680218ffadd50e2a74820",
+          "versions/v2/package.json": "20740da705d24b5a20a9b97fce5c06417d942ba08c331e9dc8bc84862ecfc0f8",
+          "versions/worktree-a77f/package.json": "d19e5689c0e9969fc85ca849f1f24eae1111788ab78b45c0a890046a5fc242d1"
+        },
+        "reason": "Continue unattempted pairs after recording the original failed attempt; no failed pair is retried. Only failure recording/resume/reporting changed."
+      }
+    ],
+    "finishedAt": "2026-09-12T00:45:19.741Z",
+    "fixtureUnchanged": true,
+    "supportedGroups": 10,
+    "unsupportedGroups": 2,
+    "successfulBuilds": 136,
+    "failedPairs": 2,
+    "attemptedPairs": 70
+  },
+  "rows": [
+    {
+      "version": "v2-1-0",
+      "parallel": false,
+      "cache": false,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 6363.276385,
+            "min": 6206.998824,
+            "max": 6454.188573,
+            "samples": [
+              6309.997894,
+              6206.998824,
+              6454.188573,
+              6411.567193,
+              6363.276385
+            ]
+          },
+          "makeMs": {
+            "median": 6141.63871,
+            "min": 5989.929289,
+            "max": 6238.847639,
+            "samples": [
+              6085.114669,
+              5989.929289,
+              6238.847639,
+              6188.472676,
+              6141.63871
+            ]
+          },
+          "finishMakeMs": {
+            "median": 16.156544,
+            "min": 15.28727,
+            "max": 16.55672,
+            "samples": [
+              15.467691,
+              16.156544,
+              15.28727,
+              16.180075,
+              16.55672
+            ]
+          },
+          "sealMs": {
+            "median": 142.914032,
+            "min": 141.214287,
+            "max": 151.185279,
+            "samples": [
+              148.579125,
+              141.848242,
+              141.214287,
+              151.185279,
+              142.914032
+            ]
+          },
+          "emitMs": {
+            "median": 23.346339,
+            "min": 22.802799,
+            "max": 26.925191,
+            "samples": [
+              24.998847,
+              23.277623,
+              23.346339,
+              22.802799,
+              26.925191
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 5153.129042,
+            "min": 5061.904826,
+            "max": 5492.256059,
+            "samples": [
+              5492.256059,
+              5363.300984,
+              5064.231186,
+              5153.129042,
+              5061.904826
+            ]
+          },
+          "makeMs": {
+            "median": 4865.347695,
+            "min": 4783.29242,
+            "max": 5201.302722,
+            "samples": [
+              5201.302722,
+              5073.916396,
+              4789.576592,
+              4865.347695,
+              4783.29242
+            ]
+          },
+          "finishMakeMs": {
+            "median": 15.460894,
+            "min": 14.947664,
+            "max": 15.742885,
+            "samples": [
+              15.72571,
+              15.460894,
+              14.947664,
+              15.302676,
+              15.742885
+            ]
+          },
+          "sealMs": {
+            "median": 129.814683,
+            "min": 125.16447,
+            "max": 134.701263,
+            "samples": [
+              129.814683,
+              128.987562,
+              125.16447,
+              132.905216,
+              134.701263
+            ]
+          },
+          "emitMs": {
+            "median": 25.268729,
+            "min": 24.354525,
+            "max": 27.172954,
+            "samples": [
+              27.172954,
+              24.354525,
+              24.956877,
+              25.268729,
+              25.379774
+            ]
+          }
+        }
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "processMs": {
+        "median": 14312.19909,
+        "min": 14117.193489,
+        "max": 14757.017469,
+        "samples": [
+          14757.017469,
+          14479.465576,
+          14251.639312,
+          14312.19909,
+          14117.193489
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 10.997779,
+        "min": 10.618762,
+        "max": 13.229927,
+        "samples": [
+          11.132051,
+          10.924923,
+          13.229927,
+          10.618762,
+          10.997779
+        ]
+      }
+    },
+    {
+      "version": "v2-1-0",
+      "parallel": true,
+      "cache": false,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 5109.388604,
+            "min": 4918.636858,
+            "max": 5213.756768,
+            "samples": [
+              5213.756768,
+              5109.388604,
+              4918.636858,
+              4960.586545,
+              5198.629521
+            ]
+          },
+          "makeMs": {
+            "median": 4908.70382,
+            "min": 4704.558609,
+            "max": 5008.923943,
+            "samples": [
+              5008.923943,
+              4908.70382,
+              4704.558609,
+              4765.671823,
+              4989.055256
+            ]
+          },
+          "finishMakeMs": {
+            "median": 14.884013,
+            "min": 14.436395,
+            "max": 15.69428,
+            "samples": [
+              14.741845,
+              14.436395,
+              15.256663,
+              15.69428,
+              14.884013
+            ]
+          },
+          "sealMs": {
+            "median": 128.502242,
+            "min": 125.968029,
+            "max": 138.445404,
+            "samples": [
+              132.686593,
+              125.968029,
+              138.445404,
+              128.502242,
+              127.625624
+            ]
+          },
+          "emitMs": {
+            "median": 24.267857,
+            "min": 23.634896,
+            "max": 29.121447,
+            "samples": [
+              23.634896,
+              24.101906,
+              24.799045,
+              24.267857,
+              29.121447
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 3722.05498,
+            "min": 3644.311523,
+            "max": 3928.770532,
+            "samples": [
+              3698.275515,
+              3722.05498,
+              3928.770532,
+              3644.311523,
+              3756.379298
+            ]
+          },
+          "makeMs": {
+            "median": 3442.766653,
+            "min": 3375.829226,
+            "max": 3646.514822,
+            "samples": [
+              3395.253298,
+              3442.766653,
+              3646.514822,
+              3375.829226,
+              3468.745178
+            ]
+          },
+          "finishMakeMs": {
+            "median": 15.693962,
+            "min": 14.533303,
+            "max": 16.036363,
+            "samples": [
+              15.71068,
+              16.036363,
+              14.86015,
+              14.533303,
+              15.693962
+            ]
+          },
+          "sealMs": {
+            "median": 129.834287,
+            "min": 124.053079,
+            "max": 139.008079,
+            "samples": [
+              139.008079,
+              133.130144,
+              125.106952,
+              124.053079,
+              129.834287
+            ]
+          },
+          "emitMs": {
+            "median": 28.503971,
+            "min": 24.218497,
+            "max": 31.646166,
+            "samples": [
+              31.646166,
+              24.218497,
+              28.503971,
+              25.20561,
+              31.079736
+            ]
+          }
+        }
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "processMs": {
+        "median": 12099.527076,
+        "min": 11910.378947,
+        "max": 12611.811445,
+        "samples": [
+          12264.891028,
+          12099.527076,
+          12017.184759,
+          11910.378947,
+          12611.811445
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 10.979083,
+        "min": 10.615224,
+        "max": 11.466348,
+        "samples": [
+          11.11069,
+          11.466348,
+          10.979083,
+          10.615224,
+          10.968026
+        ]
+      }
+    },
+    {
+      "version": "v2",
+      "parallel": false,
+      "cache": false,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 6799.623437,
+            "min": 6540.384477,
+            "max": 7019.429445,
+            "samples": [
+              6755.863116,
+              6799.623437,
+              7019.429445,
+              6540.384477,
+              6848.124835
+            ]
+          },
+          "makeMs": {
+            "median": 6597.112563,
+            "min": 6309.734407,
+            "max": 6819.338943,
+            "samples": [
+              6540.473619,
+              6597.112563,
+              6819.338943,
+              6309.734407,
+              6623.690056
+            ]
+          },
+          "finishMakeMs": {
+            "median": 15.554383,
+            "min": 15.111663,
+            "max": 16.321304,
+            "samples": [
+              15.60095,
+              15.554383,
+              16.321304,
+              15.409319,
+              15.111663
+            ]
+          },
+          "sealMs": {
+            "median": 133.309773,
+            "min": 130.44165,
+            "max": 146.557222,
+            "samples": [
+              133.309773,
+              133.029323,
+              130.44165,
+              146.557222,
+              139.176052
+            ]
+          },
+          "emitMs": {
+            "median": 25.247693,
+            "min": 24.917705,
+            "max": 35.256475,
+            "samples": [
+              25.100584,
+              25.247693,
+              24.917705,
+              27.928187,
+              35.256475
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 5159.898411,
+            "min": 4801.568087,
+            "max": 5244.458264,
+            "samples": [
+              4801.568087,
+              5206.580132,
+              5244.458264,
+              5000.769263,
+              5159.898411
+            ]
+          },
+          "makeMs": {
+            "median": 5001.85031,
+            "min": 4658.341258,
+            "max": 5100.281981,
+            "samples": [
+              4658.341258,
+              5057.381221,
+              5100.281981,
+              4856.768791,
+              5001.85031
+            ]
+          },
+          "finishMakeMs": {
+            "median": 13.554522,
+            "min": 12.81955,
+            "max": 14.330226,
+            "samples": [
+              13.554522,
+              14.330226,
+              13.129686,
+              14.020235,
+              12.81955
+            ]
+          },
+          "sealMs": {
+            "median": 106.47336,
+            "min": 104.526107,
+            "max": 118.474652,
+            "samples": [
+              107.153439,
+              106.47336,
+              104.526107,
+              104.953773,
+              118.474652
+            ]
+          },
+          "emitMs": {
+            "median": 17.306868,
+            "min": 14.567124,
+            "max": 20.033412,
+            "samples": [
+              14.567124,
+              20.033412,
+              17.837569,
+              16.761786,
+              17.306868
+            ]
+          }
+        }
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "processMs": {
+        "median": 15087.899544,
+        "min": 14542.342751,
+        "max": 15382.672579,
+        "samples": [
+          14596.968819,
+          15114.976169,
+          15382.672579,
+          14542.342751,
+          15087.899544
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 10.94196,
+        "min": 10.20783,
+        "max": 13.797241,
+        "samples": [
+          11.322226,
+          10.20783,
+          10.224359,
+          10.94196,
+          13.797241
+        ]
+      }
+    },
+    {
+      "version": "v2",
+      "parallel": false,
+      "cache": true,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 6490.016061,
+            "min": 6379.311838,
+            "max": 6623.138169,
+            "samples": [
+              6427.015757,
+              6531.652945,
+              6490.016061,
+              6379.311838,
+              6623.138169
+            ]
+          },
+          "makeMs": {
+            "median": 6202.768988,
+            "min": 6069.912926,
+            "max": 6411.495851,
+            "samples": [
+              6201.055204,
+              6202.768988,
+              6270.206288,
+              6069.912926,
+              6411.495851
+            ]
+          },
+          "finishMakeMs": {
+            "median": 17.068161,
+            "min": 15.637309,
+            "max": 127.549821,
+            "samples": [
+              16.271983,
+              127.549821,
+              17.068161,
+              120.771852,
+              15.637309
+            ]
+          },
+          "sealMs": {
+            "median": 133.749398,
+            "min": 129.357302,
+            "max": 150.592785,
+            "samples": [
+              150.592785,
+              133.749398,
+              148.370981,
+              130.972109,
+              129.357302
+            ]
+          },
+          "emitMs": {
+            "median": 28.306689,
+            "min": 25.503085,
+            "max": 29.246344,
+            "samples": [
+              29.246344,
+              28.306689,
+              25.503085,
+              28.472708,
+              27.327501
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 1108.924201,
+            "min": 1082.355443,
+            "max": 1239.001356,
+            "samples": [
+              1106.476695,
+              1239.001356,
+              1146.107443,
+              1082.355443,
+              1108.924201
+            ]
+          },
+          "makeMs": {
+            "median": 948.796002,
+            "min": 925.513693,
+            "max": 1093.307535,
+            "samples": [
+              948.796002,
+              1093.307535,
+              1001.150041,
+              925.513693,
+              945.057378
+            ]
+          },
+          "finishMakeMs": {
+            "median": 13.817932,
+            "min": 13.084457,
+            "max": 14.173497,
+            "samples": [
+              13.817932,
+              14.020086,
+              14.173497,
+              13.595425,
+              13.084457
+            ]
+          },
+          "sealMs": {
+            "median": 110.008209,
+            "min": 106.078242,
+            "max": 119.096656,
+            "samples": [
+              115.308113,
+              107.301809,
+              106.078242,
+              110.008209,
+              119.096656
+            ]
+          },
+          "emitMs": {
+            "median": 17.234479,
+            "min": 16.027062,
+            "max": 19.717904,
+            "samples": [
+              19.371648,
+              16.027062,
+              16.604159,
+              19.717904,
+              17.234479
+            ]
+          }
+        }
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "processMs": {
+        "median": 10600.018247,
+        "min": 10376.779978,
+        "max": 10821.820503,
+        "samples": [
+          10598.854573,
+          10821.820503,
+          10600.018247,
+          10376.779978,
+          10788.451539
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 11.047918,
+        "min": 10.070536,
+        "max": 11.542798,
+        "samples": [
+          10.233714,
+          11.311945,
+          10.070536,
+          11.047918,
+          11.542798
+        ]
+      }
+    },
+    {
+      "version": "v2",
+      "parallel": true,
+      "cache": false,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 5570.348231,
+            "min": 5465.629656,
+            "max": 5649.928895,
+            "samples": [
+              5570.348231,
+              5616.163648,
+              5525.300278,
+              5465.629656,
+              5649.928895
+            ]
+          },
+          "makeMs": {
+            "median": 5369.790305,
+            "min": 5262.206009,
+            "max": 5439.105882,
+            "samples": [
+              5369.790305,
+              5420.80656,
+              5327.114304,
+              5262.206009,
+              5439.105882
+            ]
+          },
+          "finishMakeMs": {
+            "median": 15.161051,
+            "min": 13.822434,
+            "max": 15.442443,
+            "samples": [
+              15.161051,
+              15.442443,
+              15.388666,
+              14.50023,
+              13.822434
+            ]
+          },
+          "sealMs": {
+            "median": 126.331752,
+            "min": 123.319972,
+            "max": 132.133166,
+            "samples": [
+              124.006334,
+              126.331752,
+              128.581423,
+              123.319972,
+              132.133166
+            ]
+          },
+          "emitMs": {
+            "median": 24.749999,
+            "min": 23.200154,
+            "max": 25.941287,
+            "samples": [
+              23.200154,
+              24.749999,
+              25.941287,
+              24.737362,
+              25.583712
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 3635.677326,
+            "min": 3590.445465,
+            "max": 3717.033409,
+            "samples": [
+              3590.445465,
+              3694.501963,
+              3717.033409,
+              3635.677326,
+              3593.860078
+            ]
+          },
+          "makeMs": {
+            "median": 3490.284376,
+            "min": 3435.071952,
+            "max": 3563.215551,
+            "samples": [
+              3435.071952,
+              3546.686492,
+              3563.215551,
+              3490.284376,
+              3447.939664
+            ]
+          },
+          "finishMakeMs": {
+            "median": 14.005891,
+            "min": 13.538792,
+            "max": 15.321596,
+            "samples": [
+              14.914398,
+              13.538792,
+              15.321596,
+              14.005891,
+              13.98589
+            ]
+          },
+          "sealMs": {
+            "median": 109.050607,
+            "min": 105.022545,
+            "max": 114.06422,
+            "samples": [
+              111.26028,
+              109.050607,
+              114.06422,
+              106.098543,
+              105.022545
+            ]
+          },
+          "emitMs": {
+            "median": 16.881134,
+            "min": 15.902199,
+            "max": 17.924244,
+            "samples": [
+              17.778936,
+              16.881134,
+              15.902199,
+              16.476014,
+              17.924244
+            ]
+          }
+        }
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "processMs": {
+        "median": 12746.405031,
+        "min": 12654.45606,
+        "max": 12939.379961,
+        "samples": [
+          12663.203168,
+          12939.379961,
+          12810.052382,
+          12654.45606,
+          12746.405031
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 10.837927,
+        "min": 10.135022,
+        "max": 11.279135,
+        "samples": [
+          10.837927,
+          10.425095,
+          10.135022,
+          11.279135,
+          11.047344
+        ]
+      }
+    },
+    {
+      "version": "v2",
+      "parallel": true,
+      "cache": true,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 6845.593465,
+            "min": 6757.412165,
+            "max": 7049.317639,
+            "samples": [
+              7049.317639,
+              6845.593465,
+              6831.284319,
+              6942.168468,
+              6757.412165
+            ]
+          },
+          "makeMs": {
+            "median": 6637.314344,
+            "min": 6557.928569,
+            "max": 6852.346914,
+            "samples": [
+              6852.346914,
+              6637.314344,
+              6627.650976,
+              6740.188536,
+              6557.928569
+            ]
+          },
+          "finishMakeMs": {
+            "median": 14.971006,
+            "min": 14.705823,
+            "max": 15.647119,
+            "samples": [
+              15.647119,
+              15.210848,
+              14.705823,
+              14.94459,
+              14.971006
+            ]
+          },
+          "sealMs": {
+            "median": 129.560671,
+            "min": 123.192648,
+            "max": 133.493994,
+            "samples": [
+              123.192648,
+              129.560671,
+              133.493994,
+              129.466223,
+              131.781368
+            ]
+          },
+          "emitMs": {
+            "median": 25.452809,
+            "min": 23.437037,
+            "max": 26.514348,
+            "samples": [
+              25.452809,
+              23.437037,
+              25.671792,
+              26.514348,
+              23.922254
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 3827.356848,
+            "min": 3821.786056,
+            "max": 3910.597139,
+            "samples": [
+              3827.356848,
+              3871.633057,
+              3910.597139,
+              3823.770211,
+              3821.786056
+            ]
+          },
+          "makeMs": {
+            "median": 3685.431488,
+            "min": 3678.427753,
+            "max": 3772.653003,
+            "samples": [
+              3685.431488,
+              3723.479125,
+              3772.653003,
+              3680.352757,
+              3678.427753
+            ]
+          },
+          "finishMakeMs": {
+            "median": 12.972791,
+            "min": 12.667857,
+            "max": 14.790409,
+            "samples": [
+              12.972791,
+              14.790409,
+              12.667857,
+              13.323249,
+              12.86633
+            ]
+          },
+          "sealMs": {
+            "median": 104.188657,
+            "min": 99.63269,
+            "max": 109.128587,
+            "samples": [
+              102.635336,
+              109.128587,
+              99.63269,
+              104.788051,
+              104.188657
+            ]
+          },
+          "emitMs": {
+            "median": 17.426782,
+            "min": 15.794563,
+            "max": 17.878878,
+            "samples": [
+              17.541379,
+              15.794563,
+              17.426782,
+              16.34592,
+              17.878878
+            ]
+          }
+        }
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "processMs": {
+        "median": 14199.990083,
+        "min": 14020.480947,
+        "max": 14386.687309,
+        "samples": [
+          14386.687309,
+          14067.074997,
+          14293.514883,
+          14199.990083,
+          14020.480947
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 11.253391,
+        "min": 10.12194,
+        "max": 11.895445,
+        "samples": [
+          11.895445,
+          11.253391,
+          10.265395,
+          11.724878,
+          10.12194
+        ]
+      }
+    },
+    {
+      "version": "worktree-a77f",
+      "parallel": false,
+      "cache": false,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 7000.297462,
+            "min": 6841.404302,
+            "max": 7183.027919,
+            "samples": [
+              7148.906513,
+              6841.404302,
+              7000.297462,
+              7183.027919,
+              6915.138074
+            ]
+          },
+          "makeMs": {
+            "median": 6786.978316,
+            "min": 6625.907314,
+            "max": 6958.345317,
+            "samples": [
+              6931.31832,
+              6625.907314,
+              6786.978316,
+              6958.345317,
+              6720.698241
+            ]
+          },
+          "finishMakeMs": {
+            "median": 16.101118,
+            "min": 14.760616,
+            "max": 17.859156,
+            "samples": [
+              17.859156,
+              16.641837,
+              16.101118,
+              15.610099,
+              14.760616
+            ]
+          },
+          "sealMs": {
+            "median": 138.6797,
+            "min": 127.180978,
+            "max": 153.472466,
+            "samples": [
+              142.188158,
+              138.6797,
+              131.817309,
+              153.472466,
+              127.180978
+            ]
+          },
+          "emitMs": {
+            "median": 25.919967,
+            "min": 24.926867,
+            "max": 28.920896,
+            "samples": [
+              26.478363,
+              28.920896,
+              24.926867,
+              25.919967,
+              25.051561
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 5316.592887,
+            "min": 5261.685913,
+            "max": 5398.650416,
+            "samples": [
+              5261.685913,
+              5319.911758,
+              5274.291462,
+              5316.592887,
+              5398.650416
+            ]
+          },
+          "makeMs": {
+            "median": 5171.241683,
+            "min": 5112.417151,
+            "max": 5246.481095,
+            "samples": [
+              5112.417151,
+              5171.750698,
+              5129.741116,
+              5171.241683,
+              5246.481095
+            ]
+          },
+          "finishMakeMs": {
+            "median": 13.980234,
+            "min": 13.016143,
+            "max": 14.103827,
+            "samples": [
+              13.016143,
+              14.034965,
+              14.103827,
+              13.622963,
+              13.980234
+            ]
+          },
+          "sealMs": {
+            "median": 106.945185,
+            "min": 104.26614,
+            "max": 110.332378,
+            "samples": [
+              109.099648,
+              105.53804,
+              104.26614,
+              106.945185,
+              110.332378
+            ]
+          },
+          "emitMs": {
+            "median": 18.11714,
+            "min": 15.732804,
+            "max": 18.550776,
+            "samples": [
+              18.218162,
+              18.550776,
+              16.942094,
+              15.732804,
+              18.11714
+            ]
+          }
+        }
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "processMs": {
+        "median": 15533.492027,
+        "min": 15372.07042,
+        "max": 15565.339501,
+        "samples": [
+          15523.805964,
+          15372.07042,
+          15536.575888,
+          15565.339501,
+          15533.492027
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 10.439688,
+        "min": 10.181997,
+        "max": 11.558658,
+        "samples": [
+          10.439688,
+          10.56486,
+          11.558658,
+          10.268223,
+          10.181997
+        ]
+      }
+    },
+    {
+      "version": "worktree-a77f",
+      "parallel": false,
+      "cache": true,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 6584.632817,
+            "min": 6464.295337,
+            "max": 6738.087411,
+            "samples": [
+              6606.825807,
+              6464.295337,
+              6738.087411,
+              6489.152358,
+              6584.632817
+            ]
+          },
+          "makeMs": {
+            "median": 6363.292588,
+            "min": 6223.895756,
+            "max": 6489.461117,
+            "samples": [
+              6363.292588,
+              6223.895756,
+              6489.461117,
+              6260.990398,
+              6363.582703
+            ]
+          },
+          "finishMakeMs": {
+            "median": 15.670569,
+            "min": 15.273518,
+            "max": 15.74276,
+            "samples": [
+              15.449199,
+              15.74276,
+              15.732956,
+              15.273518,
+              15.670569
+            ]
+          },
+          "sealMs": {
+            "median": 154.110426,
+            "min": 146.074291,
+            "max": 172.713042,
+            "samples": [
+              169.198598,
+              154.110426,
+              172.713042,
+              148.770904,
+              146.074291
+            ]
+          },
+          "emitMs": {
+            "median": 27.20746,
+            "min": 26.478879,
+            "max": 29.000276,
+            "samples": [
+              27.001925,
+              27.526877,
+              27.20746,
+              26.478879,
+              29.000276
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 1353.280052,
+            "min": 1256.1782,
+            "max": 1449.295026,
+            "samples": [
+              1397.41827,
+              1353.280052,
+              1256.1782,
+              1353.203479,
+              1449.295026
+            ]
+          },
+          "makeMs": {
+            "median": 1203.502559,
+            "min": 1106.608671,
+            "max": 1293.056819,
+            "samples": [
+              1246.225299,
+              1197.181911,
+              1106.608671,
+              1203.502559,
+              1293.056819
+            ]
+          },
+          "finishMakeMs": {
+            "median": 15.881843,
+            "min": 13.838505,
+            "max": 17.21133,
+            "samples": [
+              13.838505,
+              15.338729,
+              16.354851,
+              15.881843,
+              17.21133
+            ]
+          },
+          "sealMs": {
+            "median": 105.319441,
+            "min": 103.745621,
+            "max": 110.165927,
+            "samples": [
+              105.603452,
+              110.165927,
+              103.745621,
+              104.277482,
+              105.319441
+            ]
+          },
+          "emitMs": {
+            "median": 16.986412,
+            "min": 16.406754,
+            "max": 18.820346,
+            "samples": [
+              18.820346,
+              16.406754,
+              16.986412,
+              16.912536,
+              17.368118
+            ]
+          }
+        }
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "processMs": {
+        "median": 10988.670663,
+        "min": 10776.174547,
+        "max": 11285.09489,
+        "samples": [
+          11097.669501,
+          10859.939727,
+          10988.670663,
+          10776.174547,
+          11285.09489
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 11.123348,
+        "min": 10.42214,
+        "max": 11.486066,
+        "samples": [
+          10.42214,
+          11.123348,
+          10.549737,
+          11.337268,
+          11.486066
+        ]
+      }
+    },
+    {
+      "version": "worktree-a77f",
+      "parallel": true,
+      "cache": false,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 4296.074023,
+            "min": 4287.441937,
+            "max": 4385.413756,
+            "samples": [
+              4385.413756,
+              4293.614957,
+              4372.456756,
+              4287.441937,
+              4296.074023
+            ]
+          },
+          "makeMs": {
+            "median": 4012.145033,
+            "min": 3976.515291,
+            "max": 4083.378235,
+            "samples": [
+              4083.378235,
+              3976.515291,
+              4082.6065,
+              3989.09351,
+              4012.145033
+            ]
+          },
+          "finishMakeMs": {
+            "median": 15.984913,
+            "min": 15.016837,
+            "max": 18.583308,
+            "samples": [
+              16.41089,
+              15.016837,
+              15.984913,
+              15.528399,
+              18.583308
+            ]
+          },
+          "sealMs": {
+            "median": 131.631636,
+            "min": 125.691383,
+            "max": 133.470565,
+            "samples": [
+              131.631636,
+              125.691383,
+              128.04115,
+              133.470565,
+              132.818364
+            ]
+          },
+          "emitMs": {
+            "median": 25.313089,
+            "min": 24.697188,
+            "max": 29.175991,
+            "samples": [
+              26.606518,
+              24.798185,
+              25.313089,
+              24.697188,
+              29.175991
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 2312.206412,
+            "min": 2270.436081,
+            "max": 2357.254816,
+            "samples": [
+              2273.143072,
+              2270.436081,
+              2357.254816,
+              2335.249318,
+              2312.206412
+            ]
+          },
+          "makeMs": {
+            "median": 2154.909587,
+            "min": 2099.055766,
+            "max": 2191.909913,
+            "samples": [
+              2121.980666,
+              2099.055766,
+              2191.909913,
+              2181.740922,
+              2154.909587
+            ]
+          },
+          "finishMakeMs": {
+            "median": 13.415856,
+            "min": 12.917947,
+            "max": 14.958024,
+            "samples": [
+              13.16815,
+              14.958024,
+              13.415856,
+              12.917947,
+              13.756949
+            ]
+          },
+          "sealMs": {
+            "median": 109.826368,
+            "min": 106.161785,
+            "max": 120.893414,
+            "samples": [
+              106.161785,
+              120.893414,
+              116.773001,
+              108.696478,
+              109.826368
+            ]
+          },
+          "emitMs": {
+            "median": 17.908472,
+            "min": 16.075096,
+            "max": 21.190217,
+            "samples": [
+              16.075096,
+              21.190217,
+              19.828247,
+              17.021772,
+              17.908472
+            ]
+          }
+        }
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "processMs": {
+        "median": 10315.658741,
+        "min": 10271.85246,
+        "max": 10491.340056,
+        "samples": [
+          10387.945522,
+          10293.677611,
+          10491.340056,
+          10315.658741,
+          10271.85246
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 10.842163,
+        "min": 10.324324,
+        "max": 11.27712,
+        "samples": [
+          11.27712,
+          10.842163,
+          10.749184,
+          11.035261,
+          10.324324
+        ]
+      }
+    },
+    {
+      "version": "worktree-a77f",
+      "parallel": true,
+      "cache": true,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 4532.238891,
+            "min": 4517.218753,
+            "max": 4680.56776,
+            "samples": [
+              4532.238891,
+              4680.56776,
+              4517.218753
+            ]
+          },
+          "makeMs": {
+            "median": 4220.709361,
+            "min": 4144.882643,
+            "max": 4288.708598,
+            "samples": [
+              4220.709361,
+              4288.708598,
+              4144.882643
+            ]
+          },
+          "finishMakeMs": {
+            "median": 15.969246,
+            "min": 15.720052,
+            "max": 16.36316,
+            "samples": [
+              15.720052,
+              15.969246,
+              16.36316
+            ]
+          },
+          "sealMs": {
+            "median": 131.857517,
+            "min": 124.227593,
+            "max": 135.951535,
+            "samples": [
+              135.951535,
+              131.857517,
+              124.227593
+            ]
+          },
+          "emitMs": {
+            "median": 25.97258,
+            "min": 25.729343,
+            "max": 32.208926,
+            "samples": [
+              32.208926,
+              25.97258,
+              25.729343
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 1892.342991,
+            "min": 1886.387803,
+            "max": 1957.175952,
+            "samples": [
+              1892.342991,
+              1886.387803,
+              1957.175952
+            ]
+          },
+          "makeMs": {
+            "median": 1731.562871,
+            "min": 1725.522482,
+            "max": 1789.682675,
+            "samples": [
+              1725.522482,
+              1731.562871,
+              1789.682675
+            ]
+          },
+          "finishMakeMs": {
+            "median": 15.423145,
+            "min": 13.548744,
+            "max": 17.821605,
+            "samples": [
+              15.423145,
+              13.548744,
+              17.821605
+            ]
+          },
+          "sealMs": {
+            "median": 114.021512,
+            "min": 111.37005,
+            "max": 116.851392,
+            "samples": [
+              114.021512,
+              111.37005,
+              116.851392
+            ]
+          },
+          "emitMs": {
+            "median": 17.82236,
+            "min": 15.763421,
+            "max": 17.866722,
+            "samples": [
+              17.866722,
+              15.763421,
+              17.82236
+            ]
+          }
+        }
+      },
+      "successfulSamples": 3,
+      "failedSamples": 2,
+      "processMs": {
+        "median": 10016.673895,
+        "min": 9953.967241,
+        "max": 10144.870248,
+        "samples": [
+          9953.967241,
+          10144.870248,
+          10016.673895
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 10.684014,
+        "min": 10.419026,
+        "max": 14.110523,
+        "samples": [
+          10.684014,
+          10.419026,
+          14.110523
+        ]
+      }
+    }
+  ],
+  "failures": [
+    {
+      "version": "worktree-a77f",
+      "parallel": true,
+      "cache": true,
+      "id": "worktree-a77f-parallel-on-cache-on-measure-3",
+      "phase": "measure",
+      "round": 3,
+      "verify": false,
+      "modules": 10000,
+      "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+      "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+      "output": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/output/worktree-a77f-parallel-on-cache-on-measure-3",
+      "statsDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/stats/worktree-a77f-parallel-on-cache-on-measure-3",
+      "auditDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/audit/worktree-a77f-parallel-on-cache-on-measure-3",
+      "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/raw/worktree-a77f-parallel-on-cache-on-measure-3.json",
+      "sourceRevision": "source",
+      "status": "failed",
+      "exitCode": 1,
+      "reason": "Cold build failed: WeakReference<JsCompilation> points to a dropped reference (427 modules). Original failure retained; no retry.",
+      "failures": [
+        {
+          "state": "cold",
+          "errorCount": 427,
+          "errors": [
+            {
+              "message": "  × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+              "code": "ModuleBuildError",
+              "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00020.js",
+              "moduleName": "./module-00020.js"
+            },
+            {
+              "message": "  × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+              "code": "ModuleBuildError",
+              "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00022.js",
+              "moduleName": "./module-00022.js"
+            },
+            {
+              "message": "  × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+              "code": "ModuleBuildError",
+              "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00032.js",
+              "moduleName": "./module-00032.js"
+            },
+            {
+              "message": "  × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+              "code": "ModuleBuildError",
+              "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00043.js",
+              "moduleName": "./module-00043.js"
+            },
+            {
+              "message": "  × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+              "code": "ModuleBuildError",
+              "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00075.js",
+              "moduleName": "./module-00075.js"
+            }
+          ]
+        }
+      ],
+      "recoveredFromOriginalFailure": true,
+      "logFile": "results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/logs/worktree-a77f-parallel-on-cache-on-measure-3.log",
+      "statsEvidence": {
+        "path": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/stats/worktree-a77f-parallel-on-cache-on-measure-3/cold.json",
+        "sha256": "fbc6cf2fdf942f6d3b1df3ebd103b6c462161cc6002d90c1a63a31b71939bffe"
+      }
+    },
+    {
+      "version": "worktree-a77f",
+      "parallel": true,
+      "cache": true,
+      "id": "worktree-a77f-parallel-on-cache-on-measure-4",
+      "phase": "measure",
+      "round": 4,
+      "sourceRevision": "source-resumed-2026-09-12T00-40-47-053Z",
+      "verify": false,
+      "modules": 10000,
+      "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+      "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+      "output": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/output/worktree-a77f-parallel-on-cache-on-measure-4",
+      "statsDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/stats/worktree-a77f-parallel-on-cache-on-measure-4",
+      "auditDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/audit/worktree-a77f-parallel-on-cache-on-measure-4",
+      "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/raw/worktree-a77f-parallel-on-cache-on-measure-4.json",
+      "packageVersion": "2.2.1",
+      "compiledVersion": "2.2.1",
+      "artifacts": {
+        "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/index.js": "a66312b48a2cad7d478780562aad2277980136f291b488556417aaa45b1968dc",
+        "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+        "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/rspack.linux-x64-gnu.node": "02601bac3e4a59961f1d54bfa634c6b0c44383b65335ac9c56020c3b590bb0bf",
+        "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js": "540b11111c736d12000ab7f2ad7f02455409a3e103d21b26427910eb198b1506"
+      },
+      "dependencies": {
+        "babel-loader": {
+          "version": "10.1.1",
+          "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js",
+          "sha256": "8155bcb44c0309254de8d44c8b15be22ad025554b025c3e71bdd50cdf4a77a39"
+        },
+        "@babel/core": {
+          "version": "7.29.7",
+          "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@babel+core@7.29.7/node_modules/@babel/core/lib/index.js",
+          "sha256": "dba868255b447218cd421b30fb5289c118f265817088e7106053cf962057dd26"
+        }
+      },
+      "loadedPaths": {
+        "core": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/index.js",
+        "binding": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/binding.js",
+        "native": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/rspack.linux-x64-gnu.node",
+        "loader": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js"
+      },
+      "environment": {
+        "node": "v24.20.0",
+        "platform": "linux",
+        "arch": "x64",
+        "release": "5.15.120.bsk.3-amd64",
+        "cpu": "Intel(R) Xeon(R) Platinum 8336C CPU @ 2.30GHz",
+        "cpus": 32,
+        "availableParallelism": 32,
+        "loadAverage": [
+          2.64,
+          2.35,
+          1.82
+        ],
+        "env": {
+          "NODE_OPTIONS": "--max-old-space-size=8192",
+          "RSPACK_LOADER_WORKER_THREADS": null,
+          "RAYON_NUM_THREADS": null,
+          "UV_THREADPOOL_SIZE": null,
+          "RSPACK_NUM_THREADS": null
+        }
+      },
+      "status": "failed",
+      "compilerSetupMs": 10.540688,
+      "builds": [],
+      "failures": [
+        {
+          "state": "cold",
+          "errorCount": 434,
+          "errors": [
+            {
+              "message": "  × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+              "code": "ModuleBuildError",
+              "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00020.js",
+              "moduleName": "./module-00020.js"
+            },
+            {
+              "message": "  × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+              "code": "ModuleBuildError",
+              "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00035.js",
+              "moduleName": "./module-00035.js"
+            },
+            {
+              "message": "  × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+              "code": "ModuleBuildError",
+              "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00045.js",
+              "moduleName": "./module-00045.js"
+            },
+            {
+              "message": "  × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+              "code": "ModuleBuildError",
+              "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00081.js",
+              "moduleName": "./module-00081.js"
+            },
+            {
+              "message": "  × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):\n  ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped\n        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69\n        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)\n      \n",
+              "code": "ModuleBuildError",
+              "moduleIdentifier": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].use[0]!/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture/module-00097.js",
+              "moduleName": "./module-00097.js"
+            }
+          ],
+          "buildMs": 2857.11552
+        }
+      ],
+      "config": {
+        "context": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+        "entry": "./module-00000.js",
+        "mode": "development",
+        "target": [
+          "web",
+          "es2020"
+        ],
+        "devtool": false,
+        "cache": {
+          "type": "memory"
+        },
+        "incremental": false,
+        "lazyCompilation": false,
+        "experiments": {
+          "newCache": {
+            "module": false,
+            "codeGeneration": false,
+            "devtool": false,
+            "minimize": false,
+            "loader": true
+          },
+          "pureFunctions": false
+        },
+        "output": {
+          "path": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/output/worktree-a77f-parallel-on-cache-on-measure-4",
+          "filename": "main.js",
+          "publicPath": "",
+          "pathinfo": false,
+          "library": {
+            "type": "commonjs2"
+          },
+          "uniqueName": "babel-loader-parallel-cache-bench",
+          "clean": false
+        },
+        "optimization": {
+          "minimize": false,
+          "minimizer": [],
+          "concatenateModules": false,
+          "splitChunks": false,
+          "runtimeChunk": false,
+          "moduleIds": "natural",
+          "chunkIds": "natural",
+          "usedExports": false,
+          "sideEffects": false,
+          "providedExports": false,
+          "innerGraph": false,
+          "mangleExports": false,
+          "inlineExports": false,
+          "removeEmptyChunks": false,
+          "mergeDuplicateChunks": false,
+          "realContentHash": false,
+          "avoidEntryIife": false,
+          "nodeEnv": false,
+          "emitOnErrors": false
+        },
+        "module": {
+          "rules": [
+            {
+              "test": "/\\.js$/",
+              "include": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+              "type": "javascript/auto",
+              "use": [
+                {
+                  "loader": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js",
+                  "parallel": true,
+                  "options": {
+                    "babelrc": false,
+                    "configFile": false,
+                    "cacheDirectory": false,
+                    "sourceMaps": false,
+                    "presets": [],
+                    "plugins": [],
+                    "comments": false,
+                    "compact": false,
+                    "minified": false
+                  },
+                  "cache": true
+                }
+              ]
+            }
+          ]
+        },
+        "plugins": [
+          "BenchmarkClock"
+        ],
+        "stats": "none",
+        "infrastructureLogging": {
+          "level": "error"
+        }
+      },
+      "effectiveCache": {
+        "type": "memory"
+      },
+      "effectiveNewCache": {
+        "module": false,
+        "codeGeneration": false,
+        "devtool": false,
+        "minimize": false,
+        "loader": true
+      },
+      "effectiveOptimization": {
+        "minimize": false,
+        "minimizer": [],
+        "concatenateModules": false,
+        "splitChunks": false,
+        "runtimeChunk": false,
+        "moduleIds": "natural",
+        "chunkIds": "natural",
+        "usedExports": false,
+        "sideEffects": false,
+        "providedExports": false,
+        "innerGraph": false,
+        "mangleExports": false,
+        "inlineExports": false,
+        "removeEmptyChunks": false,
+        "mergeDuplicateChunks": false,
+        "realContentHash": false,
+        "avoidEntryIife": false,
+        "nodeEnv": false,
+        "emitOnErrors": false
+      }
+    }
+  ],
+  "unsupported": [
+    {
+      "version": "v2-1-0",
+      "parallel": false,
+      "cache": true,
+      "reason": "Rspack 2.1.0 predates experiments.newCache and loader use.cache; no cache-on timing is reported."
+    },
+    {
+      "version": "v2-1-0",
+      "parallel": true,
+      "cache": true,
+      "reason": "Rspack 2.1.0 predates experiments.newCache and loader use.cache; no cache-on timing is reported."
+    }
+  ]
+}
