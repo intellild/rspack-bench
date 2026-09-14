@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/web-infra-dev/rspack",
+  "branch": "codex/worker-function",
+  "commit": "b96dae3430811bf8587308b4186c817561510578",
+  "note": "Implementation committed after the diagnostic. Raw samples retain the original paths, artifact hashes and worktree snapshot; these are not rewritten to imply a new benchmark run."
+}

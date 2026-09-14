@@ -1,0 +1,6 @@
+Warning: Detected unsettled top-level await at file:///data00/home/jinzhixin/projects/rspack-bench/cases/split-chunks-name/run-build.mjs:90
+  await global.__startupWait();
+  ^
+
+
+

@@ -1,0 +1,14 @@
+{
+  "version": "worktree-a77f",
+  "mode": "worker",
+  "id": "worker-cold-1",
+  "phase": "diagnostic",
+  "round": 1,
+  "verify": false,
+  "modules": 10000,
+  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-startup-diagnostic-2026-09-14/worker-cold-1/output",
+  "statsFile": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-startup-diagnostic-2026-09-14/worker-cold-1/stats.json",
+  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-startup-diagnostic-2026-09-14/worker-cold-1/result.json"
+}

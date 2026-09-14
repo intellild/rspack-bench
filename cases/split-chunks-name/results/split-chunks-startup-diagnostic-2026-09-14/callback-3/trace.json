@@ -1,0 +1,50 @@
+[
+  {
+    "name": "compiler-start",
+    "time": "1109425130555951"
+  },
+  {
+    "name": "compiler-end",
+    "time": "1109425140947940"
+  },
+  {
+    "name": "prebuild-wait-start",
+    "time": "1109425141716384"
+  },
+  {
+    "name": "prebuild-wait-end",
+    "time": "1109425141731530"
+  },
+  {
+    "name": "build-start",
+    "time": "1109425141739616"
+  },
+  {
+    "name": "make",
+    "time": "1109425159239326"
+  },
+  {
+    "name": "finishMake",
+    "time": "1109425291306863"
+  },
+  {
+    "name": "seal",
+    "time": "1109425305926750"
+  },
+  {
+    "name": "afterSeal",
+    "time": "1109425869333186"
+  },
+  {
+    "name": "emit",
+    "time": "1109425877140502"
+  },
+  {
+    "name": "afterEmit",
+    "time": "1109425907351267"
+  },
+  {
+    "name": "build-end",
+    "time": "1109425914249668"
+  }
+]

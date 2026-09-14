@@ -1,0 +1,639 @@
+[
+  {
+    "name": "compiler-start",
+    "time": "1109428642116231"
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428655497199"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428657672216",
+    "threadId": 1
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428657853372"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428658312698",
+    "threadId": 2
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428658389525"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428658830941",
+    "threadId": 3
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428658941149"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428659352696",
+    "threadId": 4
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428659414992"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428659856322",
+    "threadId": 5
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428660022762"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428660464324",
+    "threadId": 6
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428660533325"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428660944836",
+    "threadId": 7
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428661158641"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428661603241",
+    "threadId": 8
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428661694157"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428662106946",
+    "threadId": 9
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428662312411"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428662785437",
+    "threadId": 10
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428662899578"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428663679491",
+    "threadId": 11
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428663730312"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428671279144",
+    "threadId": 12
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428671378238"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428671991017",
+    "threadId": 13
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428672064609"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428672385182",
+    "threadId": 14
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428672425199"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428672942787",
+    "threadId": 15
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428673033833"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428673764571",
+    "threadId": 16
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428673883506"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428674470067",
+    "threadId": 17
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428674597766"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428675070713",
+    "threadId": 18
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428675166699"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428675510028",
+    "threadId": 19
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428675572900"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428676053489",
+    "threadId": 20
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428676218663"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428676659409",
+    "threadId": 21
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428676757160"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428677381995",
+    "threadId": 22
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428677438412"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428677770847",
+    "threadId": 23
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428677853225"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428678281553",
+    "threadId": 24
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428678362443"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428678750048",
+    "threadId": 25
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428678854814"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428679161771",
+    "threadId": 26
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428679200802"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428679671054",
+    "threadId": 27
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428679771910"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428680319329",
+    "threadId": 28
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428680457592"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428681149733",
+    "threadId": 29
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428681216348"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428681614522",
+    "threadId": 30
+  },
+  {
+    "name": "worker-constructor-start",
+    "time": "1109428681758597"
+  },
+  {
+    "name": "worker-constructor-end",
+    "time": "1109428682046541",
+    "threadId": 31
+  },
+  {
+    "name": "compiler-end",
+    "time": "1109428683244569"
+  },
+  {
+    "name": "prebuild-wait-start",
+    "time": "1109428684077018"
+  },
+  {
+    "name": "prebuild-wait-end",
+    "time": "1109428684085487"
+  },
+  {
+    "name": "build-start",
+    "time": "1109428684092096"
+  },
+  {
+    "name": "make",
+    "time": "1109428768445443"
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428870346156",
+    "threadId": 1
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428875238959",
+    "threadId": 2
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428886780539",
+    "threadId": 3
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428891550615",
+    "threadId": 4
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428903666725",
+    "threadId": 9
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428912962140",
+    "threadId": 5
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428918577587",
+    "threadId": 6
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428922896452",
+    "threadId": 10
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428926686929",
+    "threadId": 8
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428931248213",
+    "threadId": 7
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428939036932",
+    "threadId": 11
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428939956129",
+    "threadId": 18
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428943451342",
+    "threadId": 15
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428946085873",
+    "threadId": 29
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428950011645",
+    "threadId": 25
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428952595589",
+    "threadId": 24
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428953102690",
+    "threadId": 19
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428954596641",
+    "threadId": 22
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428955951392",
+    "threadId": 16
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428957206426",
+    "threadId": 20
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428958381273",
+    "threadId": 28
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428959418113",
+    "threadId": 31
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428960691404",
+    "threadId": 21
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428962122850",
+    "threadId": 17
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428962988932",
+    "threadId": 30
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428964449617",
+    "threadId": 12
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428965535595",
+    "threadId": 13
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428967261452",
+    "threadId": 27
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428968353926",
+    "threadId": 23
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428970183860",
+    "threadId": 26
+  },
+  {
+    "name": "worker-ready-received",
+    "time": "1109428970825452",
+    "threadId": 14
+  },
+  {
+    "name": "finishMake",
+    "time": "1109429020482096"
+  },
+  {
+    "name": "seal",
+    "time": "1109429035056413"
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065407316",
+    "threadId": 17
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065403804",
+    "threadId": 27
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065370740",
+    "threadId": 28
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065369920",
+    "threadId": 31
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065433886",
+    "threadId": 6
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065475331",
+    "threadId": 16
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065774568",
+    "threadId": 11
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065845984",
+    "threadId": 14
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065784545",
+    "threadId": 23
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065820726",
+    "threadId": 1
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065799138",
+    "threadId": 2
+  },
+  {
+    "name": "first-name",
+    "time": "1109429065801861",
+    "threadId": 8
+  },
+  {
+    "name": "first-name",
+    "time": "1109429066022560",
+    "threadId": 7
+  },
+  {
+    "name": "first-name",
+    "time": "1109429066052127",
+    "threadId": 20
+  },
+  {
+    "name": "first-name",
+    "time": "1109429066126317",
+    "threadId": 13
+  },
+  {
+    "name": "first-name",
+    "time": "1109429066288493",
+    "threadId": 26
+  },
+  {
+    "name": "first-name",
+    "time": "1109429066474196",
+    "threadId": 24
+  },
+  {
+    "name": "first-name",
+    "time": "1109429066575575",
+    "threadId": 21
+  },
+  {
+    "name": "first-name",
+    "time": "1109429066957401",
+    "threadId": 12
+  },
+  {
+    "name": "first-name",
+    "time": "1109429067256287",
+    "threadId": 5
+  },
+  {
+    "name": "first-name",
+    "time": "1109429067275847",
+    "threadId": 15
+  },
+  {
+    "name": "first-name",
+    "time": "1109429067358515",
+    "threadId": 30
+  },
+  {
+    "name": "first-name",
+    "time": "1109429067446750",
+    "threadId": 3
+  },
+  {
+    "name": "first-name",
+    "time": "1109429067475514",
+    "threadId": 29
+  },
+  {
+    "name": "first-name",
+    "time": "1109429067545235",
+    "threadId": 18
+  },
+  {
+    "name": "first-name",
+    "time": "1109429067971565",
+    "threadId": 9
+  },
+  {
+    "name": "first-name",
+    "time": "1109429068655526",
+    "threadId": 25
+  },
+  {
+    "name": "first-name",
+    "time": "1109429072072477",
+    "threadId": 19
+  },
+  {
+    "name": "first-name",
+    "time": "1109429072068366",
+    "threadId": 22
+  },
+  {
+    "name": "first-name",
+    "time": "1109429072350425",
+    "threadId": 4
+  },
+  {
+    "name": "first-name",
+    "time": "1109429072739656",
+    "threadId": 10
+  },
+  {
+    "name": "afterSeal",
+    "time": "1109429340151839"
+  },
+  {
+    "name": "emit",
+    "time": "1109429346478722"
+  },
+  {
+    "name": "afterEmit",
+    "time": "1109429370059857"
+  },
+  {
+    "name": "build-end",
+    "time": "1109429375673115"
+  }
+]

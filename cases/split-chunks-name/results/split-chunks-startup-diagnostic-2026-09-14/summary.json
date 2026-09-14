@@ -1,0 +1,325 @@
+{
+  "modules": 10000,
+  "runsPerGroup": 3,
+  "instrumentation": "In-memory Node module-load hooks; no Rspack files or artifacts changed. Same artifact hashes as the September 11 archive. Main records worker creation/ready and build hooks; workers send one first-name timestamp each.",
+  "groups": {
+    "callback": {
+      "samples": [
+        {
+          "id": "callback-1",
+          "timings": {
+            "buildMs": 742.990095,
+            "compilerSetupMs": 10.34058,
+            "makeMs": 117.883252,
+            "finishMakeMs": 15.207632,
+            "sealMs": 555.262187,
+            "emitMs": 26.684096,
+            "readyWaitMs": 0.012706,
+            "compilerToBuildEndMs": 754.053163
+          },
+          "firstNameThreads": 0,
+          "validation": {
+            "modules": 10000,
+            "workerAudit": null,
+            "nameCalls": null,
+            "callbackTurns": null,
+            "nameResources": null,
+            "exportedValue": 49995000,
+            "sharedModules": 10000,
+            "chunks": 2,
+            "outputHashes": {
+              "shared.js": "63125df5ef41db855940528ced7b1edde0cd15550c171734408e06a9aa158742",
+              "main.js": "6313abbe7ade823f251633c787b10ef89d26bfb30b2e7d95ea5f5ae49f18ff5a"
+            },
+            "errors": 0,
+            "warnings": 0
+          }
+        },
+        {
+          "id": "callback-2",
+          "timings": {
+            "buildMs": 744.061217,
+            "compilerSetupMs": 10.75884,
+            "makeMs": 124.800251,
+            "finishMakeMs": 15.008471,
+            "sealMs": 546.929309,
+            "emitMs": 26.871302,
+            "readyWaitMs": 0.015027,
+            "compilerToBuildEndMs": 755.562189
+          },
+          "firstNameThreads": 0,
+          "validation": {
+            "modules": 10000,
+            "workerAudit": null,
+            "nameCalls": null,
+            "callbackTurns": null,
+            "nameResources": null,
+            "exportedValue": 49995000,
+            "sharedModules": 10000,
+            "chunks": 2,
+            "outputHashes": {
+              "shared.js": "63125df5ef41db855940528ced7b1edde0cd15550c171734408e06a9aa158742",
+              "main.js": "6313abbe7ade823f251633c787b10ef89d26bfb30b2e7d95ea5f5ae49f18ff5a"
+            },
+            "errors": 0,
+            "warnings": 0
+          }
+        },
+        {
+          "id": "callback-3",
+          "timings": {
+            "buildMs": 772.498979,
+            "compilerSetupMs": 10.424796,
+            "makeMs": 132.063644,
+            "finishMakeMs": 14.618513,
+            "sealMs": 563.407571,
+            "emitMs": 30.214396,
+            "readyWaitMs": 0.015146,
+            "compilerToBuildEndMs": 783.693717
+          },
+          "firstNameThreads": 0,
+          "validation": {
+            "modules": 10000,
+            "workerAudit": null,
+            "nameCalls": null,
+            "callbackTurns": null,
+            "nameResources": null,
+            "exportedValue": 49995000,
+            "sharedModules": 10000,
+            "chunks": 2,
+            "outputHashes": {
+              "shared.js": "63125df5ef41db855940528ced7b1edde0cd15550c171734408e06a9aa158742",
+              "main.js": "6313abbe7ade823f251633c787b10ef89d26bfb30b2e7d95ea5f5ae49f18ff5a"
+            },
+            "errors": 0,
+            "warnings": 0
+          }
+        }
+      ],
+      "median": {
+        "buildMs": 744.061217,
+        "compilerSetupMs": 10.424796,
+        "makeMs": 124.800251,
+        "finishMakeMs": 15.008471,
+        "sealMs": 555.262187,
+        "emitMs": 26.871302,
+        "readyWaitMs": 0.015027,
+        "compilerToBuildEndMs": 755.562189
+      }
+    },
+    "worker-cold": {
+      "samples": [
+        {
+          "id": "worker-cold-1",
+          "timings": {
+            "buildMs": 662.63795,
+            "compilerSetupMs": 37.008634,
+            "makeMs": 275.343148,
+            "finishMakeMs": 14.431129,
+            "sealMs": 300.652684,
+            "emitMs": 22.314821,
+            "readyWaitMs": 0.024017,
+            "compilerToBuildEndMs": 700.407881
+          },
+          "firstNameThreads": 31,
+          "validation": {
+            "modules": 10000,
+            "workerAudit": null,
+            "nameCalls": null,
+            "callbackTurns": null,
+            "nameResources": null,
+            "exportedValue": 49995000,
+            "sharedModules": 10000,
+            "chunks": 2,
+            "outputHashes": {
+              "shared.js": "63125df5ef41db855940528ced7b1edde0cd15550c171734408e06a9aa158742",
+              "main.js": "6313abbe7ade823f251633c787b10ef89d26bfb30b2e7d95ea5f5ae49f18ff5a"
+            },
+            "errors": 0,
+            "warnings": 0
+          }
+        },
+        {
+          "id": "worker-cold-2",
+          "timings": {
+            "buildMs": 691.061476,
+            "compilerSetupMs": 38.720964,
+            "makeMs": 316.720325,
+            "finishMakeMs": 14.394976,
+            "sealMs": 299.508716,
+            "emitMs": 24.716133,
+            "readyWaitMs": 0.007296,
+            "compilerToBuildEndMs": 730.533609
+          },
+          "firstNameThreads": 31,
+          "validation": {
+            "modules": 10000,
+            "workerAudit": null,
+            "nameCalls": null,
+            "callbackTurns": null,
+            "nameResources": null,
+            "exportedValue": 49995000,
+            "sharedModules": 10000,
+            "chunks": 2,
+            "outputHashes": {
+              "shared.js": "63125df5ef41db855940528ced7b1edde0cd15550c171734408e06a9aa158742",
+              "main.js": "6313abbe7ade823f251633c787b10ef89d26bfb30b2e7d95ea5f5ae49f18ff5a"
+            },
+            "errors": 0,
+            "warnings": 0
+          }
+        },
+        {
+          "id": "worker-cold-3",
+          "timings": {
+            "buildMs": 691.573531,
+            "compilerSetupMs": 41.160133,
+            "makeMs": 252.036873,
+            "finishMakeMs": 14.573865,
+            "sealMs": 305.092322,
+            "emitMs": 23.578416,
+            "readyWaitMs": 0.008469,
+            "compilerToBuildEndMs": 733.556884
+          },
+          "firstNameThreads": 31,
+          "validation": {
+            "modules": 10000,
+            "workerAudit": null,
+            "nameCalls": null,
+            "callbackTurns": null,
+            "nameResources": null,
+            "exportedValue": 49995000,
+            "sharedModules": 10000,
+            "chunks": 2,
+            "outputHashes": {
+              "shared.js": "63125df5ef41db855940528ced7b1edde0cd15550c171734408e06a9aa158742",
+              "main.js": "6313abbe7ade823f251633c787b10ef89d26bfb30b2e7d95ea5f5ae49f18ff5a"
+            },
+            "errors": 0,
+            "warnings": 0
+          }
+        }
+      ],
+      "median": {
+        "buildMs": 691.061476,
+        "compilerSetupMs": 38.720964,
+        "makeMs": 275.343148,
+        "finishMakeMs": 14.431129,
+        "sealMs": 300.652684,
+        "emitMs": 23.578416,
+        "readyWaitMs": 0.008469,
+        "compilerToBuildEndMs": 730.533609
+      }
+    },
+    "worker-ready": {
+      "samples": [
+        {
+          "id": "worker-ready-1",
+          "timings": {
+            "buildMs": 481.774005,
+            "compilerSetupMs": 40.572192,
+            "makeMs": 123.369541,
+            "finishMakeMs": 14.725883,
+            "sealMs": 289.118955,
+            "emitMs": 26.178142,
+            "readyWaitMs": 195.306878,
+            "compilerToBuildEndMs": 718.45042
+          },
+          "firstNameThreads": 31,
+          "validation": {
+            "modules": 10000,
+            "workerAudit": null,
+            "nameCalls": null,
+            "callbackTurns": null,
+            "nameResources": null,
+            "exportedValue": 49995000,
+            "sharedModules": 10000,
+            "chunks": 2,
+            "outputHashes": {
+              "shared.js": "63125df5ef41db855940528ced7b1edde0cd15550c171734408e06a9aa158742",
+              "main.js": "6313abbe7ade823f251633c787b10ef89d26bfb30b2e7d95ea5f5ae49f18ff5a"
+            },
+            "errors": 0,
+            "warnings": 0
+          }
+        },
+        {
+          "id": "worker-ready-2",
+          "timings": {
+            "buildMs": 597.154023,
+            "compilerSetupMs": 39.849699,
+            "makeMs": 228.946278,
+            "finishMakeMs": 14.304308,
+            "sealMs": 296.66091,
+            "emitMs": 23.87776,
+            "readyWaitMs": 213.710786,
+            "compilerToBuildEndMs": 851.489884
+          },
+          "firstNameThreads": 31,
+          "validation": {
+            "modules": 10000,
+            "workerAudit": null,
+            "nameCalls": null,
+            "callbackTurns": null,
+            "nameResources": null,
+            "exportedValue": 49995000,
+            "sharedModules": 10000,
+            "chunks": 2,
+            "outputHashes": {
+              "shared.js": "63125df5ef41db855940528ced7b1edde0cd15550c171734408e06a9aa158742",
+              "main.js": "6313abbe7ade823f251633c787b10ef89d26bfb30b2e7d95ea5f5ae49f18ff5a"
+            },
+            "errors": 0,
+            "warnings": 0
+          }
+        },
+        {
+          "id": "worker-ready-3",
+          "timings": {
+            "buildMs": 497.018128,
+            "compilerSetupMs": 44.120819,
+            "makeMs": 121.103962,
+            "finishMakeMs": 15.119164,
+            "sealMs": 302.827198,
+            "emitMs": 24.382748,
+            "readyWaitMs": 207.643539,
+            "compilerToBuildEndMs": 749.550966
+          },
+          "firstNameThreads": 31,
+          "validation": {
+            "modules": 10000,
+            "workerAudit": null,
+            "nameCalls": null,
+            "callbackTurns": null,
+            "nameResources": null,
+            "exportedValue": 49995000,
+            "sharedModules": 10000,
+            "chunks": 2,
+            "outputHashes": {
+              "shared.js": "63125df5ef41db855940528ced7b1edde0cd15550c171734408e06a9aa158742",
+              "main.js": "6313abbe7ade823f251633c787b10ef89d26bfb30b2e7d95ea5f5ae49f18ff5a"
+            },
+            "errors": 0,
+            "warnings": 0
+          }
+        }
+      ],
+      "median": {
+        "buildMs": 497.018128,
+        "compilerSetupMs": 40.572192,
+        "makeMs": 123.369541,
+        "finishMakeMs": 14.725883,
+        "sealMs": 296.66091,
+        "emitMs": 24.382748,
+        "readyWaitMs": 207.643539,
+        "compilerToBuildEndMs": 749.550966
+      }
+    }
+  },
+  "limitations": [
+    "Waiting for readiness is excluded from buildMs, included in compilerToBuildEndMs. This is a diagnostic comparison, not an end-to-end optimization.",
+    "One early worker-ready harness attempt exited before build because workers were unreferenced; retained in worker-ready-incomplete-unref. The preload now keeps the process alive while awaiting readiness.",
+    "An initial orchestration printing error stopped after callback-1 completed. Its result was retained; only unattempted complete-build jobs continued.",
+    "Three descriptive samples per group. Worker-ready make samples include one slower sample (228.95 ms). No CPU profile was collected."
+  ]
+}

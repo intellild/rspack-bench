@@ -1,0 +1,114 @@
+{
+  "modules": 10000,
+  "runsPerGroup": 3,
+  "groups": {
+    "callback": {
+      "samples": [
+        {
+          "id": "callback-1",
+          "timings": {
+            "buildMs": 787.30735,
+            "compilerSetupMs": 10.848342,
+            "makeMs": 130.141192,
+            "finishMakeMs": 15.423741,
+            "sealMs": 572.828856,
+            "emitMs": 29.699425
+          },
+          "workerCreationBeforeCompiler": true,
+          "allReadyBeforeMake": true
+        },
+        {
+          "id": "callback-2",
+          "timings": {
+            "buildMs": 794.560147,
+            "compilerSetupMs": 10.909932,
+            "makeMs": 125.548844,
+            "finishMakeMs": 15.148681,
+            "sealMs": 589.066543,
+            "emitMs": 26.951348
+          },
+          "workerCreationBeforeCompiler": true,
+          "allReadyBeforeMake": true
+        },
+        {
+          "id": "callback-3",
+          "timings": {
+            "buildMs": 778.482152,
+            "compilerSetupMs": 10.571927,
+            "makeMs": 118.022625,
+            "finishMakeMs": 15.571409,
+            "sealMs": 577.185993,
+            "emitMs": 27.512018
+          },
+          "workerCreationBeforeCompiler": true,
+          "allReadyBeforeMake": true
+        }
+      ],
+      "median": {
+        "buildMs": 787.30735,
+        "compilerSetupMs": 10.848342,
+        "makeMs": 125.548844,
+        "finishMakeMs": 15.423741,
+        "sealMs": 577.185993,
+        "emitMs": 27.512018
+      }
+    },
+    "worker": {
+      "samples": [
+        {
+          "id": "worker-1",
+          "timings": {
+            "buildMs": 530.190165,
+            "compilerSetupMs": 13.242926,
+            "makeMs": 136.262378,
+            "finishMakeMs": 14.984226,
+            "sealMs": 313.237371,
+            "emitMs": 26.813612
+          },
+          "workerCreationBeforeCompiler": true,
+          "allReadyBeforeMake": true
+        },
+        {
+          "id": "worker-2",
+          "timings": {
+            "buildMs": 493.596463,
+            "compilerSetupMs": 13.815711,
+            "makeMs": 107.771642,
+            "finishMakeMs": 13.987835,
+            "sealMs": 308.430744,
+            "emitMs": 25.763607
+          },
+          "workerCreationBeforeCompiler": true,
+          "allReadyBeforeMake": true
+        },
+        {
+          "id": "worker-3",
+          "timings": {
+            "buildMs": 530.76907,
+            "compilerSetupMs": 14.396142,
+            "makeMs": 123.887714,
+            "finishMakeMs": 18.003553,
+            "sealMs": 316.239063,
+            "emitMs": 31.147534
+          },
+          "workerCreationBeforeCompiler": true,
+          "allReadyBeforeMake": true
+        }
+      ],
+      "median": {
+        "buildMs": 530.190165,
+        "compilerSetupMs": 13.815711,
+        "makeMs": 123.887714,
+        "finishMakeMs": 14.984226,
+        "sealMs": 313.237371,
+        "emitMs": 26.813612
+      }
+    }
+  },
+  "notes": [
+    "Same native artifact as before; rebuilt JS contains prewarm/readiness change.",
+    "Instrumented diagnostic: fresh processes, rotating order, default 31 workers, no explicit harness readiness wait.",
+    "All worker constructors precede compiler construction; all worker-ready messages precede make for worker builds.",
+    "The runner hashes artifacts after loading Rspack and before compiler construction. Prewarming overlaps this work; build-only changes do not measure end-to-end process improvements."
+  ]
+}

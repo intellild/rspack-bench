@@ -24,3 +24,7 @@ Generated results go to `results/split-chunks-name-<session>/`, with raw samples
 [10,000-module run with native worker support](results/split-chunks-name-2026-09-11T14-29-44-848Z-15/README.md), comparing all seven groups with five measured builds each.
 
 [Original 10,000-module run from September 11, 2026](results/split-chunks-name-2026-09-11T11-54-45-041Z-15/README.md), before splitChunks worker support was added. Includes the unsupported result and all ordinary-callback samples.
+
+[Worker startup diagnosis](results/split-chunks-startup-diagnostic-2026-09-14/README.md): 10,000 modules, before the prewarming change, comparing cold workers with waiting for readiness before building.
+
+[Import-time prewarming results](results/split-chunks-startup-prewarm-2026-09-14/README.md): 10,000 modules after moving worker creation to Rspack loading and waiting before native builds. Includes lifecycle timestamps and three diagnostic samples per group; build timings exclude some startup work and are not end-to-end process timings.
