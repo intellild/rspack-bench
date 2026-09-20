@@ -1,0 +1,4 @@
+packages:
+  - 'versions/*'
+
+storeDir: .pnpm-store

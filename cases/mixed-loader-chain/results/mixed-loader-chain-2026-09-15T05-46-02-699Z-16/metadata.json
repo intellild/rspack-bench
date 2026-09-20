@@ -1,0 +1,46 @@
+{
+  "modules": 10000,
+  "runs": 5,
+  "versions": [
+    "v2-1-0",
+    "v2",
+    "worktree-a77f"
+  ],
+  "startedAt": "2026-09-15T05:46:03.679Z",
+  "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+  "worktree": {
+    "path": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack",
+    "head": "b96dae3430811bf8587308b4186c817561510578",
+    "status": "",
+    "patchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "artifactHashes": {
+    "cases/mixed-loader-chain/bench.mjs": "44f18d4d85fb032a871d0a9c1d36dfe326f48d4602974e7167ad53dda84875ef",
+    "cases/mixed-loader-chain/run-build.mjs": "6e6d80e62ef95e95fbed599d39b16a4cbc1300b6e4b43dacfe0a478dd6d15762",
+    "cases/mixed-loader-chain/config.mjs": "4068eb1b15ac7b90f8f54a1237c7b02d12134e8f8f930216e29a12dea962d5dd",
+    "cases/mixed-loader-chain/audit-preload.cjs": "3a871a8a1a7c2a5927e960c223ad391d5d6e484dd42c970565c56938e022439b",
+    "cases/mixed-loader-chain/loaders/left.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f",
+    "cases/mixed-loader-chain/loaders/middle.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f",
+    "cases/mixed-loader-chain/loaders/right.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f",
+    "cases/babel-loader/case.mjs": "c5ccd648255411df09fc4c883d2c701fd5a725e26211457ef8b576aafe8e3249",
+    "cases/noop-loader/config.mjs": "9fe152b1e446ade1717ee2942ffadb2c652da0eec7e520e420a6dbe63d6d3a7b",
+    "cases/split-chunks-name/versions.mjs": "ceba01e5173984c7b358de6290f9ecbc03b2f6481bd3bf5da73469387bad28cf",
+    "package.json": "20c72791a6da8c4ed8bb038c8c8a6f1ad0b388bf5293803a628d75c7256b12ca",
+    "pnpm-lock.yaml": "6a3717ec5f4a98a9c9778b3d3c1a49b7a3deb1b9fb579eeda2706adf29d11e77",
+    "pnpm-workspace.yaml": "3683dba8459c7d46338a6ef8da45b72deb09389214805efdfa065d8c91ba9b09",
+    "versions/v2-1-0/package.json": "9effc3c8f62c8c6d56f1c4a12f2616a6fb6c6e0fbc0680218ffadd50e2a74820",
+    "versions/v2/package.json": "20740da705d24b5a20a9b97fce5c06417d942ba08c331e9dc8bc84862ecfc0f8",
+    "versions/worktree-a77f/package.json": "d19e5689c0e9969fc85ca849f1f24eae1111788ab78b45c0a890046a5fc242d1"
+  },
+  "validationPairsPerGroup": 1,
+  "warmupPairsPerGroup": 1,
+  "conditions": "Development; all optimizations, all caches and incremental builds disabled. Three synchronous noop JS loaders. main=[false,false,false], mixed=[false,true,false], parallel=[true,true,true] in configured use order; normal execution runs right to left. Default worker count unless overridden in environment.",
+  "sequence": "Each fresh process creates one compiler: cold build, then full rebuild with unchanged contents and all resources marked modified. Each measured pair starts in a fresh process. The full rebuild reuses the compiler and any workers; all three loaders must run again on every module. Serial processes; rotating group order; OS cache retained.",
+  "buildBoundary": "compiler.run invocation to callback; setup/close, stats, audits, bundle evaluation and hashing excluded. Process timing covers the entire two-build child process.",
+  "finishedAt": "2026-09-15T05:57:13.197Z",
+  "fixtureUnchanged": true,
+  "supportedGroups": 9,
+  "successfulBuilds": 120,
+  "failedPairs": 3,
+  "attemptedPairs": 63
+}

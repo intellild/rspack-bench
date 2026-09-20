@@ -14,11 +14,14 @@ pnpm install --frozen-lockfile
 | [NormalModule loader hook](cases/loader-hook/README.md) | Published 2.2.3 versus local, with an empty loader hook enabled/disabled and one noop JS loader | `pnpm bench:loader-hook` |
 | [Noop JS loader overhead](cases/noop-loader/README.md) | Published 2.2.3 versus worktree `0385`, with no loader versus one noop JS loader | `pnpm bench:noop-loader` |
 | [Babel loader overhead](cases/babel-loader/README.md) | Published 2.2.3 versus worktree `0385`, with no loader versus Babel parsing and code generation | `pnpm bench:babel-loader` |
+| [Mixed JS loader chain](cases/mixed-loader-chain/README.md) | Three noop JS loaders: main/worker/main versus all main and all worker, on 2.1.0, 2.2.3 and local a77f | `pnpm bench:mixed-loader-chain` |
+| [Parallel Babel + CSS extraction](cases/babel-css-extract/README.md) | 10,000 large JS files + 10,000 CSS Modules, parallel Babel and main-thread CSS extraction; native queue/bridge overhead diagnostics | `pnpm bench:babel-css-extract` |
+| [Babel large files](cases/babel-loader-large-files/README.md) | 2.2.6 versus current MPMC branch; 10,000 modules × 1,200+ lines, parallel Babel with optional main controls, cold/full rebuilds | `pnpm bench:babel-loader-large-files` |
 | [Babel parallel / loader cache](cases/babel-loader-parallel-cache/README.md) | 2.1.0, 2.2.3, and worktree `a77f`: parallel/cache on/off, cold builds and full rebuilds | `pnpm bench:babel-loader-parallel-cache` |
 | [Less loader overhead](cases/less-loader/README.md) | Published 2.2.3 versus worktree `0385`, with precompiled CSS versus less-loader | `pnpm bench:less-loader` |
 | [splitChunks.name callback](cases/split-chunks-name/README.md) | 2.1.0, 2.2.3, and worktree `a77f`: static name versus callback and local workerFunction execution | `pnpm bench:split-chunks-name` |
 
-All cases default to 10,000 modules and five measured samples per group, using development mode with configurable optimizations disabled. Cache-focused cases enable only the cache layer under test. Run commands from the repository root. Each case documents its configuration, validation, and results.
+All cases default to 10,000 modules and five measured samples per group, using development mode with configurable optimizations disabled. The large-file Babel case generates 1,200+ lines per module. Cache-focused cases enable only the cache layer under test. Run commands from the repository root. Each case documents its configuration, validation, and results.
 
 `versions/v1`, `versions/v2`, and `versions/local` select Rspack 1.7.11, 2.2.3, and the compiled checkout at `~/rstack/rspack`. The local link assumes this repository is at `~/projects/rspack-bench`; build the JS and native artifacts in the Rspack checkout before benchmarking changes.
 

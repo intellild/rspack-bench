@@ -1,0 +1,261 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index 609406d73f..633fd64396 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -4469,6 +4469,7 @@ version = "0.102.5"
+ dependencies = [
+  "async-channel",
+  "rspack_error",
++ "serde_json",
+  "tokio",
+  "tokio-util",
+ ]
+diff --git a/crates/rspack_binding_api/src/js_tasks/subscription.rs b/crates/rspack_binding_api/src/js_tasks/subscription.rs
+index a43e8e6705..b2132dfb72 100644
+--- a/crates/rspack_binding_api/src/js_tasks/subscription.rs
++++ b/crates/rspack_binding_api/src/js_tasks/subscription.rs
+@@ -5,7 +5,7 @@ use std::{
+ 
+ use dashmap::DashMap;
+ use napi::{Env, sys};
+-use rspack_js_tasks::{MainTaskRegistration, js_task_dispatcher};
++use rspack_js_tasks::{MainTaskRegistration, TimingPoint, js_task_dispatcher};
+ use tokio_util::sync::CancellationToken;
+ 
+ use super::{
+@@ -98,6 +98,7 @@ impl JsTaskSubscription {
+           _ = &mut changed => continue,
+           task = receiver.recv() => task,
+         };
++        task.mark_timing(TimingPoint::Received);
+         if cancel.is_cancelled() {
+           task.fail("JS task subscription has closed");
+           break;
+diff --git a/crates/rspack_binding_api/src/js_tasks/tsfn.rs b/crates/rspack_binding_api/src/js_tasks/tsfn.rs
+index 5f0264a10c..52a4cfe5b3 100644
+--- a/crates/rspack_binding_api/src/js_tasks/tsfn.rs
++++ b/crates/rspack_binding_api/src/js_tasks/tsfn.rs
+@@ -2,7 +2,7 @@ use std::{ffi::c_void, ptr, sync::Mutex};
+ 
+ use napi::{bindgen_prelude::*, sys};
+ use rspack_core::{LoaderContext, RunnerContext};
+-use rspack_js_tasks::JsTask;
++use rspack_js_tasks::{JsTask, TimingPoint};
+ use tokio_util::sync::CancellationToken;
+ 
+ use crate::{COMPILER_REFERENCES, plugins::js_loader::worker::JsLoaderTask};
+@@ -110,6 +110,7 @@ extern "C" fn call_js(
+     return;
+   }
+   let env = unsafe { Env::from_raw(raw_env) };
++  task.mark_timing(TimingPoint::JsEntered);
+   match task {
+     JsTask::Loader(task) => {
+       let compiler_id = task
+diff --git a/crates/rspack_binding_api/src/plugins/js_loader/worker.rs b/crates/rspack_binding_api/src/plugins/js_loader/worker.rs
+index d3732d50d5..e626cb9ae0 100644
+--- a/crates/rspack_binding_api/src/plugins/js_loader/worker.rs
++++ b/crates/rspack_binding_api/src/plugins/js_loader/worker.rs
+@@ -9,7 +9,7 @@ use napi::bindgen_prelude::*;
+ use napi_derive::napi;
+ use rspack_collections::Identifiable;
+ use rspack_core::{CompilerId, LoaderContext, ModuleIdentifier, RunnerContext};
+-use rspack_js_tasks::{LoaderTask as NativeLoaderTask, js_task_dispatcher};
++use rspack_js_tasks::{LoaderTask as NativeLoaderTask, TimingPoint, js_task_dispatcher};
+ use rustc_hash::FxHashMap;
+ 
+ use super::{
+@@ -56,6 +56,9 @@ impl ActiveLoaderTask {
+ 
+   fn finish(mut self, pitches: Vec<String>, result: rspack_error::Result<()>) {
+     self.revoke();
++    if let Some(timing) = &self.native().timing {
++      timing.mark(TimingPoint::Returned);
++    }
+     self
+       .native
+       .take()
+@@ -168,6 +171,9 @@ impl JsLoaderTask {
+     let task = guard
+       .as_mut()
+       .ok_or_else(|| napi::Error::from_reason("Loader task has finished"))?;
++    if let Some(timing) = &task.native().timing {
++      timing.mark(TimingPoint::ContextStarted);
++    }
+     let mut context = JsLoaderContext::try_from(task.context_mut())
+       .map_err(|error| napi::Error::from_reason(error.to_string()))?;
+     if self.worker {
+@@ -183,6 +189,9 @@ impl JsLoaderTask {
+     context.loader_chain_end = task.native().end;
+     context.bridge_handle = task.bridge_handle.as_ref().map(MainObjectHandle::handle);
+     self.context_taken = true;
++    if let Some(timing) = &task.native().timing {
++      timing.mark(TimingPoint::ContextPrepared);
++    }
+     Ok(context)
+   }
+ 
+@@ -194,6 +203,9 @@ impl JsLoaderTask {
+       .expect("loader task lock poisoned")
+       .take()
+       .ok_or_else(|| napi::Error::from_reason("Loader task has finished"))?;
++    if let Some(timing) = &task.native().timing {
++      timing.mark(TimingPoint::CompleteEntered);
++    }
+     let pitches = context
+       .loader_items
+       .iter()
+@@ -259,6 +271,9 @@ impl JsLoaderTask {
+       return None;
+     }
+     let id = NEXT_TASK.fetch_add(1, Ordering::Relaxed);
++    if let Some(timing) = &task.native().timing {
++      timing.identify(id, worker);
++    }
+     let task = Arc::new(Mutex::new(Some(task)));
+     active.insert(id, task.clone());
+     TASKS
+diff --git a/crates/rspack_js_tasks/Cargo.toml b/crates/rspack_js_tasks/Cargo.toml
+index e437660b30..6965aebe33 100644
+--- a/crates/rspack_js_tasks/Cargo.toml
++++ b/crates/rspack_js_tasks/Cargo.toml
+@@ -9,6 +9,7 @@ version.workspace = true
+ [dependencies]
+ async-channel = { workspace = true }
+ rspack_error  = { workspace = true }
++serde_json    = { workspace = true }
+ tokio         = { workspace = true, features = ["sync", "macros"] }
+ tokio-util    = { workspace = true }
+ 
+diff --git a/crates/rspack_js_tasks/src/dispatcher.rs b/crates/rspack_js_tasks/src/dispatcher.rs
+index 52bc81949f..6f1d6f8ccb 100644
+--- a/crates/rspack_js_tasks/src/dispatcher.rs
++++ b/crates/rspack_js_tasks/src/dispatcher.rs
+@@ -6,7 +6,7 @@ use std::{
+ use async_channel::{Receiver, Sender};
+ use tokio_util::sync::CancellationToken;
+ 
+-use crate::JsTask;
++use crate::{JsTask, TimingPoint};
+ 
+ static JS_TASK_DISPATCHER: LazyLock<JsTaskDispatcher> = LazyLock::new(JsTaskDispatcher::new);
+ 
+@@ -26,6 +26,7 @@ impl TaskQueue {
+   }
+ 
+   fn dispatch(&self, task: JsTask) {
++    task.mark_timing(TimingPoint::Enqueued);
+     if let Err(error) = self.sender.try_send(task) {
+       error.into_inner().fail("JS task queue is closed");
+     }
+diff --git a/crates/rspack_js_tasks/src/lib.rs b/crates/rspack_js_tasks/src/lib.rs
+index 2c0d87b4f2..b37957d9ab 100644
+--- a/crates/rspack_js_tasks/src/lib.rs
++++ b/crates/rspack_js_tasks/src/lib.rs
+@@ -2,6 +2,8 @@
+ //! to the callers; this crate has no dependency on core, loader runner or N-API.
+ mod dispatcher;
+ mod task;
++mod timing;
+ 
+ pub use dispatcher::{JsTaskDispatcher, JsTaskReceiver, MainTaskRegistration, js_task_dispatcher};
+ pub use task::{JsTask, LoaderTask, LoaderTaskResult};
++pub use timing::{LoaderTaskTiming, TimingPoint};
+diff --git a/crates/rspack_js_tasks/src/task.rs b/crates/rspack_js_tasks/src/task.rs
+index 952dd3ac13..6971c975d7 100644
+--- a/crates/rspack_js_tasks/src/task.rs
++++ b/crates/rspack_js_tasks/src/task.rs
+@@ -1,13 +1,16 @@
+-use std::any::Any;
++use std::{any::Any, sync::Arc};
+ 
+ use rspack_error::{Result, error};
+ use tokio::sync::oneshot;
+ 
++use crate::{LoaderTaskTiming, TimingPoint};
++
+ /// The original allocation travels through the queue and back without copying.
+ /// Type erasure keeps the queue independent of the loader runner's context type.
+ pub type LoaderTaskResult = (Box<dyn Any + Send>, Vec<String>, Result<()>);
+ 
+ pub struct LoaderTask {
++  pub timing: Option<Arc<LoaderTaskTiming>>,
+   context: Option<Box<dyn Any + Send>>,
+   pub main_object_handle: u32,
+   pub start: u32,
+@@ -24,6 +27,7 @@ impl LoaderTask {
+     result: oneshot::Sender<LoaderTaskResult>,
+   ) -> Self {
+     Self {
++      timing: None,
+       context: Some(context),
+       main_object_handle,
+       start,
+@@ -74,6 +78,16 @@ pub enum JsTask {
+ }
+ 
+ impl JsTask {
++  pub fn mark_timing(&self, point: TimingPoint) {
++    match self {
++      Self::Loader(task) => {
++        if let Some(timing) = &task.timing {
++          timing.mark(point);
++        }
++      }
++    }
++  }
++
+   pub fn fail(self, message: &str) {
+     match self {
+       Self::Loader(task) => task.finish(Vec::new(), Err(error!("{message}"))),
+diff --git a/crates/rspack_loader_runner/src/javascript.rs b/crates/rspack_loader_runner/src/javascript.rs
+index 9a1ec734f5..d9f96f35f6 100644
+--- a/crates/rspack_loader_runner/src/javascript.rs
++++ b/crates/rspack_loader_runner/src/javascript.rs
+@@ -1,7 +1,7 @@
+ use std::sync::Mutex;
+ 
+ use rspack_error::{Result, error};
+-use rspack_js_tasks::{JsTask, LoaderTask, js_task_dispatcher};
++use rspack_js_tasks::{JsTask, LoaderTask, LoaderTaskTiming, js_task_dispatcher};
+ use rustc_hash::{FxHashMap, FxHashSet};
+ use tokio::sync::oneshot;
+ 
+@@ -94,13 +94,25 @@ impl<Context: Send + 'static> LoaderContext<Context> {
+       (start, end, parallel)
+     };
+     let (tx, rx) = oneshot::channel();
+-    let task = JsTask::Loader(LoaderTask::new(
++    let timing = LoaderTaskTiming::new(
++      self.resource(),
++      self.current_loader().path().as_str(),
++      if self.state() == State::Pitching {
++        "pitch"
++      } else {
++        "normal"
++      },
++      parallel,
++    );
++    let mut task = LoaderTask::new(
+       self.take_owned(),
+       runtime.main_object_handle,
+       start as u32,
+       end as u32,
+       tx,
+-    ));
++    );
++    task.timing = timing.clone();
++    let task = JsTask::Loader(task);
+     if parallel {
+       js_task_dispatcher().dispatch_worker(task);
+     } else {
+@@ -118,6 +130,9 @@ impl<Context: Send + 'static> LoaderContext<Context> {
+         .expect("loader pitch cache lock poisoned")
+         .extend(pitches);
+     }
++    if let Some(timing) = timing {
++      timing.finish(result.is_ok());
++    }
+     result?;
+     Ok(true)
+   }

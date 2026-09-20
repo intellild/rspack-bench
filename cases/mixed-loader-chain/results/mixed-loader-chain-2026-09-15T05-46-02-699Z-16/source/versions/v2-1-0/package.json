@@ -1,0 +1,9 @@
+{
+  "name": "rspack-bench-v2-1-0",
+  "private": true,
+  "dependencies": {
+    "@rspack/core": "2.1.0",
+    "babel-loader": "10.1.1",
+    "@babel/core": "7.29.7"
+  }
+}

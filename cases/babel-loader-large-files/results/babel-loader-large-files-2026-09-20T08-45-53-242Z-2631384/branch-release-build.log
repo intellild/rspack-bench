@@ -1,0 +1,736 @@
+$ pnpm run build:binding:release && pnpm run build:js
+$ pnpm --filter @rspack/binding run build:release
+$ node scripts/build.mjs --profile release
+Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-header --pipe "node /data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/node_binding/scripts/dts-header.mjs" --profile release --no-default-features --no-dts-cache --features plugin,info-level -- --config "target.'cfg(all())'.rustflags = [\"-Zlocation-detail=none\"]" -Zbuild-std=panic_abort,std
+(node:2607384) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+   Compiling compiler_builtins v0.1.160 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins)
+   Compiling core v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core)
+   Compiling libc v0.2.185
+   Compiling object v0.37.3
+   Compiling std v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std)
+   Compiling proc-macro2 v1.0.106
+   Compiling quote v1.0.45
+   Compiling unicode-ident v1.0.14
+   Compiling serde_core v1.0.228
+   Compiling serde v1.0.228
+   Compiling libc v0.2.183
+   Compiling crossbeam-utils v0.8.21
+   Compiling rayon-core v1.13.0
+   Compiling autocfg v1.4.0
+   Compiling version_check v0.9.5
+   Compiling zmij v1.0.5
+   Compiling serde_json v1.0.150
+   Compiling zerocopy v0.8.25
+   Compiling icu_normalizer_data v2.1.1
+   Compiling icu_properties_data v2.1.2
+   Compiling getrandom v0.3.2
+   Compiling heck v0.5.0
+   Compiling anyhow v1.0.102
+   Compiling parking_lot_core v0.9.12
+   Compiling radium v0.7.0
+   Compiling siphasher v0.3.11
+   Compiling rand_core v0.6.4
+   Compiling rustversion v1.0.19
+   Compiling dragonbox_ecma v0.1.0
+   Compiling seq-macro v0.3.6
+   Compiling find-msvc-tools v0.1.9
+   Compiling shlex v1.3.0
+   Compiling num-traits v0.2.19
+   Compiling ahash v0.8.12
+   Compiling unsize v1.1.0
+   Compiling stable_deref_trait v1.2.0
+   Compiling crc32fast v1.5.0
+   Compiling itoa v1.0.18
+   Compiling rand v0.8.5
+   Compiling phf_shared v0.11.2
+   Compiling typenum v1.17.0
+   Compiling thiserror v1.0.69
+   Compiling generic-array v0.14.7
+   Compiling camino v1.2.3
+   Compiling rustix v0.38.42
+   Compiling litemap v0.8.1
+   Compiling memchr v2.8.2
+   Compiling writeable v0.6.2
+   Compiling syn v1.0.109
+   Compiling phf_generator v0.11.2
+   Compiling rustc-hash v2.1.2
+   Compiling once_cell v1.21.4
+   Compiling bitflags v2.13.1
+   Compiling syn v2.0.117
+   Compiling cfg-if v1.0.4
+   Compiling smallvec v1.15.2
+   Compiling allocator-api2 v0.2.21
+   Compiling utf8_iter v1.0.4
+   Compiling owo-colors v4.1.0
+   Compiling percent-encoding v2.3.2
+   Compiling new_debug_unreachable v1.0.6
+   Compiling pin-project-lite v0.2.15
+   Compiling scoped-tls v1.0.1
+   Compiling bytes v1.12.0
+   Compiling either v1.18.0
+   Compiling unicode-width v0.2.2
+   Compiling foldhash v0.1.5
+   Compiling log v0.4.30
+   Compiling precomputed-map v0.2.0
+   Compiling castaway v0.2.3
+   Compiling jobserver v0.1.35
+   Compiling tracing-core v0.1.36
+   Compiling form_urlencoded v1.2.2
+   Compiling better_scoped_tls v1.0.1
+   Compiling ahash v0.7.8
+   Compiling unicode-segmentation v1.12.0
+   Compiling unicode-id-start v1.3.1
+   Compiling static_assertions v1.1.0
+   Compiling ryu v1.0.18
+   Compiling semver v1.0.28
+   Compiling syn v3.0.3
+   Compiling swc_visit v2.0.2
+   Compiling ref-cast v1.0.23
+   Compiling phf_codegen v0.11.2
+   Compiling swc_core v79.0.0
+   Compiling cranelift-srcgen v0.123.13
+   Compiling rkyv v0.7.45
+   Compiling cranelift-isle v0.123.13
+   Compiling cc v1.2.56
+   Compiling cranelift-bitset v0.123.13
+   Compiling rustix v1.1.4
+   Compiling libm v0.2.15
+   Compiling thiserror v2.0.18
+   Compiling pastey v0.1.1
+   Compiling slab v0.4.9
+   Compiling target-lexicon v0.13.2
+   Compiling cranelift-codegen-shared v0.123.13
+   Compiling napi-build v2.3.2
+   Compiling num-integer v0.1.46
+   Compiling compact_str v0.7.1
+   Compiling convert_case v0.6.0
+   Compiling rustc_version v0.4.1
+   Compiling io-lifetimes v2.0.4
+   Compiling cranelift-assembler-x64-meta v0.123.13
+   Compiling parcel_selectors v0.28.2
+   Compiling wasmparser v0.236.1
+   Compiling io-extras v0.18.4
+   Compiling unicode-xid v0.2.6
+   Compiling hashbrown v0.17.1
+   Compiling synstructure v0.13.1
+   Compiling swc_macros_common v1.0.1
+   Compiling wasm-encoder v0.236.1
+   Compiling equivalent v1.0.1
+   Compiling serde_derive v1.0.228
+   Compiling zerovec-derive v0.11.2
+   Compiling displaydoc v0.2.5
+   Compiling zerocopy-derive v0.8.25
+   Compiling tracing-attributes v0.1.31
+   Compiling swc_eq_ignore_macros v1.0.1
+   Compiling is-macro v0.3.7
+   Compiling phf_macros v0.11.2
+   Compiling thiserror-impl v1.0.69
+   Compiling tokio-macros v2.7.0
+   Compiling static-map-macro v0.3.4
+   Compiling blake3 v1.5.5
+   Compiling miette-derive v7.6.0
+   Compiling zerofrom-derive v0.1.5
+   Compiling yoke-derive v0.8.1
+   Compiling from_variant v3.0.0
+   Compiling ast_node v7.0.0
+   Compiling string_enum v1.0.2
+   Compiling swc_config_macro v1.0.1
+   Compiling swc_ecma_transforms_macros v1.0.1
+   Compiling swc_ecma_codegen_macros v2.0.2
+   Compiling hashbrown v0.14.5
+   Compiling ptr_meta_derive v0.3.0
+   Compiling cssparser-macros v0.6.1
+   Compiling ptr_meta_derive v0.1.4
+   Compiling ref-cast-impl v1.0.23
+   Compiling static-self-derive v0.1.1
+   Compiling rkyv_derive v0.7.45
+   Compiling bytecheck_derive v0.8.0
+   Compiling zerofrom v0.1.5
+   Compiling phf v0.11.2
+   Compiling pulley-macros v36.0.13
+   Compiling munge_macro v0.4.1
+   Compiling const-str-proc-macro v0.3.2
+   Compiling rkyv_derive v0.8.18
+   Compiling lightningcss-derive v1.0.0-alpha.43
+   Compiling thiserror-impl v2.0.18
+   Compiling cranelift-assembler-x64 v0.123.13
+   Compiling rspack_cacheable_macros v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_cacheable_macros)
+   Compiling yoke v0.8.1
+   Compiling tracing v0.1.44
+   Compiling futures-macro v0.3.32
+   Compiling heapless v0.7.17
+   Compiling cap-primitives v3.4.4
+   Compiling indexmap v2.14.0
+   Compiling wasmtime-internal-versioned-export-macros v36.0.13
+   Compiling leb128 v0.2.5
+   Compiling pulley-interpreter v36.0.13
+   Compiling id-arena v2.3.0
+   Compiling swc_experimental_ast_macros v0.11.0
+   Compiling wasmtime-internal-unwinder v36.0.13
+   Compiling wasmtime-internal-component-macro v36.0.13
+   Compiling cap-std v3.4.4
+   Compiling async-trait v0.1.89
+   Compiling zerovec v0.11.5
+   Compiling zerotrie v0.2.3
+   Compiling napi v3.10.5
+   Compiling wiggle-macro v36.0.13
+   Compiling wasmtime-internal-component-util v36.0.13
+   Compiling system-interface v0.27.3
+   Compiling cap-fs-ext v3.4.4
+   Compiling fs-err v3.3.1
+   Compiling wast v35.0.2
+   Compiling wasmtime v36.0.13
+   Compiling psm v0.1.24
+   Compiling cow-utils v0.1.3
+   Compiling lzzzz v2.0.0
+   Compiling stacker v0.1.24
+   Compiling smartstring v1.0.1
+   Compiling unicase v2.9.0
+   Compiling derive_more-impl v2.1.1
+   Compiling triomphe v0.1.14
+   Compiling num-bigint v0.4.6
+   Compiling bytes-str v0.2.7
+   Compiling bitfield-macros v0.19.5
+   Compiling paste v1.0.15
+   Compiling tinystr v0.8.2
+   Compiling potential_utf v0.1.4
+   Compiling swc_ecma_preset_env v64.0.0
+   Compiling indoc v2.0.7
+   Compiling hstr v4.0.1
+   Compiling witx v0.9.1
+   Compiling rspack_macros v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_macros)
+   Compiling mime_guess v2.0.5
+   Compiling async-recursion v1.1.1
+   Compiling slotmap v1.1.1
+   Compiling icu_locale_core v2.1.1
+   Compiling icu_collections v2.1.1
+   Compiling swc_html_codegen_macros v1.0.1
+   Compiling auto_impl v1.2.0
+   Compiling libmimalloc-sys v0.1.44
+   Compiling rspack_binding_build v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_binding_build)
+   Compiling portable-atomic v1.13.1
+   Compiling convert_case v0.11.0
+   Compiling ctor v1.0.7
+   Compiling rspack_napi_macros v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_napi_macros)
+   Compiling swc_atoms v10.0.0
+   Compiling cranelift-codegen-meta v0.123.13
+   Compiling wiggle-generate v36.0.13
+   Compiling rspack_binding_api v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_binding_api)
+   Compiling rspack_node v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/node_binding)
+   Compiling napi-derive-backend v5.1.2
+   Compiling icu_provider v2.1.1
+   Compiling icu_properties v2.1.2
+   Compiling icu_normalizer v2.1.1
+   Compiling wit-parser v0.236.1
+   Compiling cranelift-codegen v0.123.13
+   Compiling idna_adapter v1.2.1
+   Compiling idna v1.1.0
+   Compiling napi-derive v3.5.10
+   Compiling wasmtime-internal-wit-bindgen v36.0.13
+   Compiling url v2.5.8
+   Compiling swc_common v26.0.0
+   Compiling swc_ecma_ast v29.0.1
+   Compiling swc_ecma_parser v45.1.3
+   Compiling swc_ecma_quote_macros v45.0.1
+   Compiling rustc-std-workspace-core v1.99.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/rustc-std-workspace-core)
+   Compiling alloc v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc)
+   Compiling memchr v2.7.6
+   Compiling adler2 v2.0.1
+   Compiling rustc-demangle v0.1.27
+   Compiling panic_abort v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/panic_abort)
+   Compiling rustc-literal-escaper v0.0.7
+   Compiling unwind v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/unwind)
+   Compiling rustc-std-workspace-alloc v1.99.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/rustc-std-workspace-alloc)
+   Compiling panic_unwind v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/panic_unwind)
+   Compiling gimli v0.32.3
+   Compiling hashbrown v0.17.0
+   Compiling std_detect v0.1.5 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std_detect)
+   Compiling miniz_oxide v0.8.9
+   Compiling addr2line v0.25.1
+   Compiling proc_macro v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro)
+   Compiling foldhash v0.2.0
+   Compiling unty v0.0.4
+   Compiling scopeguard v1.2.0
+   Compiling tap v1.0.1
+   Compiling data-encoding v2.9.0
+   Compiling crossbeam-epoch v0.9.18
+   Compiling bincode v2.0.1
+   Compiling lock_api v0.4.14
+   Compiling vsimd v0.8.0
+   Compiling funty v2.0.0
+   Compiling uuid v1.11.0
+   Compiling outref v0.5.1
+   Compiling if_chain v1.0.2
+   Compiling cbor4ii v1.2.2
+   Compiling crossbeam-deque v0.8.6
+   Compiling wyz v0.5.1
+   Compiling num_cpus v1.16.0
+   Compiling base64-simd v0.8.0
+   Compiling aho-corasick v1.1.4
+   Compiling hashbrown v0.16.1
+   Compiling regex-syntax v0.8.11
+   Compiling bumpalo v3.20.3
+   Compiling swc_ecma_regexp_common v0.0.1
+   Compiling debugid v0.8.0
+   Compiling bstr v1.11.1
+   Compiling bitvec v1.0.1
+   Compiling arrayvec v0.7.6
+   Compiling react_compiler_diagnostics v0.1.0
+   Compiling linux-raw-sys v0.4.14
+   Compiling lazy_static v1.5.0
+   Compiling iana-time-zone v0.1.61
+   Compiling hashbrown v0.15.2
+   Compiling fixedbitset v0.5.7
+   Compiling serde-transcode v1.1.1
+   Compiling getrandom v0.2.15
+   Compiling rayon v1.12.0
+   Compiling regress v0.11.1
+   Compiling byteorder v1.5.0
+   Compiling adler2 v2.0.0
+   Compiling cpufeatures v0.2.16
+   Compiling is_ci v1.2.0
+   Compiling is-terminal v0.4.17
+   Compiling base64 v0.22.1
+   Compiling ascii v1.1.0
+   Compiling parking_lot v0.12.5
+   Compiling regex-automata v0.4.18
+   Compiling pathdiff v0.2.3
+   Compiling chrono v0.4.45
+   Compiling rustc-demangle v0.1.24
+   Compiling lru v0.18.2
+   Compiling supports-color v3.0.2
+   Compiling nom v8.0.0
+   Compiling itertools v0.15.0
+   Compiling unicode-width v0.1.14
+   Compiling path-clean v1.0.1
+   Compiling unicode-linebreak v0.1.5
+   Compiling supports-unicode v3.0.0
+   Compiling radix_fmt v1.0.0
+   Compiling swc_allocator v5.0.0
+   Compiling tokio v1.53.1
+   Compiling supports-color v2.1.0
+   Compiling hmac-sha256 v1.1.14
+   Compiling supports-hyperlinks v3.1.0
+   Compiling ryu-js v1.0.2
+   Compiling st-map v0.2.4
+   Compiling constant_time_eq v0.3.1
+   Compiling arrayref v0.3.9
+   Compiling swc_experimental_allocator v0.11.0
+   Compiling dtoa v1.0.9
+   Compiling simdutf8 v0.1.5
+   Compiling par-core v2.0.0
+   Compiling dashmap v6.2.1
+   Compiling textwrap v0.16.1
+   Compiling ptr_meta v0.3.0
+   Compiling outref v0.1.0
+   Compiling halfbrown v0.4.0
+   Compiling crypto-common v0.1.6
+   Compiling par-iter v2.0.0
+   Compiling block-buffer v0.10.4
+   Compiling browserslist-data v0.2.0
+   Compiling dtoa-short v0.3.5
+   Compiling float-cmp v0.10.0
+   Compiling ptr_meta v0.1.4
+   Compiling regex v1.13.1
+   Compiling globset v0.4.16
+   Compiling simd-abstraction v0.7.1
+   Compiling rancor v0.1.0
+   Compiling hashbrown v0.12.3
+   Compiling matches v0.1.10
+   Compiling seahash v4.1.0
+   Compiling digest v0.10.7
+   Compiling petgraph v0.7.1
+   Compiling react_compiler_utils v0.1.0
+   Compiling static-self v0.1.2
+   Compiling precomputed-hash v0.1.1
+   Compiling vlq v0.5.1
+   Compiling serde-content v0.1.2
+   Compiling Inflector v0.11.4
+   Compiling cssparser v0.33.0
+   Compiling bytecheck v0.8.0
+   Compiling value-trait v0.12.2
+   Compiling base64-simd v0.7.0
+   Compiling data-url v0.1.1
+   Compiling itertools v0.10.5
+   Compiling const-str v0.3.2
+   Compiling munge v0.4.1
+   Compiling linux-raw-sys v0.12.1
+   Compiling xxhash-rust v0.8.15
+   Compiling futures-core v0.3.32
+   Compiling react_compiler_hir v0.1.0
+   Compiling react_compiler_ast v0.1.0
+   Compiling sha1 v0.10.6
+   Compiling browserslist-rs v0.20.0
+   Compiling jsonc-parser v0.26.2
+   Compiling termcolor v1.4.1
+   Compiling simd-utf16-len v0.2.0
+   Compiling simd-json v0.17.3
+   Compiling rend v0.5.2
+   Compiling cranelift-entity v0.123.13
+   Compiling ustr-fxhash v1.0.1
+   Compiling hashlink v0.11.0
+   Compiling sugar_path v2.0.1
+   Compiling smol_str v0.3.6
+   Compiling terminal_size v0.4.1
+   Compiling json v0.12.4
+   Compiling futures-sink v0.3.32
+   Compiling cssparser-color v0.1.0
+   Compiling inventory v0.3.17
+   Compiling arc-swap v1.9.1
+   Compiling arbitrary v1.4.1
+   Compiling futures-task v0.3.32
+   Compiling preset_env_base v9.0.0
+   Compiling parcel_sourcemap v2.1.1
+   Compiling futures-io v0.3.32
+   Compiling cranelift-bforest v0.123.13
+   Compiling hash32 v0.2.1
+   Compiling regalloc2 v0.12.2
+   Compiling react_compiler_ssa v0.1.0
+   Compiling react_compiler_validation v0.1.0
+   Compiling futures-channel v0.3.32
+   Compiling spin v0.9.9
+   Compiling cobs v0.3.0
+   Compiling ambient-authority v0.0.2
+   Compiling leb128fmt v0.1.0
+   Compiling maybe-owned v0.3.4
+   Compiling ipnet v2.10.1
+   Compiling nonmax v0.5.5
+   Compiling backtrace v0.3.76
+   Compiling react_compiler_typeinference v0.1.0
+   Compiling lightningcss v1.0.0-alpha.71
+   Compiling wasmtime-internal-math v36.0.13
+   Compiling cranelift-control v0.123.13
+   Compiling swc_sourcemap v10.0.2
+   Compiling ppv-lite86 v0.2.21
+   Compiling itertools v0.14.0
+   Compiling libloading v0.9.0
+   Compiling nohash-hasher v0.2.0
+   Compiling memfd v0.6.4
+   Compiling wasmtime-internal-jit-icache-coherence v36.0.13
+   Compiling encoding_rs v0.8.35
+   Compiling wasmtime-internal-asm-macros v36.0.13
+   Compiling wasmtime-internal-slab v36.0.13
+   Compiling backtrace-ext v0.2.1
+   Compiling oxc_index v4.1.0
+   Compiling rkyv v0.8.18
+   Compiling concat-string v1.0.1
+   Compiling zlib-rs v0.5.2
+   Compiling json-escape-simd v3.1.1
+   Compiling nibble_vec v0.1.0
+   Compiling postcard v1.1.3
+   Compiling napi-sys v3.2.3
+   Compiling swc_config v6.0.0
+   Compiling miette v7.6.0
+   Compiling futures-util v0.3.32
+   Compiling rand_chacha v0.3.1
+   Compiling endian-type v0.2.0
+   Compiling concurrent_lru v0.2.0
+   Compiling react_compiler_lowering v0.1.0
+   Compiling react_compiler_reactive_scopes v0.1.0
+   Compiling swc_experimental_ecma_ast v0.11.0
+   Compiling parking v2.2.1
+   Compiling nodejs-built-in-modules v1.0.0
+   Compiling dunce v1.0.5
+   Compiling concurrent-queue v2.5.0
+   Compiling thread_local v1.1.9
+   Compiling sha2 v0.10.9
+   Compiling md4 v0.10.2
+   Compiling serde_bytes v0.11.19
+   Compiling jiff-core v0.1.0
+   Compiling foldhash-portable v0.2.1
+   Compiling radix_trie v0.3.0
+   Compiling libz-rs-sys v0.5.2
+   Compiling event-listener v5.4.2
+   Compiling utf8-width v0.1.7
+   Compiling quick_cache v0.6.24
+   Compiling memmap2 v0.9.11
+   Compiling react_compiler_optimization v0.1.0
+   Compiling rustix-linux-procfs v0.1.1
+   Compiling fs-set-times v0.20.3
+   Compiling winnow v0.7.15
+   Compiling json-strip-comments v3.1.1
+   Compiling qfilter v0.3.0-alpha.4
+   Compiling event-listener-strategy v0.5.4
+   Compiling html-escape v0.2.13
+   Compiling anymap3 v1.1.0
+   Compiling mime v0.3.17
+   Compiling flate2 v1.1.5
+   Compiling derive_more v2.1.1
+   Compiling cap-rand v3.4.4
+   Compiling jiff v0.2.35
+   Compiling react_compiler_inference v0.1.0
+   Compiling swc_ecma_regexp_ast v3.0.0
+   Compiling swc_ecma_loader v27.0.0
+   Compiling swc_transform_common v20.0.0
+   Compiling swc_node_comments v27.0.0
+   Compiling swc_error_reporters v28.0.0
+   Compiling rspack_sources v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_sources)
+   Compiling async-channel v2.5.0
+   Compiling swc_experimental_ecma_visit v0.11.0
+   Compiling bitfield v0.19.5
+   Compiling oneshot v0.2.1
+   Compiling rspack_workspace v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_workspace)
+   Compiling pnp v0.12.11
+   Compiling rspack_dojang v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_dojang)
+   Compiling swc_experimental_ecma_parser v0.11.0
+   Compiling fast-glob v1.1.0
+   Compiling hex v0.4.3
+   Compiling urlencoding v2.1.3
+   Compiling react_compiler v0.1.0
+   Compiling dyn-clone v1.0.20
+   Compiling swc_experimental_ecma_transforms_base v0.11.0
+   Compiling cap-time-ext v3.4.4
+   Compiling swc_experimental_ecma_semantic v0.11.0
+   Compiling swc_ecma_regexp_visit v0.15.0
+   Compiling atomic_refcell v0.1.14
+   Compiling css-module-lexer v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/css-module-lexer)
+   Compiling swc_html_ast v26.0.0
+   Compiling swc_html_utils v17.0.0
+   Compiling inotify-sys v0.1.5
+   Compiling same-file v1.0.6
+   Compiling matchers v0.2.0
+   Compiling sharded-slab v0.1.7
+   Compiling mio v1.0.3
+   Compiling console v0.16.2
+   Compiling tracing-serde v0.2.0
+   Compiling notify-types v2.0.0
+   Compiling inotify v0.11.0
+   Compiling unit-prefix v0.5.2
+   Compiling swc_ecma_regexp v0.15.0
+   Compiling swc_ecma_compat_regexp v9.0.0
+   Compiling swc_html_parser v26.0.0
+   Compiling swc_html_visit v26.0.0
+   Compiling swc_html_codegen v27.0.0
+   Compiling walkdir v2.5.0
+   Compiling tracing-subscriber v0.3.23
+   Compiling mimalloc v0.1.48
+   Compiling rspack_allocator v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_allocator)
+   Compiling notify v8.2.0
+   Compiling indicatif v0.18.4
+   Compiling swc_html v38.0.0
+   Compiling rspack_tracing v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_tracing)
+   Compiling futures-executor v0.3.32
+   Compiling futures v0.3.32
+   Compiling rspack_tasks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_tasks)
+   Compiling tokio-util v0.7.19
+   Compiling rspack_parallel v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_parallel)
+   Compiling rspack-turbo-persistence v0.1.1
+   Compiling swc_ecma_visit v29.0.0
+   Compiling swc_plugin_proxy v30.0.0
+   Compiling swc_plugin_runner v34.0.0
+   Compiling wasmprinter v0.236.1
+   Compiling wasmtime-environ v36.0.13
+   Compiling swc_ecma_utils v35.0.2
+   Compiling swc_ecma_hooks v1.0.0
+   Compiling swc_ecma_transforms_base v49.0.1
+   Compiling swc_ecma_codegen v32.0.2
+   Compiling swc_ecma_ext_transforms v35.0.0
+   Compiling swc_typescript v34.0.1
+   Compiling swc_ecma_react_compiler v25.0.0
+   Compiling swc_ecma_transformer v21.0.1
+   Compiling swc_ecma_transforms_classes v49.0.0
+   Compiling swc_ecma_transforms_optimization v52.0.1
+   Compiling swc_ecma_transforms_react v55.0.1
+   Compiling swc_ecma_transforms_module v56.0.0
+   Compiling swc_ecma_transforms_proposal v49.0.3
+   Compiling swc_ecma_transforms_typescript v55.0.4
+   Compiling swc_ecma_compat_common v45.0.0
+   Compiling swc_ecma_compat_es2022 v53.0.0
+   Compiling swc_ecma_compat_es2018 v51.0.0
+   Compiling swc_ecma_compat_es2021 v50.0.0
+   Compiling swc_ecma_compat_es2017 v50.0.0
+   Compiling swc_ecma_compat_es2019 v50.0.0
+   Compiling swc_ecma_compat_es2016 v50.0.0
+   Compiling swc_ecma_compat_es2015 v55.0.1
+   Compiling swc_ecma_compat_es2020 v53.0.0
+   Compiling swc_ecma_minifier v61.0.7
+   Compiling cranelift-frontend v0.123.13
+   Compiling cranelift-native v0.123.13
+   Compiling wasmtime-internal-cranelift v36.0.13
+   Compiling rspack_browserslist v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_browserslist)
+   Compiling swc_ecma_compat_bugfixes v56.0.0
+   Compiling swc_ecma_transforms_compat v57.0.2
+   Compiling swc_ecma_transforms v63.0.0
+   Compiling wiggle v36.0.13
+   Compiling wasi-common v36.0.13
+   Compiling swc_compiler_base v64.0.0
+   Compiling swc_html_minifier v61.0.0
+   Compiling swc v77.0.0
+   Compiling rspack_intern v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_intern)
+   Compiling rspack_swc_plugin_import v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/swc_plugin_import)
+   Compiling rspack_swc_plugin_ts_collector v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/swc_plugin_ts_collector)
+   Compiling rspack_cacheable v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_cacheable)
+   Compiling rspack_paths v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_paths)
+   Compiling rspack_location v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_location)
+   Compiling rspack_collections v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_collections)
+   Compiling rspack_error v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_error)
+   Compiling rspack_resolver v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_resolver)
+   Compiling rspack_regex v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_regex)
+   Compiling rspack_js_tasks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_js_tasks)
+   Compiling rspack_napi v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_napi)
+   Compiling rspack_hook v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_hook)
+warning: field `count` is never read
+  --> crates/rspack_napi/src/js_values/value_ref.rs:13:14
+   |
+11 | pub struct Ref {
+   |            --- field in this struct
+12 |   pub(crate) raw_ref: sys::napi_ref,
+13 |   pub(crate) count: u32,
+   |              ^^^^^
+   |
+   = note: requested on the command line with `-W dead-code`
+
+warning: `rspack_napi` (lib) generated 1 warning
+   Compiling rspack_util v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_util)
+   Compiling rspack_fs v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_fs)
+   Compiling rspack_hash v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_hash)
+   Compiling rspack_javascript_compiler v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_javascript_compiler)
+   Compiling rspack_watcher v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_watcher)
+   Compiling rspack_loader_runner v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_runner)
+   Compiling rspack_storage v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_storage)
+warning: method `children` is never used
+  --> crates/rspack_loader_runner/src/chain.rs:91:6
+   |
+24 | impl LoaderChain {
+   | ---------------- method in this implementation
+...
+91 |   fn children(&self) -> Option<&Range<u16>> {
+   |      ^^^^^^^^
+   |
+   = note: requested on the command line with `-W dead-code`
+
+warning: `rspack_loader_runner` (lib) generated 1 warning
+   Compiling rspack_core v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_core)
+   Compiling rspack_ids v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_ids)
+   Compiling rspack_plugin_asset v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_asset)
+   Compiling rspack_plugin_split_chunks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_split_chunks)
+   Compiling rspack_plugin_json v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_json)
+   Compiling rspack_plugin_remove_duplicate_modules v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_remove_duplicate_modules)
+   Compiling rspack_plugin_real_content_hash v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_real_content_hash)
+   Compiling rspack_plugin_html v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_html)
+   Compiling rspack_loader_lightningcss v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_lightningcss)
+   Compiling rspack_plugin_ensure_chunk_conditions v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_ensure_chunk_conditions)
+   Compiling rspack_plugin_size_limits v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_size_limits)
+   Compiling rspack_plugin_case_sensitive v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_case_sensitive)
+   Compiling rspack_plugin_progress v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_progress)
+   Compiling rspack_plugin_wasm v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_wasm)
+   Compiling rspack_plugin_merge_duplicate_chunks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_merge_duplicate_chunks)
+   Compiling rspack_plugin_no_emit_on_errors v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_no_emit_on_errors)
+   Compiling rspack_plugin_worker v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_worker)
+   Compiling rspack_loader_swc v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_swc)
+   Compiling rspack_plugin_banner v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_banner)
+   Compiling rspack_plugin_circular_dependencies v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_circular_dependencies)
+   Compiling rspack_plugin_remove_empty_chunks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_remove_empty_chunks)
+   Compiling rspack_plugin_lightning_css_minimizer v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_lightning_css_minimizer)
+   Compiling rspack_loader_react_refresh v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_react_refresh)
+   Compiling rspack_plugin_dynamic_entry v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_dynamic_entry)
+   Compiling rspack_plugin_module_replacement v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_module_replacement)
+   Compiling rspack_plugin_ignore v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_ignore)
+   Compiling rspack_plugin_entry v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_entry)
+   Compiling rspack_plugin_copy v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_copy)
+   Compiling rspack_plugin_schemes v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_schemes)
+   Compiling rspack_loader_preact_refresh v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_preact_refresh)
+   Compiling rspack_plugin_limit_chunk_count v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_limit_chunk_count)
+   Compiling rspack_plugin_runtime_chunk v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_runtime_chunk)
+   Compiling rspack_plugin_javascript v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_javascript)
+   Compiling rspack_plugin_runtime v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_runtime)
+   Compiling rspack_plugin_devtool v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_devtool)
+   Compiling rspack_plugin_lazy_compilation v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_lazy_compilation)
+   Compiling rspack_plugin_rstest v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rstest)
+   Compiling rspack_plugin_swc_js_minimizer v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_swc_js_minimizer)
+   Compiling rspack_plugin_rsc v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rsc)
+   Compiling rspack_plugin_rsdoctor v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rsdoctor)
+   Compiling rspack_plugin_css v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_css)
+   Compiling rspack_plugin_mf v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_mf)
+   Compiling rspack_plugin_extract_css v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_extract_css)
+   Compiling rspack_plugin_sri v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_sri)
+   Compiling rspack_plugin_externals v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_externals)
+   Compiling rspack_plugin_module_info_header v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_module_info_header)
+   Compiling rspack_plugin_css_chunking v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_css_chunking)
+   Compiling rspack_plugin_hmr v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_hmr)
+   Compiling rspack_plugin_rslib v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rslib)
+   Compiling rspack_plugin_dll v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_dll)
+   Compiling rspack_plugin_esm_library v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_esm_library)
+   Compiling rspack_plugin_library v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_library)
+    Finished `release` profile [optimized] target(s) in 19m 10s
+$ pnpm --filter "@rspack/core" build && pnpm --parallel --filter "@rspack/*" --filter "create-rspack" --filter "!@rspack/core" build
+$ rs lib
+Rslib v1.0.1
+
+info    build started...
+ready   built in 0.08s (esm1)
+ready   built in 0.08s (esm2)
+ready   built in 0.10s (esm3)
+ready   built in 0.12s (esm0)
+start   generating declaration files... (esm0)
+ready   declaration files generated with tsgo in 0.63 s (esm0)
+
+File (esm0)     Size       
+dist/l~0.js     1.4 kB  
+dist/index.js   737.9 kB
+
+       Total:   739.3 kB
+
+File (esm1)                Size     
+dist/cssExtractLoader.js   7.5 kB
+
+File (esm2)             Size     
+dist/cssExtractHmr.js   4.3 kB
+
+File (esm3)      Size       
+dist/l~3.js      1.2 kB  
+dist/worker.js   107.4 kB
+
+        Total:   108.5 kB
+
+Scope: 22 of 34 workspace projects
+packages/create-rspack build$ rs lib
+packages/rspack-browser build$ pnpm run --fail-if-no-match --filter @rspack/core build:browser || pnpm --fail-if-no-match --filter @rspack-canary/core build:browser
+packages/rspack-cli build$ rs lib
+packages/rspack-test-tools build$ rs lib
+packages/create-rspack build: Rslib v1.0.1
+packages/rspack-cli build: Rslib v1.0.1
+packages/rspack-test-tools build: Rslib v1.0.1
+packages/create-rspack build: info    build started...
+packages/rspack-cli build: info    build started...
+packages/create-rspack build: ready   built in 0.04s
+packages/create-rspack build: File (esm)      Size     
+packages/create-rspack build: dist/index.js   3.8 kB
+packages/rspack-test-tools build: info    build started...
+packages/create-rspack build: Done
+packages/rspack-cli build: ready   built in 0.07s
+packages/rspack-cli build: start   generating declaration files... (esm)
+packages/rspack-test-tools build: start   generating declaration files... (esm)
+packages/rspack-test-tools build: ready   built in 0.17s (esm)
+packages/rspack-test-tools build: ready   built in 0.17s (cjs)
+packages/rspack-cli build: info    declaration files prepared with tsgo in 0.19 s (esm)
+packages/rspack-browser build: $ rs lib -c rstack.browser.config.ts
+packages/rspack-browser build: Rslib v1.0.1
+packages/rspack-test-tools build: ready   declaration files generated with tsgo in 0.41 s (esm)
+packages/rspack-test-tools build: 86 files generated in dist, total: 429.9 kB (cjs)
+packages/rspack-test-tools build: 87 files generated in dist, total: 265.2 kB (esm)
+packages/rspack-test-tools build: Done
+packages/rspack-browser build: info    build started...
+packages/rspack-browser build: warn    The resolved outDir /data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack-browser/dist is outside the project root /data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack, please check your tsconfig file.
+packages/rspack-browser build: start   generating declaration files... (esm)
+packages/rspack-browser build: ready   built in 0.12s (iife)
+packages/rspack-browser build: ready   built in 0.19s (esm)
+packages/rspack-browser build: ready   declaration files generated with tsgo in 0.65 s (esm)
+packages/rspack-browser build: File (esm)                        Size        Gzip   
+packages/rspack-browser build: ../rspack-browser/dist/l~0.js     1.9 kB      0.70 kB
+packages/rspack-browser build: ../rspack-browser/dist/index.js   3254.3 kB   551.9 kB
+packages/rspack-browser build:                          Total:   3256.2 kB   552.6 kB
+packages/rspack-browser build: File (iife)                                      Size        Gzip   
+packages/rspack-browser build: ../rspack-browser/dist/wasi-worker-browser.mjs   1472.2 kB   200.6 kB
+packages/rspack-cli build: ready   declaration files bundled successfully: dist/index.d.ts in 0.94 s (esm)
+packages/rspack-cli build: File (esm)             Size      
+packages/rspack-cli build: dist/profile.js        1.8 kB 
+packages/rspack-cli build: dist/rspack-merge.js   3.5 kB 
+packages/rspack-cli build: dist/exit-hook.js      3.6 kB 
+packages/rspack-cli build: dist/freshImport.js    6.1 kB 
+packages/rspack-cli build: dist/json-ext.js       7.2 kB 
+packages/rspack-cli build: dist/index.js          54.6 kB
+packages/rspack-cli build:               Total:   76.9 kB
+packages/rspack-cli build: Done
+packages/rspack-browser build: Done

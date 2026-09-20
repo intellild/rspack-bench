@@ -1,0 +1,173 @@
+{
+  "method": "In-memory instrumentation of the compiled main/worker loader runner and MessagePort.postMessage. Shared atomic counters; no source/artifact mutation. Timings from this diagnostic are not performance samples.",
+  "modules": 10000,
+  "groups": {
+    "main": {
+      "builds": [
+        {
+          "state": "cold",
+          "counts": {
+            "mainPitch": 1,
+            "mainNormal": 10000,
+            "mainHooksPitch": 0,
+            "mainHooksNormal": 0,
+            "workerPitch": 0,
+            "workerNormal": 0,
+            "optionsRequests": 0,
+            "functionInvokes": 0,
+            "additionalDataRequests": 0,
+            "optionsHandles": {}
+          }
+        },
+        {
+          "state": "warm",
+          "counts": {
+            "mainPitch": 0,
+            "mainNormal": 10000,
+            "mainHooksPitch": 0,
+            "mainHooksNormal": 0,
+            "workerPitch": 0,
+            "workerNormal": 0,
+            "optionsRequests": 0,
+            "functionInvokes": 0,
+            "additionalDataRequests": 0,
+            "optionsHandles": {}
+          }
+        }
+      ],
+      "total": {
+        "mainPitch": 1,
+        "mainNormal": 20000,
+        "mainHooksPitch": 0,
+        "mainHooksNormal": 0,
+        "workerPitch": 0,
+        "workerNormal": 0,
+        "optionsRequests": 0,
+        "functionInvokes": 0,
+        "additionalDataRequests": 0,
+        "optionsHandles": {}
+      }
+    },
+    "mixed": {
+      "builds": [
+        {
+          "state": "cold",
+          "counts": {
+            "mainPitch": 2,
+            "mainNormal": 20000,
+            "mainHooksPitch": 1,
+            "mainHooksNormal": 10000,
+            "workerPitch": 1,
+            "workerNormal": 10000,
+            "optionsRequests": 30003,
+            "functionInvokes": 0,
+            "additionalDataRequests": 0,
+            "optionsHandles": {
+              "1": 10001,
+              "2": 10001,
+              "3": 10001
+            }
+          }
+        },
+        {
+          "state": "warm",
+          "counts": {
+            "mainPitch": 0,
+            "mainNormal": 20000,
+            "mainHooksPitch": 0,
+            "mainHooksNormal": 10000,
+            "workerPitch": 0,
+            "workerNormal": 10000,
+            "optionsRequests": 30000,
+            "functionInvokes": 0,
+            "additionalDataRequests": 0,
+            "optionsHandles": {
+              "1": 10000,
+              "2": 10000,
+              "3": 10000
+            }
+          }
+        }
+      ],
+      "total": {
+        "mainPitch": 2,
+        "mainNormal": 40000,
+        "mainHooksPitch": 1,
+        "mainHooksNormal": 20000,
+        "workerPitch": 1,
+        "workerNormal": 20000,
+        "optionsRequests": 60003,
+        "functionInvokes": 0,
+        "additionalDataRequests": 0,
+        "optionsHandles": {
+          "1": 20001,
+          "2": 20001,
+          "3": 20001
+        }
+      }
+    },
+    "parallel": {
+      "builds": [
+        {
+          "state": "cold",
+          "counts": {
+            "mainPitch": 0,
+            "mainNormal": 0,
+            "mainHooksPitch": 1,
+            "mainHooksNormal": 10000,
+            "workerPitch": 1,
+            "workerNormal": 10000,
+            "optionsRequests": 30003,
+            "functionInvokes": 0,
+            "additionalDataRequests": 0,
+            "optionsHandles": {
+              "1": 10001,
+              "2": 10001,
+              "3": 10001
+            }
+          }
+        },
+        {
+          "state": "warm",
+          "counts": {
+            "mainPitch": 0,
+            "mainNormal": 0,
+            "mainHooksPitch": 0,
+            "mainHooksNormal": 10000,
+            "workerPitch": 0,
+            "workerNormal": 10000,
+            "optionsRequests": 30000,
+            "functionInvokes": 0,
+            "additionalDataRequests": 0,
+            "optionsHandles": {
+              "1": 10000,
+              "2": 10000,
+              "3": 10000
+            }
+          }
+        }
+      ],
+      "total": {
+        "mainPitch": 0,
+        "mainNormal": 0,
+        "mainHooksPitch": 1,
+        "mainHooksNormal": 20000,
+        "workerPitch": 1,
+        "workerNormal": 20000,
+        "optionsRequests": 60003,
+        "functionInvokes": 0,
+        "additionalDataRequests": 0,
+        "optionsHandles": {
+          "1": 20001,
+          "2": 20001,
+          "3": 20001
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Counts identify repeated work, not milliseconds attributable to each component.",
+    "An initial instrumentation attempt incorrectly assumed numeric loader states; its rejected builds are retained under the original ignored run directory and excluded. Corrected instrumentation uses the native string enum.",
+    "These instrumented builds do not replace the performance run or its retained failures."
+  ]
+}

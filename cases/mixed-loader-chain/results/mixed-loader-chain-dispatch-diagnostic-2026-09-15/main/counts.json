@@ -1,0 +1,46 @@
+{
+  "builds": [
+    {
+      "state": "cold",
+      "counts": {
+        "mainPitch": 1,
+        "mainNormal": 10000,
+        "mainHooksPitch": 0,
+        "mainHooksNormal": 0,
+        "workerPitch": 0,
+        "workerNormal": 0,
+        "optionsRequests": 0,
+        "functionInvokes": 0,
+        "additionalDataRequests": 0,
+        "optionsHandles": {}
+      }
+    },
+    {
+      "state": "warm",
+      "counts": {
+        "mainPitch": 0,
+        "mainNormal": 10000,
+        "mainHooksPitch": 0,
+        "mainHooksNormal": 0,
+        "workerPitch": 0,
+        "workerNormal": 0,
+        "optionsRequests": 0,
+        "functionInvokes": 0,
+        "additionalDataRequests": 0,
+        "optionsHandles": {}
+      }
+    }
+  ],
+  "total": {
+    "mainPitch": 1,
+    "mainNormal": 20000,
+    "mainHooksPitch": 0,
+    "mainHooksNormal": 0,
+    "workerPitch": 0,
+    "workerNormal": 0,
+    "optionsRequests": 0,
+    "functionInvokes": 0,
+    "additionalDataRequests": 0,
+    "optionsHandles": {}
+  }
+}

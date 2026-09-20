@@ -1,0 +1,213 @@
+{
+  "version": "worktree-a77f",
+  "mode": "mixed",
+  "id": "worktree-a77f-mixed-warmup-0",
+  "phase": "warmup",
+  "round": 0,
+  "sourceRevision": "source",
+  "verify": false,
+  "modules": 10000,
+  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
+  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/output/worktree-a77f-mixed-warmup-0",
+  "statsDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/stats/worktree-a77f-mixed-warmup-0",
+  "auditDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/audit/worktree-a77f-mixed-warmup-0",
+  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/raw/worktree-a77f-mixed-warmup-0.json",
+  "packageVersion": "2.2.1",
+  "compiledVersion": "2.2.1",
+  "artifacts": {
+    "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/index.js": "1c551b8adb5d679d7436c2d01a3668102474fd8a9793cbfa6af752ca333b4bc1",
+    "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/rspack.linux-x64-gnu.node": "02601bac3e4a59961f1d54bfa634c6b0c44383b65335ac9c56020c3b590bb0bf",
+    "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js": "1e41adaa317d2b5cf34c8964d2cb192aee7fd975c131bc09f5805eee3bc00d2c"
+  },
+  "loaders": {
+    "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/left.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f",
+    "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/middle.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f",
+    "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/right.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f"
+  },
+  "loadedPaths": {
+    "core": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/index.js",
+    "binding": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/binding.js",
+    "native": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/crates/node_binding/rspack.linux-x64-gnu.node",
+    "loaders": [
+      "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/left.cjs",
+      "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/middle.cjs",
+      "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/right.cjs"
+    ]
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "arch": "x64",
+    "release": "5.15.120.bsk.3-amd64",
+    "cpu": "Intel(R) Xeon(R) Platinum 8336C CPU @ 2.30GHz",
+    "cpus": 32,
+    "availableParallelism": 32,
+    "loadAverage": [
+      2.44,
+      1.74,
+      0.87
+    ],
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=8192",
+      "RSPACK_LOADER_WORKER_THREADS": null,
+      "RAYON_NUM_THREADS": null,
+      "UV_THREADPOOL_SIZE": null,
+      "RSPACK_NUM_THREADS": null
+    }
+  },
+  "status": "passed",
+  "compilerSetupMs": 10.550768,
+  "builds": [
+    {
+      "state": "cold",
+      "timings": {
+        "buildMs": 5142.198764,
+        "makeMs": 4936.365545,
+        "finishMakeMs": 16.246205,
+        "sealMs": 133.605607,
+        "emitMs": 26.943488
+      },
+      "validation": {
+        "modules": 10000,
+        "builtModules": 10000,
+        "audit": null,
+        "exportedValue": 49995000,
+        "outputSha256": "7baf5a8779e0e65ec3d59228728fba73882db5351cc63cd694ccefce7888e1d3",
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "state": "warm",
+      "timings": {
+        "buildMs": 4380.63095,
+        "makeMs": 4199.118414,
+        "finishMakeMs": 14.899438,
+        "sealMs": 134.279619,
+        "emitMs": 23.392063
+      },
+      "validation": {
+        "modules": 10000,
+        "builtModules": 10000,
+        "audit": null,
+        "exportedValue": 49995000,
+        "outputSha256": "7baf5a8779e0e65ec3d59228728fba73882db5351cc63cd694ccefce7888e1d3",
+        "errors": 0,
+        "warnings": 0
+      }
+    }
+  ],
+  "failures": [],
+  "config": {
+    "context": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+    "entry": "./module-00000.js",
+    "mode": "development",
+    "target": [
+      "web",
+      "es2020"
+    ],
+    "devtool": false,
+    "cache": false,
+    "incremental": false,
+    "lazyCompilation": false,
+    "experiments": {
+      "newCache": false,
+      "pureFunctions": false
+    },
+    "output": {
+      "path": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/output/worktree-a77f-mixed-warmup-0",
+      "filename": "main.js",
+      "publicPath": "",
+      "pathinfo": false,
+      "library": {
+        "type": "commonjs2"
+      },
+      "uniqueName": "mixed-loader-chain-bench",
+      "clean": false
+    },
+    "optimization": {
+      "minimize": false,
+      "minimizer": [],
+      "concatenateModules": false,
+      "splitChunks": false,
+      "runtimeChunk": false,
+      "moduleIds": "natural",
+      "chunkIds": "natural",
+      "usedExports": false,
+      "sideEffects": false,
+      "providedExports": false,
+      "innerGraph": false,
+      "mangleExports": false,
+      "inlineExports": false,
+      "removeEmptyChunks": false,
+      "mergeDuplicateChunks": false,
+      "realContentHash": false,
+      "avoidEntryIife": false,
+      "nodeEnv": false,
+      "emitOnErrors": false
+    },
+    "module": {
+      "rules": [
+        {
+          "test": "/\\.js$/",
+          "include": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+          "type": "javascript/auto",
+          "use": [
+            {
+              "loader": "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/left.cjs",
+              "options": {},
+              "parallel": false,
+              "cache": false
+            },
+            {
+              "loader": "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/middle.cjs",
+              "options": {},
+              "parallel": true,
+              "cache": false
+            },
+            {
+              "loader": "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/right.cjs",
+              "options": {},
+              "parallel": false,
+              "cache": false
+            }
+          ]
+        }
+      ]
+    },
+    "plugins": [
+      "BenchmarkClock"
+    ],
+    "stats": "none",
+    "infrastructureLogging": {
+      "level": "error"
+    }
+  },
+  "effectiveCache": false,
+  "effectiveNewCache": false,
+  "effectiveOptimization": {
+    "minimize": false,
+    "minimizer": [],
+    "concatenateModules": false,
+    "splitChunks": false,
+    "runtimeChunk": false,
+    "moduleIds": "natural",
+    "chunkIds": "natural",
+    "usedExports": false,
+    "sideEffects": false,
+    "providedExports": false,
+    "innerGraph": false,
+    "mangleExports": false,
+    "inlineExports": false,
+    "removeEmptyChunks": false,
+    "mergeDuplicateChunks": false,
+    "realContentHash": false,
+    "avoidEntryIife": false,
+    "nodeEnv": false,
+    "emitOnErrors": false
+  },
+  "processMs": 14381.145052,
+  "executionOrder": 16
+}

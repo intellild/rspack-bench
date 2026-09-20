@@ -1,0 +1,9 @@
+{
+  "name": "rspack-bench-worktree-bec7",
+  "private": true,
+  "dependencies": {
+    "@rspack/core": "link:/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack",
+    "babel-loader": "10.1.1",
+    "@babel/core": "7.29.7"
+  }
+}

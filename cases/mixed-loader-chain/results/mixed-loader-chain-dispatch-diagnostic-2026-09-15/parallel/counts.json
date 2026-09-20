@@ -1,0 +1,58 @@
+{
+  "builds": [
+    {
+      "state": "cold",
+      "counts": {
+        "mainPitch": 0,
+        "mainNormal": 0,
+        "mainHooksPitch": 1,
+        "mainHooksNormal": 10000,
+        "workerPitch": 1,
+        "workerNormal": 10000,
+        "optionsRequests": 30003,
+        "functionInvokes": 0,
+        "additionalDataRequests": 0,
+        "optionsHandles": {
+          "1": 10001,
+          "2": 10001,
+          "3": 10001
+        }
+      }
+    },
+    {
+      "state": "warm",
+      "counts": {
+        "mainPitch": 0,
+        "mainNormal": 0,
+        "mainHooksPitch": 0,
+        "mainHooksNormal": 10000,
+        "workerPitch": 0,
+        "workerNormal": 10000,
+        "optionsRequests": 30000,
+        "functionInvokes": 0,
+        "additionalDataRequests": 0,
+        "optionsHandles": {
+          "1": 10000,
+          "2": 10000,
+          "3": 10000
+        }
+      }
+    }
+  ],
+  "total": {
+    "mainPitch": 0,
+    "mainNormal": 0,
+    "mainHooksPitch": 1,
+    "mainHooksNormal": 20000,
+    "workerPitch": 1,
+    "workerNormal": 20000,
+    "optionsRequests": 60003,
+    "functionInvokes": 0,
+    "additionalDataRequests": 0,
+    "optionsHandles": {
+      "1": 20001,
+      "2": 20001,
+      "3": 20001
+    }
+  }
+}

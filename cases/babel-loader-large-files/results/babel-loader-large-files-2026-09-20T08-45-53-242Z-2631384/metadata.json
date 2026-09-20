@@ -1,0 +1,48 @@
+{
+  "modules": 10000,
+  "linesPerModule": 1200,
+  "runs": 5,
+  "workers": 8,
+  "includeMain": false,
+  "versions": [
+    "v2-2-6",
+    "worktree-bec7"
+  ],
+  "startedAt": "2026-09-20T08:45:56.521Z",
+  "fixtureSha256": "6f633fd9e0ef9b96ed1b89de0e812510bd2e1f3a57b0587e11f2def2a5d52724",
+  "fixture": {
+    "minLines": 1208,
+    "maxLines": 1210,
+    "totalBytes": 457355067,
+    "functionsPerModule": 86
+  },
+  "worktree": {
+    "path": "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack",
+    "head": "954fd197fd772978a53919b56c22e469c53ebc7e",
+    "status": "",
+    "patchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "artifactHashes": {
+    "cases/babel-loader-large-files/bench.mjs": "a01c6783b4b21212f9e58cb622caebbaa1d2bf511ce354785d9218b3ab933b47",
+    "cases/babel-loader-large-files/run-build.mjs": "89ac1473d3fc951b3d34dab0023aafdb7a21b7d0b1a5e08cdbe1c16a98b9f65e",
+    "cases/babel-loader-large-files/evaluate-output.cjs": "720b46ed0ea69f6510b0f999a802192305eb541538185ae756e8e78cc79f728c",
+    "cases/babel-loader-large-files/config.mjs": "0d52df1bc9974f1789959b3690e4a872d083945d33338d0be76d57a9b2a8543f",
+    "cases/babel-loader-large-files/versions.mjs": "8bcda604fa7a2e703dd813a3b4e7cb5997ecd439da6a697658d983744ed93b09",
+    "cases/babel-loader-parallel-cache/audit-preload.cjs": "7766eabe6a26a4126e5460ba178c11907773b065720d6dc031e0195da3b77b4f",
+    "cases/babel-loader/case.mjs": "ec9f3343692b0faa4ca82bb5a63f2770374109acc1bb0b529db0bafcb6368e57",
+    "cases/noop-loader/config.mjs": "9fe152b1e446ade1717ee2942ffadb2c652da0eec7e520e420a6dbe63d6d3a7b",
+    "package.json": "fde4216d0c80f98a26462fee016701b42f5ba032c578105b599acce86342021d",
+    "pnpm-lock.yaml": "e9dc03d0f3ad69b22afb1d6e22011d8f67043c0ad8a10168686e8dd121787ccf",
+    "pnpm-workspace.yaml": "3683dba8459c7d46338a6ef8da45b72deb09389214805efdfa065d8c91ba9b09",
+    "versions/v2-2-6/package.json": "47c98d90455b16f9449c46e14649179092eba06bd67713735d96b25216efc8b0",
+    "versions/worktree-bec7/package.json": "3e85f6e358935ed098d043671ecda6669a28a4f4fdb39a9df75221a05c7e6c51"
+  },
+  "validationPairsPerGroup": 1,
+  "warmupPairsPerGroup": 1,
+  "conditions": "Development bundler configuration with release native artifacts. Optimizations, incremental, Rspack caches, loader cache and Babel disk/config caches disabled. Babel parses and generates JavaScript without presets/plugins. Identical explicit worker counts.",
+  "sequence": "Each fresh process creates one compiler: cold build, then full rebuild with all resources marked modified. Serial processes; rotating group order; OS cache retained. Validation and warmup pairs excluded from samples.",
+  "buildBoundary": "compiler.run invocation through callback; excludes setup/close, stats, audits, bundle evaluation and hashing. setupAndColdBuildMs includes compiler setup because worker boot can start there. Process includes the entire two-build child lifetime and validation overhead.",
+  "finishedAt": "2026-09-20T09:21:50.939Z",
+  "fixtureUnchanged": true,
+  "failedPairs": 0
+}

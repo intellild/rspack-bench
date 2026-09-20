@@ -14,7 +14,10 @@
     "bench:babel-loader": "zx cases/babel-loader/bench.mjs",
     "bench:less-loader": "zx cases/less-loader/bench.mjs",
     "bench:split-chunks-name": "zx cases/split-chunks-name/bench.mjs",
-    "bench:babel-loader-parallel-cache": "zx cases/babel-loader-parallel-cache/bench.mjs"
+    "bench:babel-loader-parallel-cache": "zx cases/babel-loader-parallel-cache/bench.mjs",
+    "bench:mixed-loader-chain": "zx cases/mixed-loader-chain/bench.mjs",
+    "bench:babel-loader-large-files": "zx cases/babel-loader-large-files/bench.mjs",
+    "bench:babel-css-extract": "zx cases/babel-css-extract/bench.mjs"
   },
   "devDependencies": {
     "zx": "8.8.5",

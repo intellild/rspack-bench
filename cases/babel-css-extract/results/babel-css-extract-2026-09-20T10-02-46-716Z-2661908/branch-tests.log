@@ -1,0 +1,19 @@
+   Compiling rspack_js_tasks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_js_tasks)
+   Compiling rspack_loader_runner v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_runner)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.28s
+     Running unittests src/lib.rs (target/debug/deps/rspack_loader_runner-6c7980f92f930dc4)
+
+running 10 tests
+test scheme::tests::custom_for_custom_url ... ok
+test scheme::tests::file_for_file_url ... ok
+test scheme::tests::none_for_windows_path ... ok
+test scheme::tests::data_for_data_uri ... ok
+test scheme::tests::http_for_http_url ... ok
+test loader::test::should_handle_posix_non_len_blank_unicode_correctly ... ok
+test loader::test::should_handle_win_non_len_blank_unicode_correctly ... ok
+test runner::test::should_able_to_consume_additional_data ... ok
+test runner::test::should_override_data_if_finish_with_is_not_called ... ok
+test runner::test::should_have_the_right_execution_order ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
