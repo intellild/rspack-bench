@@ -1,0 +1,92 @@
+{
+  "args": {
+    "builds": "/data00/home/jinzhixin/.codex/worktrees/c10f/rspack/target/placeholder-memory-build/builds.json",
+    "core": "/data00/home/jinzhixin/.codex/worktrees/c10f/rspack/packages/rspack/dist/index.js",
+    "modules": "1000",
+    "rules": "32",
+    "runs": "5",
+    "workers": "8",
+    "output": "results/placeholder-memory-pr15808-2026-09-22",
+    "dependencies": "/data00/home/jinzhixin/projects/rspack-bench/versions/local",
+    "cases": "runtime-template,css-native-sri,css-extract-auto-sri,css-extract-relative,url-relative,url-worker,modern-module,module-preserve,rstest,node-external",
+    "versions": "main,branch"
+  },
+  "builds": {
+    "profile": {
+      "optLevel": 3,
+      "lto": "off",
+      "codegenUnits": 16,
+      "allocator": "mimalloc v3 + requested-byte counters",
+      "features": [
+        "info-level"
+      ]
+    },
+    "versions": {
+      "main": {
+        "sha": "cb9a731cf375d5f65d046ea08219812ca8fa33c5",
+        "native": "/data00/home/jinzhixin/.codex/worktrees/c10f/rspack/target/placeholder-memory-build/main.node",
+        "nativeSha256": "c42e5eb5ffe9cf3e3432d42c96346c6736eb667c13493509ef2e00f3c7bdd172",
+        "instrumentationSha256": "a458ae802e2004f2d5c07a4d90b9c31cf3b4c90b2c9bb331ac61d2ab6446ede7",
+        "command": [
+          "cargo",
+          "build",
+          "--locked",
+          "--release",
+          "-p",
+          "rspack_node",
+          "--features",
+          "info-level"
+        ]
+      },
+      "branch": {
+        "sha": "61bde4be5db26709df773f061766793dce702122",
+        "native": "/data00/home/jinzhixin/.codex/worktrees/c10f/rspack/target/placeholder-memory-build/branch.node",
+        "nativeSha256": "9b5d370203fb6b305979b84040826c2e318fad85742900250a653e68aaad62ec",
+        "instrumentationSha256": "a458ae802e2004f2d5c07a4d90b9c31cf3b4c90b2c9bb331ac61d2ab6446ede7",
+        "command": [
+          "cargo",
+          "build",
+          "--locked",
+          "--release",
+          "-p",
+          "rspack_node",
+          "--features",
+          "info-level"
+        ]
+      }
+    },
+    "rustc": "rustc 1.97.0-nightly (e8e4541ff 2026-04-15)\nbinary: rustc\ncommit-hash: e8e4541ff19649d95afab52fdde2c2eaa6829965\ncommit-date: 2026-04-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.97.0-nightly\nLLVM version: 22.1.2\n",
+    "cargo": "cargo 1.97.0-nightly (eb94155a9 2026-04-09)\n",
+    "environment": {
+      "RUSTFLAGS": null,
+      "RUSTC_WRAPPER": null,
+      "CC": null,
+      "CFLAGS": null,
+      "CARGO_ENCODED_RUSTFLAGS": null
+    }
+  },
+  "coreHashes": {
+    "cssExtractHmr.js": "84519bfc003effe519e926b16420642d87de06bef2b76f1ec89c7d945429ae77",
+    "cssExtractLoader.js": "fc407a4dcf6760a84b11acfa85994b25f9a0ebe932fdef10973b096d68b453bf",
+    "index.js": "0edff53d9aa3a2ddcb54caaebc0a6044e72226a97f919c170abb916a2e796998",
+    "l~0.js": "47a8a92d2fffc8a72850de33bc19fd2feb0517a661ec3ad0dd63fc6ecc126550",
+    "l~3.js": "47a8a92d2fffc8a72850de33bc19fd2feb0517a661ec3ad0dd63fc6ecc126550",
+    "moduleFederationDefaultRuntime.js": "b4b90f429a990768956e9efb1d2a19f362dbef3915a4d402379e918d2a835082",
+    "worker.js": "389ba110267e11291ef4ba2d6e200d61a9b122fb07f5a0f5bcbf046266027bfc"
+  },
+  "dependencies": {
+    "css-loader": {
+      "version": "7.1.5",
+      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/css-loader@7.1.5_@rspack+core@..+rstack+rspack+packages+rspack/node_modules/css-loader/dist/cjs.js",
+      "sha256": "56124fb0cf9070e90851369a1824da2b3ed047af5cbef63680e6dba29da900e7"
+    }
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "Intel(R) Xeon(R) Platinum 8336C CPU @ 2.30GHz",
+    "cpus": 32,
+    "totalMemory": 67261816832
+  }
+}

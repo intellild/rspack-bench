@@ -17,7 +17,8 @@
     "bench:babel-loader-parallel-cache": "zx cases/babel-loader-parallel-cache/bench.mjs",
     "bench:mixed-loader-chain": "zx cases/mixed-loader-chain/bench.mjs",
     "bench:babel-loader-large-files": "zx cases/babel-loader-large-files/bench.mjs",
-    "bench:babel-css-extract": "zx cases/babel-css-extract/bench.mjs"
+    "bench:babel-css-extract": "zx cases/babel-css-extract/bench.mjs",
+    "bench:placeholder-memory": "node cases/placeholder-memory/bench.mjs"
   },
   "devDependencies": {
     "zx": "8.8.5",

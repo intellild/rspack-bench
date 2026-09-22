@@ -1,0 +1,772 @@
+[
+  {
+    "scenario": "runtime-template",
+    "versions": {
+      "main": {
+        "peakBytes": {
+          "median": 41233682,
+          "min": 41127931,
+          "max": 41288154
+        },
+        "peakAboveBaselineBytes": {
+          "median": 41061402,
+          "min": 40955779,
+          "max": 41116002
+        },
+        "liveBytes": {
+          "median": 37841759,
+          "min": 37687126,
+          "max": 37984339
+        },
+        "liveAboveBaselineBytes": {
+          "median": 37669607,
+          "min": 37514974,
+          "max": 37812059
+        },
+        "allocatedBytes": {
+          "median": 171898243,
+          "min": 171695840,
+          "max": 171960096
+        },
+        "allocationCalls": {
+          "median": 748973,
+          "min": 748641,
+          "max": 749443
+        }
+      },
+      "branch": {
+        "peakBytes": {
+          "median": 41098072,
+          "min": 41025586,
+          "max": 41113101
+        },
+        "peakAboveBaselineBytes": {
+          "median": 40925920,
+          "min": 40853306,
+          "max": 40940821
+        },
+        "liveBytes": {
+          "median": 37667233,
+          "min": 37579726,
+          "max": 37698209
+        },
+        "liveAboveBaselineBytes": {
+          "median": 37494953,
+          "min": 37407446,
+          "max": 37525929
+        },
+        "allocatedBytes": {
+          "median": 171089264,
+          "min": 170982322,
+          "max": 171140152
+        },
+        "allocationCalls": {
+          "median": 747449,
+          "min": 747264,
+          "max": 747637
+        }
+      }
+    },
+    "deltaPercent": {
+      "peakBytes": -0.3288816167326458,
+      "peakAboveBaselineBytes": -0.32994976644976637,
+      "liveBytes": -0.461199491281572,
+      "liveAboveBaselineBytes": -0.46364699265378784,
+      "allocatedBytes": -0.4706150486948224,
+      "allocationCalls": -0.2034786300707747
+    }
+  },
+  {
+    "scenario": "css-native-sri",
+    "versions": {
+      "main": {
+        "peakBytes": {
+          "median": 260147076,
+          "min": 259303773,
+          "max": 260356637
+        },
+        "peakAboveBaselineBytes": {
+          "median": 259974924,
+          "min": 259131493,
+          "max": 260184357
+        },
+        "liveBytes": {
+          "median": 236594658,
+          "min": 233792011,
+          "max": 239965132
+        },
+        "liveAboveBaselineBytes": {
+          "median": 236422378,
+          "min": 233619859,
+          "max": 239792980
+        },
+        "allocatedBytes": {
+          "median": 1134661832,
+          "min": 1132932190,
+          "max": 1136467348
+        },
+        "allocationCalls": {
+          "median": 5533239,
+          "min": 5532712,
+          "max": 5535064
+        }
+      },
+      "branch": {
+        "peakBytes": {
+          "median": 258739632,
+          "min": 258323289,
+          "max": 260771318
+        },
+        "peakAboveBaselineBytes": {
+          "median": 258567352,
+          "min": 258151009,
+          "max": 260599038
+        },
+        "liveBytes": {
+          "median": 235867574,
+          "min": 234421063,
+          "max": 239120086
+        },
+        "liveAboveBaselineBytes": {
+          "median": 235695294,
+          "min": 234248783,
+          "max": 238947806
+        },
+        "allocatedBytes": {
+          "median": 1113802597,
+          "min": 1111606664,
+          "max": 1119194358
+        },
+        "allocationCalls": {
+          "median": 5332043,
+          "min": 5330944,
+          "max": 5333861
+        }
+      }
+    },
+    "deltaPercent": {
+      "peakBytes": -0.5410185736625439,
+      "peakAboveBaselineBytes": -0.541426064615369,
+      "liveBytes": -0.3073120949332653,
+      "liveAboveBaselineBytes": -0.3075360319740983,
+      "allocatedBytes": -1.838365794258956,
+      "allocationCalls": -3.636134278674752
+    }
+  },
+  {
+    "scenario": "css-extract-auto-sri",
+    "versions": {
+      "main": {
+        "peakBytes": {
+          "median": 179522998,
+          "min": 179441521,
+          "max": 179698499
+        },
+        "peakAboveBaselineBytes": {
+          "median": 179350718,
+          "min": 179269241,
+          "max": 179526219
+        },
+        "liveBytes": {
+          "median": 170321236,
+          "min": 162318598,
+          "max": 170421413
+        },
+        "liveAboveBaselineBytes": {
+          "median": 170148956,
+          "min": 162146318,
+          "max": 170249133
+        },
+        "allocatedBytes": {
+          "median": 1974315388,
+          "min": 1974010200,
+          "max": 1974997388
+        },
+        "allocationCalls": {
+          "median": 7135885,
+          "min": 7134478,
+          "max": 7138530
+        }
+      },
+      "branch": {
+        "peakBytes": {
+          "median": 179580085,
+          "min": 179437393,
+          "max": 179756455
+        },
+        "peakAboveBaselineBytes": {
+          "median": 179407933,
+          "min": 179265241,
+          "max": 179584175
+        },
+        "liveBytes": {
+          "median": 168658400,
+          "min": 163099565,
+          "max": 169394725
+        },
+        "liveAboveBaselineBytes": {
+          "median": 168486120,
+          "min": 162927285,
+          "max": 169222445
+        },
+        "allocatedBytes": {
+          "median": 1942506916,
+          "min": 1941786576,
+          "max": 1942904250
+        },
+        "allocationCalls": {
+          "median": 7102643,
+          "min": 7099868,
+          "max": 7103000
+        }
+      }
+    },
+    "deltaPercent": {
+      "peakBytes": 0.031799268414633985,
+      "peakAboveBaselineBytes": 0.03190118257569985,
+      "liveBytes": -0.9762939954240379,
+      "liveAboveBaselineBytes": -0.9772825170904942,
+      "allocatedBytes": -1.6111140192359152,
+      "allocationCalls": -0.46584270906832037
+    }
+  },
+  {
+    "scenario": "css-extract-relative",
+    "versions": {
+      "main": {
+        "peakBytes": {
+          "median": 182290417,
+          "min": 182046234,
+          "max": 182781268
+        },
+        "peakAboveBaselineBytes": {
+          "median": 182118137,
+          "min": 181874082,
+          "max": 182609116
+        },
+        "liveBytes": {
+          "median": 168876070,
+          "min": 167758764,
+          "max": 175605137
+        },
+        "liveAboveBaselineBytes": {
+          "median": 168703918,
+          "min": 167586484,
+          "max": 175432857
+        },
+        "allocatedBytes": {
+          "median": 1955041136,
+          "min": 1954461120,
+          "max": 1956085780
+        },
+        "allocationCalls": {
+          "median": 7075460,
+          "min": 7074051,
+          "max": 7078625
+        }
+      },
+      "branch": {
+        "peakBytes": {
+          "median": 182087515,
+          "min": 181986329,
+          "max": 182180889
+        },
+        "peakAboveBaselineBytes": {
+          "median": 181915235,
+          "min": 181814049,
+          "max": 182008737
+        },
+        "liveBytes": {
+          "median": 168932264,
+          "min": 167350382,
+          "max": 175118372
+        },
+        "liveAboveBaselineBytes": {
+          "median": 168760112,
+          "min": 167178102,
+          "max": 174946092
+        },
+        "allocatedBytes": {
+          "median": 1923098362,
+          "min": 1922724669,
+          "max": 1923377593
+        },
+        "allocationCalls": {
+          "median": 7043067,
+          "min": 7042606,
+          "max": 7043662
+        }
+      }
+    },
+    "deltaPercent": {
+      "peakBytes": -0.11130700304449181,
+      "peakAboveBaselineBytes": -0.1114122971727971,
+      "liveBytes": 0.033275288796108526,
+      "liveAboveBaselineBytes": 0.033309244187207376,
+      "allocatedBytes": -1.6338671044720199,
+      "allocationCalls": -0.45782182359874746
+    }
+  },
+  {
+    "scenario": "url-relative",
+    "versions": {
+      "main": {
+        "peakBytes": {
+          "median": 40256931,
+          "min": 40243457,
+          "max": 40289472
+        },
+        "peakAboveBaselineBytes": {
+          "median": 40084651,
+          "min": 40071177,
+          "max": 40117320
+        },
+        "liveBytes": {
+          "median": 36905609,
+          "min": 36891387,
+          "max": 37435911
+        },
+        "liveAboveBaselineBytes": {
+          "median": 36733329,
+          "min": 36719107,
+          "max": 37263759
+        },
+        "allocatedBytes": {
+          "median": 161887252,
+          "min": 161816982,
+          "max": 161998299
+        },
+        "allocationCalls": {
+          "median": 699497,
+          "min": 698222,
+          "max": 700093
+        }
+      },
+      "branch": {
+        "peakBytes": {
+          "median": 40233782,
+          "min": 40220130,
+          "max": 40294599
+        },
+        "peakAboveBaselineBytes": {
+          "median": 40061502,
+          "min": 40047978,
+          "max": 40122319
+        },
+        "liveBytes": {
+          "median": 36909319,
+          "min": 36867099,
+          "max": 37440543
+        },
+        "liveAboveBaselineBytes": {
+          "median": 36737039,
+          "min": 36694947,
+          "max": 37268263
+        },
+        "allocatedBytes": {
+          "median": 161256060,
+          "min": 161175162,
+          "max": 161439082
+        },
+        "allocationCalls": {
+          "median": 698454,
+          "min": 698170,
+          "max": 699491
+        }
+      }
+    },
+    "deltaPercent": {
+      "peakBytes": -0.05750314150873015,
+      "peakAboveBaselineBytes": -0.05775028451663333,
+      "liveBytes": 0.01005267248130881,
+      "liveAboveBaselineBytes": 0.010099819703235369,
+      "allocatedBytes": -0.38989604938133304,
+      "allocationCalls": -0.14910714413357562
+    }
+  },
+  {
+    "scenario": "url-worker",
+    "versions": {
+      "main": {
+        "peakBytes": {
+          "median": 43130686,
+          "min": 43076680,
+          "max": 43160967
+        },
+        "peakAboveBaselineBytes": {
+          "median": 42958406,
+          "min": 42904528,
+          "max": 42988815
+        },
+        "liveBytes": {
+          "median": 40460205,
+          "min": 40413713,
+          "max": 40633132
+        },
+        "liveAboveBaselineBytes": {
+          "median": 40287925,
+          "min": 40241433,
+          "max": 40460980
+        },
+        "allocatedBytes": {
+          "median": 159948555,
+          "min": 159686650,
+          "max": 160041104
+        },
+        "allocationCalls": {
+          "median": 669344,
+          "min": 668694,
+          "max": 669403
+        }
+      },
+      "branch": {
+        "peakBytes": {
+          "median": 40003378,
+          "min": 39922682,
+          "max": 40023413
+        },
+        "peakAboveBaselineBytes": {
+          "median": 39831098,
+          "min": 39750402,
+          "max": 39851261
+        },
+        "liveBytes": {
+          "median": 37330658,
+          "min": 37248688,
+          "max": 37350841
+        },
+        "liveAboveBaselineBytes": {
+          "median": 37158378,
+          "min": 37076408,
+          "max": 37178561
+        },
+        "allocatedBytes": {
+          "median": 153006582,
+          "min": 152935525,
+          "max": 153163649
+        },
+        "allocationCalls": {
+          "median": 663187,
+          "min": 662684,
+          "max": 663310
+        }
+      }
+    },
+    "deltaPercent": {
+      "peakBytes": -7.25077268652764,
+      "peakAboveBaselineBytes": -7.279851119243109,
+      "liveBytes": -7.734876775834431,
+      "liveAboveBaselineBytes": -7.767952804717537,
+      "allocatedBytes": -4.340128611977767,
+      "allocationCalls": -0.9198558588707773
+    }
+  },
+  {
+    "scenario": "modern-module",
+    "versions": {
+      "main": {
+        "peakBytes": {
+          "median": 110148264,
+          "min": 110016829,
+          "max": 110210172
+        },
+        "peakAboveBaselineBytes": {
+          "median": 109975984,
+          "min": 109844549,
+          "max": 110037892
+        },
+        "liveBytes": {
+          "median": 104351998,
+          "min": 104214406,
+          "max": 104416033
+        },
+        "liveAboveBaselineBytes": {
+          "median": 104179718,
+          "min": 104042126,
+          "max": 104243753
+        },
+        "allocatedBytes": {
+          "median": 519320240,
+          "min": 518951815,
+          "max": 519529392
+        },
+        "allocationCalls": {
+          "median": 2409472,
+          "min": 2409169,
+          "max": 2410620
+        }
+      },
+      "branch": {
+        "peakBytes": {
+          "median": 106966867,
+          "min": 106863781,
+          "max": 107049206
+        },
+        "peakAboveBaselineBytes": {
+          "median": 106794587,
+          "min": 106691501,
+          "max": 106876926
+        },
+        "liveBytes": {
+          "median": 101169144,
+          "min": 101066809,
+          "max": 101244454
+        },
+        "liveAboveBaselineBytes": {
+          "median": 100996864,
+          "min": 100894529,
+          "max": 101072174
+        },
+        "allocatedBytes": {
+          "median": 510962138,
+          "min": 510606395,
+          "max": 511195311
+        },
+        "allocationCalls": {
+          "median": 2396297,
+          "min": 2395765,
+          "max": 2397063
+        }
+      }
+    },
+    "deltaPercent": {
+      "peakBytes": -2.8882861013588057,
+      "peakAboveBaselineBytes": -2.892810670373269,
+      "liveBytes": -3.05011313726834,
+      "liveAboveBaselineBytes": -3.0551570508186687,
+      "allocatedBytes": -1.609431205685341,
+      "allocationCalls": -0.5468002948363804
+    }
+  },
+  {
+    "scenario": "module-preserve",
+    "versions": {
+      "main": {
+        "peakBytes": {
+          "median": 81015388,
+          "min": 80973223,
+          "max": 81177010
+        },
+        "peakAboveBaselineBytes": {
+          "median": 80843236,
+          "min": 80800943,
+          "max": 81004730
+        },
+        "liveBytes": {
+          "median": 74338890,
+          "min": 74287182,
+          "max": 74496005
+        },
+        "liveAboveBaselineBytes": {
+          "median": 74166738,
+          "min": 74114902,
+          "max": 74323725
+        },
+        "allocatedBytes": {
+          "median": 386595343,
+          "min": 386363639,
+          "max": 386838424
+        },
+        "allocationCalls": {
+          "median": 1850752,
+          "min": 1849811,
+          "max": 1851070
+        }
+      },
+      "branch": {
+        "peakBytes": {
+          "median": 77878712,
+          "min": 77846773,
+          "max": 78067695
+        },
+        "peakAboveBaselineBytes": {
+          "median": 77706432,
+          "min": 77674493,
+          "max": 77895415
+        },
+        "liveBytes": {
+          "median": 71301097,
+          "min": 71183943,
+          "max": 71461204
+        },
+        "liveAboveBaselineBytes": {
+          "median": 71128817,
+          "min": 71011663,
+          "max": 71288924
+        },
+        "allocatedBytes": {
+          "median": 379246906,
+          "min": 379103681,
+          "max": 379482389
+        },
+        "allocationCalls": {
+          "median": 1843582,
+          "min": 1842646,
+          "max": 1844478
+        }
+      }
+    },
+    "deltaPercent": {
+      "peakBytes": -3.871703978014651,
+      "peakAboveBaselineBytes": -3.8801069269419175,
+      "liveBytes": -4.086411567350545,
+      "liveAboveBaselineBytes": -4.096069318836704,
+      "allocatedBytes": -1.9008084636963685,
+      "allocationCalls": -0.3874100906010147
+    }
+  },
+  {
+    "scenario": "rstest",
+    "versions": {
+      "main": {
+        "peakBytes": {
+          "median": 37410896,
+          "min": 37383560,
+          "max": 37550992
+        },
+        "peakAboveBaselineBytes": {
+          "median": 37238616,
+          "min": 37211408,
+          "max": 37378712
+        },
+        "liveBytes": {
+          "median": 34057683,
+          "min": 34030347,
+          "max": 34197779
+        },
+        "liveAboveBaselineBytes": {
+          "median": 33885403,
+          "min": 33858195,
+          "max": 34025499
+        },
+        "allocatedBytes": {
+          "median": 5017324869,
+          "min": 5017315042,
+          "max": 5017609170
+        },
+        "allocationCalls": {
+          "median": 559386,
+          "min": 559028,
+          "max": 559501
+        }
+      },
+      "branch": {
+        "peakBytes": {
+          "median": 37441391,
+          "min": 37224335,
+          "max": 37456911
+        },
+        "peakAboveBaselineBytes": {
+          "median": 37269239,
+          "min": 37052055,
+          "max": 37284631
+        },
+        "liveBytes": {
+          "median": 34088178,
+          "min": 33871122,
+          "max": 34103698
+        },
+        "liveAboveBaselineBytes": {
+          "median": 33916026,
+          "min": 33698842,
+          "max": 33931418
+        },
+        "allocatedBytes": {
+          "median": 5013420620,
+          "min": 5013001840,
+          "max": 5013449375
+        },
+        "allocationCalls": {
+          "median": 543810,
+          "min": 543645,
+          "max": 543922
+        }
+      }
+    },
+    "deltaPercent": {
+      "peakBytes": 0.08151368521085445,
+      "peakAboveBaselineBytes": 0.08223452772788686,
+      "liveBytes": 0.089539267835681,
+      "liveAboveBaselineBytes": 0.09037224671637478,
+      "allocatedBytes": -0.0778153518446234,
+      "allocationCalls": -2.7844815565638004
+    }
+  },
+  {
+    "scenario": "node-external",
+    "versions": {
+      "main": {
+        "peakBytes": {
+          "median": 34535075,
+          "min": 33183347,
+          "max": 35652160
+        },
+        "peakAboveBaselineBytes": {
+          "median": 34362795,
+          "min": 33011067,
+          "max": 35480008
+        },
+        "liveBytes": {
+          "median": 31276238,
+          "min": 31174086,
+          "max": 31322054
+        },
+        "liveAboveBaselineBytes": {
+          "median": 31104086,
+          "min": 31001806,
+          "max": 31149774
+        },
+        "allocatedBytes": {
+          "median": 174212128,
+          "min": 174003928,
+          "max": 174314182
+        },
+        "allocationCalls": {
+          "median": 723223,
+          "min": 722609,
+          "max": 723268
+        }
+      },
+      "branch": {
+        "peakBytes": {
+          "median": 34433395,
+          "min": 33215407,
+          "max": 35597187
+        },
+        "peakAboveBaselineBytes": {
+          "median": 34261115,
+          "min": 33043127,
+          "max": 35424907
+        },
+        "liveBytes": {
+          "median": 31215505,
+          "min": 31122729,
+          "max": 31233937
+        },
+        "liveAboveBaselineBytes": {
+          "median": 31043225,
+          "min": 30950449,
+          "max": 31061657
+        },
+        "allocatedBytes": {
+          "median": 173746016,
+          "min": 173550732,
+          "max": 173843184
+        },
+        "allocationCalls": {
+          "median": 712480,
+          "min": 711866,
+          "max": 712894
+        }
+      }
+    },
+    "deltaPercent": {
+      "peakBytes": -0.29442530528744904,
+      "peakAboveBaselineBytes": -0.29590142478224113,
+      "liveBytes": -0.19418256121468414,
+      "liveAboveBaselineBytes": -0.19566882627575222,
+      "allocatedBytes": -0.2675542772774153,
+      "allocationCalls": -1.4854339532896499
+    }
+  }
+]
