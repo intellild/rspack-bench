@@ -46,7 +46,7 @@ Rust loader_yield: before boxed context move
   → complete enter → result returned → Rust context restored
 ```
 
-`diagnostics.mjs` joins each resource's cold/rebuild invocation with its native task and module lifecycle. It verifies task phase, routing, counts and thread IDs. `diagnostics.md` reports p50/p95/max; JSON additionally includes mean and sum. The worker callback currently awaits `prepareWorkerTask` RPC on main before `takeContext`; this wait is included in “callback + main prepare”. N-API conversion, runner work and RPC inside the JS interval are part of its residual after subtracting the actual body.
+`diagnostics.mjs` joins each resource's cold/rebuild invocation with its native task and module lifecycle. It verifies task phase, routing, counts and thread IDs. `diagnostics.md` reports p50/p95/max; JSON additionally includes mean and sum. The worker callback awaits `prepareWorkerTask` RPC on main before `takeContext`; this wait is included in “callback + main prepare”. The current branch skips the NormalModule loader hook for worker tasks and returns the API bridge data in that same response. It no longer performs a second synchronous getMainObject request. Older result snapshots retain their original hook/bridge behavior. N-API conversion, runner work and RPC inside the JS interval are part of its residual after subtracting the actual body.
 
 All these durations are latency, including waits. Concurrent task sums overlap. Extract pitch contains the nested CSS loader build, and Babel body contains transform; do not add nested intervals or interpret residuals as pure CPU overhead. Instrumented runs perturb contention and are excluded from performance medians. Whole-version differences cannot isolate queue dispatch as the sole cause.
 
@@ -55,3 +55,7 @@ Results are saved under `results/babel-css-extract-*`; the latest complete run i
 ## Recorded results
 
 [10,000-module mixed comparison](results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/README.md).
+
+## Recorded results
+
+[10,000-module mixed comparison](results/babel-css-extract-2026-09-20T11-37-49-482Z-2750617/README.md).

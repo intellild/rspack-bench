@@ -7,11 +7,11 @@
   "round": 0,
   "verify": false,
   "modules": 10000,
-  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/fixture",
+  "fixture": "~/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/fixture",
   "fixtureSha256": "739a3f11c1fa2f9647cbb2bfdfb68809745d8964e4d52be50fc9e15e51790787",
-  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/output/worktree-0385-baseline-warmup-0",
-  "statsFile": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/stats/worktree-0385-baseline-warmup-0.json",
-  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/raw/worktree-0385-baseline-warmup-0.json",
+  "output": "~/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/output/worktree-0385-baseline-warmup-0",
+  "statsFile": "~/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/stats/worktree-0385-baseline-warmup-0.json",
+  "resultFile": "~/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/raw/worktree-0385-baseline-warmup-0.json",
   "timings": {
     "buildMs": 316.426159,
     "compilerSetupMs": 10.365008,
@@ -26,24 +26,24 @@
   "dependencies": {
     "less-loader": {
       "version": "13.0.0",
-      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/less-loader@13.0.0_@rspack+core@..+.codex+worktrees+0385+rspack+packages+rspack_less@4.9.1/node_modules/less-loader/dist/cjs/index.js",
+      "entry": "~/projects/rspack-bench/node_modules/.pnpm/less-loader@13.0.0_@rspack+core@..+.codex+worktrees+0385+rspack+packages+rspack_less@4.9.1/node_modules/less-loader/dist/cjs/index.js",
       "sha256": "1253263daa9caf510ca8c5a2f6c3bbb4acc67c15b1547652f2d6a489110ccce9"
     },
     "less": {
       "version": "4.9.1",
-      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/less@4.9.1/node_modules/less/lib/less-node/index.js",
+      "entry": "~/projects/rspack-bench/node_modules/.pnpm/less@4.9.1/node_modules/less/lib/less-node/index.js",
       "sha256": "4b2357a041cee4468c534121ca55f7dab567dd2dc61d7e41276a6b59c0076839"
     }
   },
   "loadedPaths": {
-    "core": "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/packages/rspack/dist/index.js",
-    "binding": "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/crates/node_binding/binding.js",
-    "nativeBinding": "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/crates/node_binding/rspack.linux-x64-gnu.node"
+    "core": "~/.codex/worktrees/0385/rspack/packages/rspack/dist/index.js",
+    "binding": "~/.codex/worktrees/0385/rspack/crates/node_binding/binding.js",
+    "nativeBinding": "~/.codex/worktrees/0385/rspack/crates/node_binding/rspack.linux-x64-gnu.node"
   },
   "artifacts": {
-    "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/packages/rspack/dist/index.js": "92a63dac856dc284b9424a70ba6065864913d7598624cf18628958caf2d691f2",
-    "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/crates/node_binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
-    "/data00/home/jinzhixin/.codex/worktrees/0385/rspack/crates/node_binding/rspack.linux-x64-gnu.node": "038cab23095d431e1554c3521f89b3ca44948a8e82c84ef39a6eea6a36fbc41e"
+    "~/.codex/worktrees/0385/rspack/packages/rspack/dist/index.js": "92a63dac856dc284b9424a70ba6065864913d7598624cf18628958caf2d691f2",
+    "~/.codex/worktrees/0385/rspack/crates/node_binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "~/.codex/worktrees/0385/rspack/crates/node_binding/rspack.linux-x64-gnu.node": "038cab23095d431e1554c3521f89b3ca44948a8e82c84ef39a6eea6a36fbc41e"
   },
   "environment": {
     "node": "v24.20.0",
@@ -79,7 +79,7 @@
     "warnings": 0
   },
   "config": {
-    "context": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/fixture",
+    "context": "~/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/fixture",
     "entry": "./index-css.js",
     "mode": "development",
     "target": [
@@ -95,7 +95,7 @@
       "pureFunctions": false
     },
     "output": {
-      "path": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/output/worktree-0385-baseline-warmup-0",
+      "path": "~/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/output/worktree-0385-baseline-warmup-0",
       "filename": "main.js",
       "publicPath": "",
       "pathinfo": false,
@@ -131,7 +131,7 @@
       "rules": [
         {
           "test": "/\\.(?:less|css)$/",
-          "include": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/fixture",
+          "include": "~/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/fixture",
           "type": "css",
           "use": []
         }

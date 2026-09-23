@@ -4,10 +4,10 @@ Compares published **Rspack 2.2.6** with the release build of `codex/loader-runn
 
 ```bash
 # Build the branch before measuring; do not build or run other benchmarks concurrently.
-cd /data00/home/jinzhixin/.codex/worktrees/bec7/rspack
+cd ~/.codex/worktrees/bec7/rspack
 pnpm run build:cli:release
 
-cd /home/jinzhixin/projects/rspack-bench
+cd ~/projects/rspack-bench
 pnpm install --frozen-lockfile
 pnpm bench:babel-loader-large-files --modules 10000 --lines 1200 --workers 8 --runs 5
 ```

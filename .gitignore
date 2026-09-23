@@ -3,3 +3,4 @@ fixture/
 /results/
 .bench-running/
 .pnpm-store/
+__pycache__/

@@ -9,7 +9,7 @@
   "startedAt": "2026-09-11T14:29:45.853Z",
   "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
   "worktree": {
-    "path": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack",
+    "path": "~/.codex/worktrees/a77f/rspack",
     "head": "bbb58b8516649f14c896399db802031151bb0057",
     "status": "M crates/node_binding/napi-binding.d.ts\n M crates/rspack_binding_api/src/raw_options/raw_split_chunks/mod.rs\n M crates/rspack_binding_api/src/raw_options/raw_split_chunks/raw_split_chunk_name.rs\n M crates/rspack_binding_api/src/worker.rs\n M packages/rspack/src/Compiler.ts\n M packages/rspack/src/builtin-plugin/SplitChunksPlugin.ts\n M packages/rspack/src/loader-runner/service.ts\n M packages/rspack/src/loader-runner/worker.ts\n M packages/rspack/src/workerFunction.ts\n M website/docs/en/api/javascript-api/worker-function.mdx\n M website/docs/zh/api/javascript-api/worker-function.mdx\n?? tests/rspack-test/compilerCases/fixtures/worker-function-split-chunks/\n?? tests/rspack-test/compilerCases/worker-function-split-chunks.js",
     "patchSha256": "64d122da4e4b293a9a050486961ec7d64d6992001eb6cae74aafc8201e8b8811"

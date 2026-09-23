@@ -1,5 +1,5 @@
-   Compiling rspack_js_tasks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_js_tasks)
-   Compiling rspack_loader_runner v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_runner)
+   Compiling rspack_js_tasks v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_js_tasks)
+   Compiling rspack_loader_runner v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_loader_runner)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 3.28s
      Running unittests src/lib.rs (target/debug/deps/rspack_loader_runner-6c7980f92f930dc4)
 

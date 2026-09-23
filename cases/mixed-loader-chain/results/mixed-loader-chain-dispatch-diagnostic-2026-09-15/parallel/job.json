@@ -7,10 +7,10 @@
   "sourceRevision": "source",
   "verify": false,
   "modules": 10000,
-  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixture": "~/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
   "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
-  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-dispatch-diagnostic-2026-09-15/parallel/output",
-  "statsDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-dispatch-diagnostic-2026-09-15/parallel/stats",
-  "auditDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-dispatch-diagnostic-2026-09-15/parallel/audit",
-  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-dispatch-diagnostic-2026-09-15/parallel/result.json"
+  "output": "~/projects/rspack-bench/results/mixed-loader-chain-dispatch-diagnostic-2026-09-15/parallel/output",
+  "statsDirectory": "~/projects/rspack-bench/results/mixed-loader-chain-dispatch-diagnostic-2026-09-15/parallel/stats",
+  "auditDirectory": "~/projects/rspack-bench/results/mixed-loader-chain-dispatch-diagnostic-2026-09-15/parallel/audit",
+  "resultFile": "~/projects/rspack-bench/results/mixed-loader-chain-dispatch-diagnostic-2026-09-15/parallel/result.json"
 }

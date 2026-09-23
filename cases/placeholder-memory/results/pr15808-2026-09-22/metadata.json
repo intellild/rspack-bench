@@ -1,13 +1,13 @@
 {
   "args": {
-    "builds": "/data00/home/jinzhixin/.codex/worktrees/c10f/rspack/target/placeholder-memory-build/builds.json",
-    "core": "/data00/home/jinzhixin/.codex/worktrees/c10f/rspack/packages/rspack/dist/index.js",
+    "builds": "~/.codex/worktrees/c10f/rspack/target/placeholder-memory-build/builds.json",
+    "core": "~/.codex/worktrees/c10f/rspack/packages/rspack/dist/index.js",
     "modules": "1000",
     "rules": "32",
     "runs": "5",
     "workers": "8",
     "output": "results/placeholder-memory-pr15808-2026-09-22",
-    "dependencies": "/data00/home/jinzhixin/projects/rspack-bench/versions/local",
+    "dependencies": "~/projects/rspack-bench/versions/local",
     "cases": "runtime-template,css-native-sri,css-extract-auto-sri,css-extract-relative,url-relative,url-worker,modern-module,module-preserve,rstest,node-external",
     "versions": "main,branch"
   },
@@ -24,7 +24,7 @@
     "versions": {
       "main": {
         "sha": "cb9a731cf375d5f65d046ea08219812ca8fa33c5",
-        "native": "/data00/home/jinzhixin/.codex/worktrees/c10f/rspack/target/placeholder-memory-build/main.node",
+        "native": "~/.codex/worktrees/c10f/rspack/target/placeholder-memory-build/main.node",
         "nativeSha256": "c42e5eb5ffe9cf3e3432d42c96346c6736eb667c13493509ef2e00f3c7bdd172",
         "instrumentationSha256": "a458ae802e2004f2d5c07a4d90b9c31cf3b4c90b2c9bb331ac61d2ab6446ede7",
         "command": [
@@ -40,7 +40,7 @@
       },
       "branch": {
         "sha": "61bde4be5db26709df773f061766793dce702122",
-        "native": "/data00/home/jinzhixin/.codex/worktrees/c10f/rspack/target/placeholder-memory-build/branch.node",
+        "native": "~/.codex/worktrees/c10f/rspack/target/placeholder-memory-build/branch.node",
         "nativeSha256": "9b5d370203fb6b305979b84040826c2e318fad85742900250a653e68aaad62ec",
         "instrumentationSha256": "a458ae802e2004f2d5c07a4d90b9c31cf3b4c90b2c9bb331ac61d2ab6446ede7",
         "command": [
@@ -77,7 +77,7 @@
   "dependencies": {
     "css-loader": {
       "version": "7.1.5",
-      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/css-loader@7.1.5_@rspack+core@..+rstack+rspack+packages+rspack/node_modules/css-loader/dist/cjs.js",
+      "entry": "~/projects/rspack-bench/node_modules/.pnpm/css-loader@7.1.5_@rspack+core@..+rstack+rspack+packages+rspack/node_modules/css-loader/dist/cjs.js",
       "sha256": "56124fb0cf9070e90851369a1824da2b3ed047af5cbef63680e6dba29da900e7"
     }
   },

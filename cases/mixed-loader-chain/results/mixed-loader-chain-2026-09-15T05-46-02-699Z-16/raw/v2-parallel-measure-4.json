@@ -7,33 +7,33 @@
   "sourceRevision": "source",
   "verify": false,
   "modules": 10000,
-  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixture": "~/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
   "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
-  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/output/v2-parallel-measure-4",
-  "statsDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/stats/v2-parallel-measure-4",
-  "auditDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/audit/v2-parallel-measure-4",
-  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/raw/v2-parallel-measure-4.json",
+  "output": "~/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/output/v2-parallel-measure-4",
+  "statsDirectory": "~/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/stats/v2-parallel-measure-4",
+  "auditDirectory": "~/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/audit/v2-parallel-measure-4",
+  "resultFile": "~/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/raw/v2-parallel-measure-4.json",
   "packageVersion": "2.2.3",
   "compiledVersion": "2.2.3",
   "artifacts": {
-    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js": "5b8a8e7a063ef63ee0a709a284792537ea8d544b2f8e7e67a83ba36ef42c32ba",
-    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.2.3/node_modules/@rspack/binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
-    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.2.3/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node": "5842ccdf40d67f08781ac217dd63288da0facdb86e6797ba2c255583abd29661",
-    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/worker.js": "67a2a5b0cd6ae6ecf629a09543e1e01102745a473a5523e508440346b1c8298e"
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js": "5b8a8e7a063ef63ee0a709a284792537ea8d544b2f8e7e67a83ba36ef42c32ba",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.2.3/node_modules/@rspack/binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.2.3/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node": "5842ccdf40d67f08781ac217dd63288da0facdb86e6797ba2c255583abd29661",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/worker.js": "67a2a5b0cd6ae6ecf629a09543e1e01102745a473a5523e508440346b1c8298e"
   },
   "loaders": {
-    "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/left.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f",
-    "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/middle.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f",
-    "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/right.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f"
+    "~/projects/rspack-bench/cases/mixed-loader-chain/loaders/left.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f",
+    "~/projects/rspack-bench/cases/mixed-loader-chain/loaders/middle.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f",
+    "~/projects/rspack-bench/cases/mixed-loader-chain/loaders/right.cjs": "2e22819363dcda34a360af022c0286610ac652581e53cbb7c714b990c76dce4f"
   },
   "loadedPaths": {
-    "core": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js",
-    "binding": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.2.3/node_modules/@rspack/binding/binding.js",
-    "native": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.2.3/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node",
+    "core": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js",
+    "binding": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.2.3/node_modules/@rspack/binding/binding.js",
+    "native": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.2.3/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node",
     "loaders": [
-      "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/left.cjs",
-      "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/middle.cjs",
-      "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/right.cjs"
+      "~/projects/rspack-bench/cases/mixed-loader-chain/loaders/left.cjs",
+      "~/projects/rspack-bench/cases/mixed-loader-chain/loaders/middle.cjs",
+      "~/projects/rspack-bench/cases/mixed-loader-chain/loaders/right.cjs"
     ]
   },
   "environment": {
@@ -101,7 +101,7 @@
   ],
   "failures": [],
   "config": {
-    "context": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+    "context": "~/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
     "entry": "./module-00000.js",
     "mode": "development",
     "target": [
@@ -117,7 +117,7 @@
       "pureFunctions": false
     },
     "output": {
-      "path": "/data00/home/jinzhixin/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/output/v2-parallel-measure-4",
+      "path": "~/projects/rspack-bench/results/mixed-loader-chain-2026-09-15T05-46-02-699Z-16/output/v2-parallel-measure-4",
       "filename": "main.js",
       "publicPath": "",
       "pathinfo": false,
@@ -152,23 +152,23 @@
       "rules": [
         {
           "test": "/\\.js$/",
-          "include": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+          "include": "~/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
           "type": "javascript/auto",
           "use": [
             {
-              "loader": "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/left.cjs",
+              "loader": "~/projects/rspack-bench/cases/mixed-loader-chain/loaders/left.cjs",
               "options": {},
               "parallel": true,
               "cache": false
             },
             {
-              "loader": "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/middle.cjs",
+              "loader": "~/projects/rspack-bench/cases/mixed-loader-chain/loaders/middle.cjs",
               "options": {},
               "parallel": true,
               "cache": false
             },
             {
-              "loader": "/data00/home/jinzhixin/projects/rspack-bench/cases/mixed-loader-chain/loaders/right.cjs",
+              "loader": "~/projects/rspack-bench/cases/mixed-loader-chain/loaders/right.cjs",
               "options": {},
               "parallel": true,
               "cache": false

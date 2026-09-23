@@ -7,37 +7,37 @@
   "round": 1,
   "verify": false,
   "modules": 10000,
-  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixture": "~/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
   "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
-  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/output/v2-1-0-parallel-off-cache-off-measure-1",
-  "statsDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/stats/v2-1-0-parallel-off-cache-off-measure-1",
-  "auditDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/audit/v2-1-0-parallel-off-cache-off-measure-1",
-  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/raw/v2-1-0-parallel-off-cache-off-measure-1.json",
+  "output": "~/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/output/v2-1-0-parallel-off-cache-off-measure-1",
+  "statsDirectory": "~/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/stats/v2-1-0-parallel-off-cache-off-measure-1",
+  "auditDirectory": "~/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/audit/v2-1-0-parallel-off-cache-off-measure-1",
+  "resultFile": "~/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/raw/v2-1-0-parallel-off-cache-off-measure-1.json",
   "packageVersion": "2.1.0",
   "compiledVersion": "2.1.0",
   "artifacts": {
-    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/index.js": "58f125ccdaf373c66b870f45ddcb0631b7dab6e8769c4b780c00b05f0f755233",
-    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.1.0/node_modules/@rspack/binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
-    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.1.0/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node": "3b68a1e171a9649a8f56294f5a610817dba644d428aa39212dd5078825a592fd",
-    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/worker.js": "6f96561f0e194b4199a5d32f40283088fd72576a2e4daad1c863bccc520882a3"
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/index.js": "58f125ccdaf373c66b870f45ddcb0631b7dab6e8769c4b780c00b05f0f755233",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.1.0/node_modules/@rspack/binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.1.0/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node": "3b68a1e171a9649a8f56294f5a610817dba644d428aa39212dd5078825a592fd",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/worker.js": "6f96561f0e194b4199a5d32f40283088fd72576a2e4daad1c863bccc520882a3"
   },
   "dependencies": {
     "babel-loader": {
       "version": "10.1.1",
-      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@2.1.0/node_modules/babel-loader/lib/index.js",
+      "entry": "~/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@2.1.0/node_modules/babel-loader/lib/index.js",
       "sha256": "8155bcb44c0309254de8d44c8b15be22ad025554b025c3e71bdd50cdf4a77a39"
     },
     "@babel/core": {
       "version": "7.29.7",
-      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@babel+core@7.29.7/node_modules/@babel/core/lib/index.js",
+      "entry": "~/projects/rspack-bench/node_modules/.pnpm/@babel+core@7.29.7/node_modules/@babel/core/lib/index.js",
       "sha256": "dba868255b447218cd421b30fb5289c118f265817088e7106053cf962057dd26"
     }
   },
   "loadedPaths": {
-    "core": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/index.js",
-    "binding": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.1.0/node_modules/@rspack/binding/binding.js",
-    "native": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.1.0/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node",
-    "loader": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@2.1.0/node_modules/babel-loader/lib/index.js"
+    "core": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/index.js",
+    "binding": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.1.0/node_modules/@rspack/binding/binding.js",
+    "native": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.1.0/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node",
+    "loader": "~/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@2.1.0/node_modules/babel-loader/lib/index.js"
   },
   "environment": {
     "node": "v24.20.0",
@@ -103,7 +103,7 @@
     }
   ],
   "config": {
-    "context": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+    "context": "~/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
     "entry": "./module-00000.js",
     "mode": "development",
     "target": [
@@ -118,7 +118,7 @@
       "pureFunctions": false
     },
     "output": {
-      "path": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/output/v2-1-0-parallel-off-cache-off-measure-1",
+      "path": "~/projects/rspack-bench/results/babel-loader-parallel-cache-2026-09-12T00-27-06-288Z-16/output/v2-1-0-parallel-off-cache-off-measure-1",
       "filename": "main.js",
       "publicPath": "",
       "pathinfo": false,
@@ -153,11 +153,11 @@
       "rules": [
         {
           "test": "/\\.js$/",
-          "include": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+          "include": "~/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
           "type": "javascript/auto",
           "use": [
             {
-              "loader": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@2.1.0/node_modules/babel-loader/lib/index.js",
+              "loader": "~/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@2.1.0/node_modules/babel-loader/lib/index.js",
               "parallel": false,
               "options": {
                 "babelrc": false,

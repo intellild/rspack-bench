@@ -13,6 +13,6 @@ The median differences are below 1% in opposite directions. This run does not sh
 
 [Full report](report.md) includes ranges, phase timings and validation counts. [Raw samples](raw/) contain effective configuration, exact artifact hashes and environment. [Summary JSON](summary.json) retains every timing sample. [Source snapshot](source/) includes the generator, runner and lockfile. [Audit records](audit/) verify actual Babel execution threads and call counts.
 
-Original full run: `/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-large-files-2026-09-20T08-45-53-242Z-2631384`. The original directory also retains generated sources, bundles, job files and full module stats; these bulky reproducible files are omitted from this compact snapshot.
+Original full run: `~/projects/rspack-bench/results/babel-loader-large-files-2026-09-20T08-45-53-242Z-2631384`. The original directory also retains generated sources, bundles, job files and full module stats; these bulky reproducible files are omitted from this compact snapshot.
 
 The workload measures Babel parsing and code generation without presets/plugins. This is a whole-version comparison, not proof that the queue alone caused a timing difference. OS caches are retained and background machine activity is uncontrolled.

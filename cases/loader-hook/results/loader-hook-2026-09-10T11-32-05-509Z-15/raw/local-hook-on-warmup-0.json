@@ -6,11 +6,11 @@
   "round": 0,
   "verify": false,
   "modules": 10000,
-  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/fixture",
+  "fixture": "~/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/fixture",
   "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
-  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/output/local-hook-on-warmup-0",
-  "statsFile": "/data00/home/jinzhixin/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/stats/local-hook-on-warmup-0.json",
-  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/raw/local-hook-on-warmup-0.json",
+  "output": "~/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/output/local-hook-on-warmup-0",
+  "statsFile": "~/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/stats/local-hook-on-warmup-0.json",
+  "resultFile": "~/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/raw/local-hook-on-warmup-0.json",
   "timings": {
     "buildMs": 1840.473154,
     "compilerSetupMs": 11.246586,
@@ -23,14 +23,14 @@
   "packageVersion": "2.2.3",
   "compiledVersion": "2.2.3",
   "loadedPaths": {
-    "core": "/data00/home/jinzhixin/rstack/rspack/packages/rspack/dist/index.js",
-    "binding": "/data00/home/jinzhixin/rstack/rspack/crates/node_binding/binding.js",
-    "nativeBinding": "/data00/home/jinzhixin/rstack/rspack/crates/node_binding/rspack.linux-x64-gnu.node"
+    "core": "~/rstack/rspack/packages/rspack/dist/index.js",
+    "binding": "~/rstack/rspack/crates/node_binding/binding.js",
+    "nativeBinding": "~/rstack/rspack/crates/node_binding/rspack.linux-x64-gnu.node"
   },
   "artifacts": {
-    "/data00/home/jinzhixin/rstack/rspack/packages/rspack/dist/index.js": "a2af08ed4f24cc4c824aab4d055b59699c66c72203dbaebce2ede926a1e0c343",
-    "/data00/home/jinzhixin/rstack/rspack/crates/node_binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
-    "/data00/home/jinzhixin/rstack/rspack/crates/node_binding/rspack.linux-x64-gnu.node": "782435000a11a367ad1663b63b49d67891c462e23daefa0e70579bbbe15e3ffb"
+    "~/rstack/rspack/packages/rspack/dist/index.js": "a2af08ed4f24cc4c824aab4d055b59699c66c72203dbaebce2ede926a1e0c343",
+    "~/rstack/rspack/crates/node_binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "~/rstack/rspack/crates/node_binding/rspack.linux-x64-gnu.node": "782435000a11a367ad1663b63b49d67891c462e23daefa0e70579bbbe15e3ffb"
   },
   "environment": {
     "node": "v24.20.0",
@@ -64,7 +64,7 @@
     "warnings": 0
   },
   "config": {
-    "context": "/data00/home/jinzhixin/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/fixture",
+    "context": "~/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/fixture",
     "entry": "./module-00000.js",
     "mode": "development",
     "target": [
@@ -80,7 +80,7 @@
       "pureFunctions": false
     },
     "output": {
-      "path": "/data00/home/jinzhixin/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/output/local-hook-on-warmup-0",
+      "path": "~/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/output/local-hook-on-warmup-0",
       "filename": "main.js",
       "publicPath": "",
       "pathinfo": false,
@@ -115,11 +115,11 @@
       "rules": [
         {
           "test": "/\\.js$/",
-          "include": "/data00/home/jinzhixin/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/fixture",
+          "include": "~/projects/rspack-bench/results/loader-hook-2026-09-10T11-32-05-509Z-15/fixture",
           "type": "javascript/auto",
           "use": [
             {
-              "loader": "/data00/home/jinzhixin/projects/rspack-bench/loaders/noop.cjs",
+              "loader": "~/projects/rspack-bench/loaders/noop.cjs",
               "parallel": false
             }
           ]

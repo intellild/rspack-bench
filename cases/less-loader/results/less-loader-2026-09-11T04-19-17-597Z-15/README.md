@@ -2,7 +2,7 @@
 
 `pnpm bench:less-loader --modules 10000 --runs 5`
 
-Local worktree: `/data00/home/jinzhixin/.codex/worktrees/0385/rspack`. HEAD: `0c244ef4114d0209bea0e40a684b6fd777609562`. Actual compiled artifacts are identified by hashes in the raw records.
+Local worktree: `~/.codex/worktrees/0385/rspack`. HEAD: `0c244ef4114d0209bea0e40a684b6fd777609562`. Actual compiled artifacts are identified by hashes in the raw records.
 
 | Version | Baseline, median | Loader, median | Incremental overhead |
 |---|---:|---:|---:|

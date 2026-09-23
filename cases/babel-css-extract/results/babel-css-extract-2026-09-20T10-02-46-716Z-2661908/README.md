@@ -15,7 +15,7 @@ Medians in seconds:
 
 All per-task native/JS logs, module lifecycle records and joined per-module timings are preserved in [audit.tar.gz](audit.tar.gz). Concurrent latency sums overlap; they are not CPU time and must not be subtracted from build wall time. The branch still awaits a per-task main-thread prepare RPC before takeContext; its wait is part of the callback + main prepare interval.
 
-Original full run with uncompressed audit logs, fixtures, bundles and full stats: `/data00/home/jinzhixin/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908`.
+Original full run with uncompressed audit logs, fixtures, bundles and full stats: `~/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908`.
 
 Raw samples: [raw/](raw/). Exact harness, lockfile and relevant Rust source snapshot: [source/](source/). Release build: [branch-release-build.log](branch-release-build.log). Machine/Node environment and loaded artifact hashes are in raw records. Babel parses/prints without presets/plugins. Whole-version differences do not isolate the queue as their sole cause.
 

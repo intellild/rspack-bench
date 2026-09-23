@@ -63,7 +63,7 @@ importers:
   versions/worktree-0385:
     dependencies:
       '@rspack/core':
-        specifier: link:/data00/home/jinzhixin/.codex/worktrees/0385/rspack/packages/rspack
+        specifier: link:~/.codex/worktrees/0385/rspack/packages/rspack
         version: link:../../../../.codex/worktrees/0385/rspack/packages/rspack
 
 packages:

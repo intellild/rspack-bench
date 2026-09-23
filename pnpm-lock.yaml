@@ -99,7 +99,7 @@ importers:
         specifier: 7.29.7
         version: 7.29.7
       '@rspack/core':
-        specifier: link:/data00/home/jinzhixin/.codex/worktrees/0385/rspack/packages/rspack
+        specifier: link:../../../../.codex/worktrees/0385/rspack/packages/rspack
         version: link:../../../../.codex/worktrees/0385/rspack/packages/rspack
       babel-loader:
         specifier: 10.1.1
@@ -117,7 +117,7 @@ importers:
         specifier: 7.29.7
         version: 7.29.7
       '@rspack/core':
-        specifier: link:/data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack
+        specifier: link:../../../../.codex/worktrees/a77f/rspack/packages/rspack
         version: link:../../../../.codex/worktrees/a77f/rspack/packages/rspack
       babel-loader:
         specifier: 10.1.1
@@ -129,7 +129,7 @@ importers:
         specifier: 7.29.7
         version: 7.29.7
       '@rspack/core':
-        specifier: link:/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack
+        specifier: link:../../../../.codex/worktrees/bec7/rspack/packages/rspack
         version: link:../../../../.codex/worktrees/bec7/rspack/packages/rspack
       babel-loader:
         specifier: 10.1.1

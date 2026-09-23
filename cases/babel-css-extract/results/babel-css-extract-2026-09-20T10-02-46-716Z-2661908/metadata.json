@@ -16,7 +16,7 @@
     "functionsPerModule": 86
   },
   "worktree": {
-    "path": "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack",
+    "path": "~/.codex/worktrees/bec7/rspack",
     "head": "954fd197fd772978a53919b56c22e469c53ebc7e",
     "status": "M Cargo.lock\n M crates/rspack_binding_api/src/js_tasks/subscription.rs\n M crates/rspack_binding_api/src/js_tasks/tsfn.rs\n M crates/rspack_binding_api/src/plugins/js_loader/worker.rs\n M crates/rspack_js_tasks/Cargo.toml\n M crates/rspack_js_tasks/src/dispatcher.rs\n M crates/rspack_js_tasks/src/lib.rs\n M crates/rspack_js_tasks/src/task.rs\n M crates/rspack_loader_runner/src/javascript.rs\n?? crates/rspack_js_tasks/src/timing.rs",
     "patchSha256": "50a5b179355c010b9f6856db116ee0d0966e866dcac0c662d796567ee31a7504"

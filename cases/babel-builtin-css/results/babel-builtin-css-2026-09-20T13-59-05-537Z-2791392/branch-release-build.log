@@ -1,0 +1,33 @@
+$ pnpm --filter @rspack/binding run build:release
+$ node scripts/build.mjs --profile release
+Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-header --pipe "node ~/.codex/worktrees/bec7/rspack/crates/node_binding/scripts/dts-header.mjs" --profile release --no-default-features --no-dts-cache --features plugin,info-level -- --config "target.'cfg(all())'.rustflags = [\"-Zlocation-detail=none\"]" -Zbuild-std=panic_abort,std
+(node:2733211) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+    Blocking waiting for file lock on build directory
+   Compiling rspack_binding_api v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_binding_api)
+   Compiling rspack_node v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/node_binding)
+warning: field `count` is never read
+  --> crates/rspack_napi/src/js_values/value_ref.rs:13:14
+   |
+11 | pub struct Ref {
+   |            --- field in this struct
+12 |   pub(crate) raw_ref: sys::napi_ref,
+13 |   pub(crate) count: u32,
+   |              ^^^^^
+   |
+   = note: requested on the command line with `-W dead-code`
+
+warning: `rspack_napi` (lib) generated 1 warning
+warning: method `children` is never used
+  --> crates/rspack_loader_runner/src/chain.rs:91:6
+   |
+24 | impl LoaderChain {
+   | ---------------- method in this implementation
+...
+91 |   fn children(&self) -> Option<&Range<u16>> {
+   |      ^^^^^^^^
+   |
+   = note: requested on the command line with `-W dead-code`
+
+warning: `rspack_loader_runner` (lib) generated 1 warning
+    Finished `release` profile [optimized] target(s) in 10m 10s

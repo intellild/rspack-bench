@@ -17,7 +17,7 @@
     "functionsPerModule": 86
   },
   "worktree": {
-    "path": "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack",
+    "path": "~/.codex/worktrees/bec7/rspack",
     "head": "954fd197fd772978a53919b56c22e469c53ebc7e",
     "status": "",
     "patchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"

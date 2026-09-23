@@ -6,7 +6,7 @@ old=json.loads((root/'cases/split-chunks-name/results/split-chunks-name-2026-09-
 expected={name:hashlib.sha256(Path(name).read_bytes()).hexdigest() for name in old}
 assert all(expected[name]==digest for name,digest in old.items() if name.endswith('.node'))
 (base/'artifacts.json').write_text(json.dumps(expected,indent=2)+'\n')
-repo='/data00/home/jinzhixin/.codex/worktrees/a77f/rspack'
+repo='~/.codex/worktrees/a77f/rspack'
 (base/'worktree.patch').write_bytes(subprocess.check_output(['git','-C',repo,'diff','--binary','HEAD']))
 for iteration in range(3):
  groups=['callback','worker'] if iteration%2==0 else ['worker','callback']

@@ -1,5 +1,5 @@
 {
-  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixture": "~/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
   "fileHashes": {
     "module-00000.js": "dc96c10b02eb8bff08f7057fc2e8c331bf55c753215124effd54bfd61ab1ee86",
     "module-00002.js": "40b00af696e98a0572ac5dff434ddb19f063ef5dbf7504df3d3ec32c46ed29ff",

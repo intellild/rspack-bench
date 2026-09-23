@@ -1,0 +1,412 @@
+{
+  "metadata": {
+    "modules": 10000,
+    "linesPerModule": 1200,
+    "runs": 5,
+    "workers": 8,
+    "versions": [
+      "v2-2-6",
+      "worktree-bec7"
+    ],
+    "startedAt": "2026-09-20T11:37:56.942Z",
+    "fixtureSha256": "6043756fccffbd36994176474fc7f5fc6d633722548fee1c0af31c3457f05979",
+    "fixture": {
+      "minLines": 1210,
+      "maxLines": 1212,
+      "totalBytes": 460327841,
+      "functionsPerModule": 86
+    },
+    "worktree": {
+      "path": "~/.codex/worktrees/bec7/rspack",
+      "head": "b4222b41b713ca4e99d886d213c95e4cc7302a90",
+      "status": "M crates/node_binding/napi-binding.d.ts\n M crates/node_binding/rspack.wasi-browser.js\n M crates/rspack_binding_api/src/plugins/js_loader/bridge.rs\n M crates/rspack_binding_api/src/plugins/js_loader/context.rs\n M crates/rspack_binding_api/src/plugins/js_loader/result.rs\n M packages/rspack/src/browser/service.ts\n M packages/rspack/src/loader-runner/index.ts\n M packages/rspack/src/loader-runner/service.ts\n?? tests/rspack-test/configCases/loader-parallel/serialized-data/",
+      "patchSha256": "6c4f0e5339b67ce6bb00a4ba0e290e8a32242c2d117275e36f74815fb22c2e0b"
+    },
+    "artifactHashes": {
+      "cases/babel-css-extract/bench.mjs": "b9dcc9fdcf10711d8a2b984fa2462daa37d3516ee1637bbbf9ec20918d2f9ad3",
+      "cases/babel-css-extract/run-build.mjs": "ba9596fac0caa9db0393be2327c0697a6bb24e5767bb40106a5495a6e726da12",
+      "cases/babel-css-extract/fixture.mjs": "ee199bf8c1acdb43913e13efc9f008711bbde44645c84a210b08174d6b3b3d35",
+      "cases/babel-css-extract/audit-preload.cjs": "ab2becadbb46854eb3a61aec1e0c51c4049d1b6080bbe6744cf6f97e746b9c94",
+      "cases/babel-css-extract/diagnostics.mjs": "b176137bf7321137bf508970072fe9cf8059003042c7e5138aeca316626d229d",
+      "cases/babel-loader-large-files/evaluate-output.cjs": "720b46ed0ea69f6510b0f999a802192305eb541538185ae756e8e78cc79f728c",
+      "cases/babel-loader-large-files/config.mjs": "0d52df1bc9974f1789959b3690e4a872d083945d33338d0be76d57a9b2a8543f",
+      "cases/babel-loader-large-files/versions.mjs": "8bcda604fa7a2e703dd813a3b4e7cb5997ecd439da6a697658d983744ed93b09",
+      "cases/babel-css-extract/config.mjs": "86f729240c495aa4ed96e19bd695796a163187ecf682897c2811b65e55d90476",
+      "cases/babel-css-extract/versions.mjs": "ee7ad7760fcc015dd499f02c09c3bbd9f40dbc40a5999935395823b2130368f8",
+      "cases/babel-loader/case.mjs": "ec9f3343692b0faa4ca82bb5a63f2770374109acc1bb0b529db0bafcb6368e57",
+      "cases/noop-loader/config.mjs": "9fe152b1e446ade1717ee2942ffadb2c652da0eec7e520e420a6dbe63d6d3a7b",
+      "package.json": "b19cc9da92d1d8bebcb1fa7a90d3c50408b6685a89193809b61c82e813fdc49d",
+      "pnpm-lock.yaml": "63d5671065684e660fb9c7ff0ad93ff4a6ea2e6185708f7683ed5bda6f57862f",
+      "pnpm-workspace.yaml": "3683dba8459c7d46338a6ef8da45b72deb09389214805efdfa065d8c91ba9b09",
+      "versions/v2-2-6/package.json": "113fd6c49bd6d0a2b57f66c0d3b2f71bfc4ebb6ea8a4f4eb537439e0675e9266",
+      "versions/worktree-bec7/package.json": "41bd238066f48352968afe61560b5a1c0debf4562a85b43409f3303b4d905738",
+      "rspack/crates/rspack_js_tasks/src/timing.rs": "0849157fb05a132f1cdc86f63351d1a79ce02d9a80fb499c6a19f622d89c8185",
+      "rspack/crates/rspack_js_tasks/src/task.rs": "88cb20a054a02c0b91093d64a1fc8fceae9cf324ec10dca7c36c240da2cf8a28",
+      "rspack/crates/rspack_js_tasks/src/dispatcher.rs": "5418e616f5baa5cec842d0822a670f51d6d8cb6e38f0a3babc46e8a51993ee88",
+      "rspack/crates/rspack_loader_runner/src/javascript.rs": "fa26b9758f9f2f2ac60bd4d3a6aeb0a3c644a396da32af8e5980c84b5631521d",
+      "rspack/crates/rspack_binding_api/src/js_tasks/tsfn.rs": "97361bb9c8407512e6f41162f724799041bbd4de33688602512f270aaee463b2",
+      "rspack/crates/rspack_binding_api/src/js_tasks/subscription.rs": "faca106ec01494347d4bb4b817482f512313f21a980ceb10b50118d7ff93122c",
+      "rspack/crates/rspack_binding_api/src/plugins/js_loader/worker.rs": "f493d4eed4044e1aa89491895dafe4cc4118d46f1f0b35f0b2657e5e485f3954",
+      "rspack/crates/rspack_binding_api/src/plugins/js_loader/bridge.rs": "adf7e1340778f4dc5b4fe84e40ea361770d9aa70d37d5602c68fd99fb2c4d9ec",
+      "rspack/crates/rspack_binding_api/src/plugins/js_loader/context.rs": "7d8d7d4e16f1d7af458644de59330a3fde976e9d356dca06ee367183cf7d6fb7",
+      "rspack/crates/rspack_binding_api/src/plugins/js_loader/result.rs": "9548dcec20b93012cfdd4e73b8ed15696351bdcc099b88312612ea10ee5d7691",
+      "rspack/packages/rspack/src/loader-runner/service.ts": "40b17c0ce7645994d789c074449752fed71d3f11f670eb060256785046322e1f",
+      "rspack/packages/rspack/src/loader-runner/index.ts": "39088bee7d39faed0db4181c93237455908cfbf3791bbda3c929855e72b0951f",
+      "rspack/packages/rspack/src/loader-runner/worker.ts": "90f5d9b601cb17413e594cc78f36d67b0794256a314aeea5df02702ac0c08188",
+      "rspack/packages/rspack/src/browser/service.ts": "435271e7b17e130219001dab15223f53624c9f2ade964ef2c4c04ab9ede722ef",
+      "rspack/tests/rspack-test/configCases/loader-parallel/serialized-data/check-loader.js": "0f82fa1e8f7363d477739028d7f0e1cfe26c7347bdafcab9e285f8b71239c016",
+      "rspack/tests/rspack-test/configCases/loader-parallel/serialized-data/index.js": "aa1a2775036d4dee55d6e1eb614b5b89f0b3d66ec4f2327269786a4f928ed8a2",
+      "rspack/tests/rspack-test/configCases/loader-parallel/serialized-data/resource.js": "e1be9565b9151318e0fa4e9c7afd62337e519ca34bdda6b7c971cbe9cae7dfe2",
+      "rspack/tests/rspack-test/configCases/loader-parallel/serialized-data/rspack.config.mjs": "180ad2dcb9ac0101ce964b7c8b59f245d1b1e9c3e11e658f66d72e62d0c358b3",
+      "rspack/tests/rspack-test/configCases/loader-parallel/serialized-data/seed-loader.js": "d5b9afa11e15c6720c3ff78aa778701b41755adb2d9d55af8d50fa39b4e3074d",
+      "rspack/tests/rspack-test/configCases/loader-parallel/serialized-data/worker-loader.js": "58c61e54c540c772ecb98538303fcf6e643f1712a9e1ae7924c8110349061dd4"
+    },
+    "validationPairsPerGroup": 1,
+    "warmupPairsPerGroup": 1,
+    "conditions": "Development bundler configuration with release native artifacts. Optimizations, incremental, Rspack caches, loader cache and Babel disk/config caches disabled. Every large JS module runs parallel Babel parse/print and imports one CSS Module, processed on main by css-loader and CssExtractRspackPlugin. Identical explicit worker counts.",
+    "sequence": "Each fresh process creates one compiler: cold build, then full rebuild with all resources marked modified. Serial processes; rotating group order; OS cache retained. Validation and warmup pairs excluded from samples.",
+    "buildBoundary": "compiler.run invocation through callback; excludes setup/close, stats, audits, bundle evaluation and hashing. setupAndColdBuildMs includes compiler setup because worker boot can start there. Process includes the entire two-build child lifetime and validation overhead.",
+    "finishedAt": "2026-09-20T12:32:16.414Z",
+    "fixtureUnchanged": true,
+    "failedPairs": 0
+  },
+  "rows": [
+    {
+      "version": "v2-2-6",
+      "parallel": true,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 97218.431838,
+            "min": 95594.154181,
+            "max": 99238.113122,
+            "samples": [
+              98467.981059,
+              99238.113122,
+              97218.431838,
+              96221.756171,
+              95594.154181
+            ]
+          },
+          "makeMs": {
+            "median": 75478.376892,
+            "min": 74275.555689,
+            "max": 77178.499502,
+            "samples": [
+              77178.499502,
+              75478.376892,
+              75959.411192,
+              74796.143574,
+              74275.555689
+            ]
+          },
+          "finishMakeMs": {
+            "median": 157.857135,
+            "min": 154.512106,
+            "max": 166.33554,
+            "samples": [
+              154.512106,
+              156.00139,
+              157.857135,
+              166.33554,
+              160.504284
+            ]
+          },
+          "sealMs": {
+            "median": 20107.941639,
+            "min": 20014.450726,
+            "max": 22478.745402,
+            "samples": [
+              20107.941639,
+              22478.745402,
+              20090.720201,
+              20282.579656,
+              20014.450726
+            ]
+          },
+          "emitMs": {
+            "median": 981.984537,
+            "min": 931.554035,
+            "max": 1098.513634,
+            "samples": [
+              981.984537,
+              1081.083838,
+              965.357098,
+              931.554035,
+              1098.513634
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 98309.801171,
+            "min": 97122.612888,
+            "max": 101011.23749,
+            "samples": [
+              97122.612888,
+              98681.200691,
+              97915.539817,
+              101011.23749,
+              98309.801171
+            ]
+          },
+          "makeMs": {
+            "median": 75392.418296,
+            "min": 74914.516228,
+            "max": 76211.068493,
+            "samples": [
+              74914.516228,
+              74980.24863,
+              75724.644462,
+              75392.418296,
+              76211.068493
+            ]
+          },
+          "finishMakeMs": {
+            "median": 171.483002,
+            "min": 163.120551,
+            "max": 184.540853,
+            "samples": [
+              176.784204,
+              163.120551,
+              184.540853,
+              171.483002,
+              169.952914
+            ]
+          },
+          "sealMs": {
+            "median": 20804.089621,
+            "min": 20679.275433,
+            "max": 24199.24466,
+            "samples": [
+              20771.845688,
+              22378.711541,
+              20804.089621,
+              24199.24466,
+              20679.275433
+            ]
+          },
+          "emitMs": {
+            "median": 1228.639108,
+            "min": 1139.644588,
+            "max": 1238.509191,
+            "samples": [
+              1238.509191,
+              1139.644588,
+              1180.195808,
+              1228.639108,
+              1229.857811
+            ]
+          }
+        }
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "processMs": {
+        "median": 223336.451444,
+        "min": 222023.224901,
+        "max": 225598.201771,
+        "samples": [
+          223336.451444,
+          225598.201771,
+          222023.224901,
+          224647.430177,
+          222918.895136
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 10.642029,
+        "min": 10.525925,
+        "max": 10.863368,
+        "samples": [
+          10.789893,
+          10.581403,
+          10.863368,
+          10.642029,
+          10.525925
+        ]
+      },
+      "setupAndColdBuildMs": {
+        "median": 97229.29520600001,
+        "min": 95604.680106,
+        "max": 99248.694525,
+        "samples": [
+          98478.77095199999,
+          99248.694525,
+          97229.29520600001,
+          96232.3982,
+          95604.680106
+        ]
+      }
+    },
+    {
+      "version": "worktree-bec7",
+      "parallel": true,
+      "states": {
+        "cold": {
+          "buildMs": {
+            "median": 103703.575829,
+            "min": 99892.36532,
+            "max": 104596.206843,
+            "samples": [
+              104408.78603,
+              99892.36532,
+              103703.575829,
+              102884.148867,
+              104596.206843
+            ]
+          },
+          "makeMs": {
+            "median": 78981.854543,
+            "min": 78449.117757,
+            "max": 80418.377515,
+            "samples": [
+              80198.26409,
+              78449.117757,
+              78948.437552,
+              78981.854543,
+              80418.377515
+            ]
+          },
+          "finishMakeMs": {
+            "median": 156.181361,
+            "min": 148.208683,
+            "max": 160.377622,
+            "samples": [
+              156.181361,
+              158.991034,
+              148.208683,
+              150.772803,
+              160.377622
+            ]
+          },
+          "sealMs": {
+            "median": 22988.582725,
+            "min": 20240.019537,
+            "max": 23586.408584,
+            "samples": [
+              23012.872023,
+              20240.019537,
+              23586.408584,
+              22673.103571,
+              22988.582725
+            ]
+          },
+          "emitMs": {
+            "median": 982.323477,
+            "min": 961.202533,
+            "max": 1023.91772,
+            "samples": [
+              982.323477,
+              986.754773,
+              961.202533,
+              1023.91772,
+              970.725311
+            ]
+          }
+        },
+        "warm": {
+          "buildMs": {
+            "median": 100826.208427,
+            "min": 99345.401958,
+            "max": 101615.897745,
+            "samples": [
+              100949.867103,
+              99345.401958,
+              100826.208427,
+              100568.295077,
+              101615.897745
+            ]
+          },
+          "makeMs": {
+            "median": 76937.50726,
+            "min": 76636.582914,
+            "max": 77527.200285,
+            "samples": [
+              76636.582914,
+              76937.50726,
+              76996.551666,
+              76837.436845,
+              77527.200285
+            ]
+          },
+          "finishMakeMs": {
+            "median": 153.496077,
+            "min": 139.095037,
+            "max": 172.83756,
+            "samples": [
+              172.83756,
+              139.095037,
+              150.461118,
+              153.813537,
+              153.496077
+            ]
+          },
+          "sealMs": {
+            "median": 22374.45107,
+            "min": 21038.387225,
+            "max": 22891.775289,
+            "samples": [
+              22891.775289,
+              21038.387225,
+              22374.45107,
+              22057.730557,
+              22400.287035
+            ]
+          },
+          "emitMs": {
+            "median": 1210.954189,
+            "min": 1165.167932,
+            "max": 1498.892445,
+            "samples": [
+              1208.199686,
+              1210.954189,
+              1287.348404,
+              1498.892445,
+              1165.167932
+            ]
+          }
+        }
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "processMs": {
+        "median": 231156.640708,
+        "min": 227749.142524,
+        "max": 233490.65396,
+        "samples": [
+          232505.956568,
+          227749.142524,
+          231156.640708,
+          230166.775757,
+          233490.65396
+        ]
+      },
+      "compilerSetupMs": {
+        "median": 11.159277,
+        "min": 10.760443,
+        "max": 11.37728,
+        "samples": [
+          10.812511,
+          11.159277,
+          11.339597,
+          10.760443,
+          11.37728
+        ]
+      },
+      "setupAndColdBuildMs": {
+        "median": 103714.91542599999,
+        "min": 99903.524597,
+        "max": 104607.58412300001,
+        "samples": [
+          104419.598541,
+          99903.524597,
+          103714.91542599999,
+          102894.90931,
+          104607.58412300001
+        ]
+      }
+    }
+  ],
+  "failures": []
+}

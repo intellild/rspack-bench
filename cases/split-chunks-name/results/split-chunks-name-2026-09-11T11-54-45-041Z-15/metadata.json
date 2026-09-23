@@ -9,7 +9,7 @@
   "startedAt": "2026-09-11T11:54:46.006Z",
   "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
   "worktree": {
-    "path": "/data00/home/jinzhixin/.codex/worktrees/a77f/rspack",
+    "path": "~/.codex/worktrees/a77f/rspack",
     "head": "bbb58b8516649f14c896399db802031151bb0057",
     "status": ""
   },

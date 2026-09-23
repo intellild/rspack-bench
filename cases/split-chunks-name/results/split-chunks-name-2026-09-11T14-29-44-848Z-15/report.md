@@ -4,7 +4,7 @@ Development; only splitChunks enabled; other optimizations, cache and incrementa
 
 10000 JS modules, extracted into one shared chunk. Static name "shared" versus a callback returning "shared". One validation, one warmup and 5 measured builds per supported group.
 
-Worktree: /data00/home/jinzhixin/.codex/worktrees/a77f/rspack. HEAD: bbb58b8516649f14c896399db802031151bb0057. Status: M crates/node_binding/napi-binding.d.ts
+Worktree: ~/.codex/worktrees/a77f/rspack. HEAD: bbb58b8516649f14c896399db802031151bb0057. Status: M crates/node_binding/napi-binding.d.ts
  M crates/rspack_binding_api/src/raw_options/raw_split_chunks/mod.rs
  M crates/rspack_binding_api/src/raw_options/raw_split_chunks/raw_split_chunk_name.rs
  M crates/rspack_binding_api/src/worker.rs

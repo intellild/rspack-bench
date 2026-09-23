@@ -1,6 +1,6 @@
 # Less loader overhead
 
-Compares Rspack 2.2.3 and `/data00/home/jinzhixin/.codex/worktrees/0385/rspack` using `less-loader@13.0.0` and `less@4.9.1`, against equivalent CSS requiring no loader.
+Compares Rspack 2.2.3 and `~/.codex/worktrees/0385/rspack` using `less-loader@13.0.0` and `less@4.9.1`, against equivalent CSS requiring no loader.
 
 ```bash
 pnpm install --frozen-lockfile

@@ -27,4 +27,31 @@ All cases default to 10,000 modules and five measured samples per group, using d
 
 Generated runs go to the ignored root `results/` directory. Selected recorded results are committed under the corresponding case's `results/` directory. Shared loader helpers live in `loaders/`.
 
-`versions/worktree-0385` links the noop, Babel, and Less loader cases to `/data00/home/jinzhixin/.codex/worktrees/0385/rspack/packages/rspack` and uses its existing compiled JS and native artifacts.
+`versions/worktree-0385` links the noop, Babel, and Less loader cases to `~/.codex/worktrees/0385/rspack/packages/rspack` and uses its existing compiled JS and native artifacts.
+
+## Publishing results
+
+Local runs in ignored `results/` retain paths needed by diagnostics and resume.
+After copying selected results into `cases/<case>/results/`, run:
+
+```bash
+pnpm privacy:fix
+pnpm privacy:check
+```
+
+These commands require Python 3 and inspect all tracked and non-ignored untracked
+files, including gzip payloads and tar members/ownership metadata. Home directory
+prefixes become `~`; possible credentials and unsupported binary files require
+manual inspection. The check fails if any supported personal path remains.
+Review other identifying information before publishing; this is a path and common
+credential check, not a general personal-information detector.
+
+Recorded hashes remain fingerprints of the original benchmark inputs/outputs.
+Sanitized snapshots can differ from those original bytes and are evidence, not
+runnable copies of the original machine's paths. Existing Git history is unchanged.
+
+Worktree cases resolve their checkout through the installed `@rspack/core` link
+in `versions/worktree-*`. The relative dependency links assume the same
+`~/projects/rspack-bench` and `~/.codex/worktrees/<id>/rspack` layout; adjust the
+links and regenerate the lockfile when using a different layout. No username or
+absolute home directory is required in the manifests or benchmark scripts.

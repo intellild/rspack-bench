@@ -4,7 +4,7 @@ Development; only splitChunks enabled; other optimizations, cache and incrementa
 
 10000 JS modules, extracted into one shared chunk. Static name "shared" versus a callback returning "shared". One validation, one warmup and 5 measured builds per supported group.
 
-Worktree: /data00/home/jinzhixin/.codex/worktrees/a77f/rspack. HEAD: bbb58b8516649f14c896399db802031151bb0057. Status: clean. Actual compiled artifacts are identified by the recorded hashes.
+Worktree: ~/.codex/worktrees/a77f/rspack. HEAD: bbb58b8516649f14c896399db802031151bb0057. Status: clean. Actual compiled artifacts are identified by the recorded hashes.
 
 workerFunction: unsupported in splitChunks.name by the loaded a77f build; no worker timing is reported. See worker-function-status.json.
 

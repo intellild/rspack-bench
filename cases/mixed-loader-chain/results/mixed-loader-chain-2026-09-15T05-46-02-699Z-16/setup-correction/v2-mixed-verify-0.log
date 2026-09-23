@@ -1,4 +1,4 @@
-file:///data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3562
+file://~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3562
                 if (parallelism && (!use.options || 'object' != typeof use.options)) throw Error(`\`Rule.use.parallel\` requires \`Rule.use.options\` to be an object.\nHowever the received value is \`${use.options}\` under option path \`${path}\`\nInternally, parallelism is provided by passing \`Rule.use.ident\` to the loader as an identifier to ident the parallelism option\nYou can either replace the \`Rule.use.loader\` with \`Rule.use.options = {}\` or remove \`Rule.use.parallel\`.`);
                                                                                            ^
 
@@ -6,15 +6,15 @@ Error: `Rule.use.parallel` requires `Rule.use.options` to be an object.
 However the received value is `undefined` under option path `ruleSet[1].rules[0].use[1]`
 Internally, parallelism is provided by passing `Rule.use.ident` to the loader as an identifier to ident the parallelism option
 You can either replace the `Rule.use.loader` with `Rule.use.options = {}` or remove `Rule.use.parallel`.
-    at file:///data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3562:92
-    at file:///data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3564:14
+    at file://~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3562:92
+    at file://~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3564:14
     at Array.map (<anonymous>)
-    at createRawModuleRuleUses (file:///data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3504:79)
-    at getRawModuleRule (file:///data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3660:61)
-    at file:///data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3667:75
+    at createRawModuleRuleUses (file://~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3504:79)
+    at getRawModuleRule (file://~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3660:61)
+    at file://~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3667:75
     at Array.map (<anonymous>)
-    at getRawModuleRule (file:///data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3667:56)
-    at file:///data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:12548:42
+    at getRawModuleRule (file://~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:3667:56)
+    at file://~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.3/node_modules/@rspack/core/dist/index.js:12548:42
     at Array.map (<anonymous>)
 
 Node.js v24.20.0

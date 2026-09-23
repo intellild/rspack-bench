@@ -4,7 +4,7 @@ Development; all optimization flags disabled; no cache/incremental; no loader ve
 
 10000 plain JS modules. Four groups: 2.2.3/worktree-0385 × no loader/one noop JS loader. One validation, one warmup and 5 measured builds per group.
 
-Worktree: /data00/home/jinzhixin/.codex/worktrees/0385/rspack. HEAD: 0c244ef4114d0209bea0e40a684b6fd777609562. Status: clean. Loaded binary and core hashes identify the actual compiled artifacts.
+Worktree: ~/.codex/worktrees/0385/rspack. HEAD: 0c244ef4114d0209bea0e40a684b6fd777609562. Status: clean. Loaded binary and core hashes identify the actual compiled artifacts.
 
 No NormalModule loader hook is registered by this case. Only validation builds count noop calls; measured builds use the unmodified noop loader.
 

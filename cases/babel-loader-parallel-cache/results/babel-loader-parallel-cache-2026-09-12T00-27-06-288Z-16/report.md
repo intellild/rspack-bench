@@ -27,14 +27,14 @@ Failed pairs are excluded from timing distributions and retained in failures.jso
 
 - worktree-a77f-parallel-on-cache-on-measure-3:   × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):
   ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped
-        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69
-        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)
+        │     at file://~/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69
+        │     at runWorkerLoop (file://~/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)
 
 
 - worktree-a77f-parallel-on-cache-on-measure-4:   × Module build failed (from ../../../node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+a77f+rspack+packages+rspack/node_modules/babel-loader/lib/index.js):
   ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped
-        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69
-        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)
+        │     at file://~/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3902:69
+        │     at runWorkerLoop (file://~/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3906:18)
 
 
 

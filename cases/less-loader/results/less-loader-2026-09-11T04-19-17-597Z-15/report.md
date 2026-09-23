@@ -6,7 +6,7 @@ Development; all optimization flags disabled; no cache/incremental; serial loade
 
 10000 workload modules. Four groups: 2.2.3/worktree-0385 × baseline/loader. One validation, one warmup and 5 measured builds per group.
 
-Worktree: /data00/home/jinzhixin/.codex/worktrees/0385/rspack. HEAD: 0c244ef4114d0209bea0e40a684b6fd777609562. Status: clean. Actual compiled artifacts are identified by hashes in raw/.
+Worktree: ~/.codex/worktrees/0385/rspack. HEAD: 0c244ef4114d0209bea0e40a684b6fd777609562. Status: clean. Actual compiled artifacts are identified by hashes in raw/.
 
 | Group | Package / compiled core | Loader calls | Compiler calls |
 |---|---|---:|---:|

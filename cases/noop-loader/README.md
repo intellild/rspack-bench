@@ -1,6 +1,6 @@
 # Noop JS loader overhead
 
-Compares published Rspack 2.2.3 with the compiled worktree at `/data00/home/jinzhixin/.codex/worktrees/0385/rspack`, linked through the `versions/worktree-0385` pnpm workspace package.
+Compares published Rspack 2.2.3 with the compiled worktree at `~/.codex/worktrees/0385/rspack`, linked through the `versions/worktree-0385` pnpm workspace package.
 
 ```bash
 pnpm install --frozen-lockfile

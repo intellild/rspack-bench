@@ -1,6 +1,6 @@
 # Babel loader parallel / cache
 
-Compares Rspack 2.1.0, 2.2.3, and the compiled checkout at `/data00/home/jinzhixin/.codex/worktrees/a77f/rspack`, using the existing 10,000-module JS graph and identical Babel versions selected through pnpm workspaces.
+Compares Rspack 2.1.0, 2.2.3, and the compiled checkout at `~/.codex/worktrees/a77f/rspack`, using the existing 10,000-module JS graph and identical Babel versions selected through pnpm workspaces.
 
 ```bash
 pnpm install --frozen-lockfile

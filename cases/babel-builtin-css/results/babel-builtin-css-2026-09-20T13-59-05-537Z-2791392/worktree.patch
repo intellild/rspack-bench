@@ -1,0 +1,585 @@
+diff --git a/crates/node_binding/napi-binding.d.ts b/crates/node_binding/napi-binding.d.ts
+index 5b7e2328e6..66dc1d3849 100644
+--- a/crates/node_binding/napi-binding.d.ts
++++ b/crates/node_binding/napi-binding.d.ts
+@@ -674,6 +674,9 @@ export declare function formatDiagnostic(diagnostic: JsDiagnostic): ExternalObje
+  */
+ export declare function getJsTaskSubscription(isWorker: boolean): ExternalObject<'JsTaskSubscription'>
+ 
++/** Read cached V8 bytes in the calling worker env, without a main-thread RPC. */
++export declare function getSerializedLoaderOptions(owner: number, ident: string): Buffer | null
++
+ export interface JsAddingRuntimeModule {
+   name: string
+   generator: () => String
+@@ -985,7 +988,7 @@ export interface JsLoaderContext {
+   hot: Readonly<boolean>
+   /** Content maybe empty in pitching stage */
+   content: string | Buffer | null
+-  additionalData?: number
++  additionalData?: number | Buffer
+   hooksOnly: boolean
+   bridgeHandle?: number
+   __internal__parseMeta: Record<string, string>
+@@ -3400,7 +3403,7 @@ export interface RegisterJsTaps {
+ /** Register one compiler-independent entry point in the current JS env. */
+ export declare function registerJsTaskRunner(runner: (arg0: unknown, arg1: unknown) => void, workerId?: number | undefined | null): void
+ 
+-export declare function registerLoaderReference(owner: number, ident: string, parallel: boolean): boolean
++export declare function registerLoaderReference(owner: number, ident: string, parallel: boolean, serialized?: Buffer | undefined | null): boolean
+ 
+ export declare function registerLoaderWorker(id: number): void
+ 
+diff --git a/crates/node_binding/rspack.wasi-browser.js b/crates/node_binding/rspack.wasi-browser.js
+index 6a98649a65..0afaf8b7a9 100644
+--- a/crates/node_binding/rspack.wasi-browser.js
++++ b/crates/node_binding/rspack.wasi-browser.js
+@@ -137,6 +137,7 @@ export const registerLoaderWorker = __napiModule.exports.registerLoaderWorker
+ export const stopLoaderWorker = __napiModule.exports.stopLoaderWorker
+ export const registerMainObjectRelease = __napiModule.exports.registerMainObjectRelease
+ export const registerLoaderReference = __napiModule.exports.registerLoaderReference
++export const getSerializedLoaderOptions = __napiModule.exports.getSerializedLoaderOptions
+ export const releaseLoaderReferences = __napiModule.exports.releaseLoaderReferences
+ export const prepareLoaderTask = __napiModule.exports.prepareLoaderTask
+ export const completeLoaderTaskHooks = __napiModule.exports.completeLoaderTaskHooks
+diff --git a/crates/rspack_binding_api/src/plugins/js_loader/bridge.rs b/crates/rspack_binding_api/src/plugins/js_loader/bridge.rs
+index 04125ecf68..400c5ffc34 100644
+--- a/crates/rspack_binding_api/src/plugins/js_loader/bridge.rs
++++ b/crates/rspack_binding_api/src/plugins/js_loader/bridge.rs
+@@ -2,6 +2,7 @@ use std::sync::{Arc, LazyLock, Mutex, Weak};
+ 
+ use napi::{
+   Env, Status,
++  bindgen_prelude::Buffer,
+   threadsafe_function::{ThreadsafeFunction, ThreadsafeFunctionCallMode},
+ };
+ use napi_derive::napi;
+@@ -64,7 +65,24 @@ impl MainObjectHandle {
+   }
+ }
+ 
+-static REFERENCES: LazyLock<Mutex<FxHashMap<u32, Arc<JsLoaderRuntime>>>> =
++struct LoaderReferences {
++  runtime: Arc<JsLoaderRuntime>,
++  serialized_options: FxHashMap<String, Vec<u8>>,
++}
++
++impl LoaderReferences {
++  fn new(owner: u32) -> Self {
++    Self {
++      runtime: Arc::new(JsLoaderRuntime::new(owner)),
++      serialized_options: Default::default(),
++    }
++  }
++}
++
++/// V8 bytes owned by the native loader context, independent of any JS env.
++pub(super) struct SerializedLoaderData(pub Vec<u8>);
++
++static REFERENCES: LazyLock<Mutex<FxHashMap<u32, LoaderReferences>>> =
+   LazyLock::new(Default::default);
+ 
+ #[napi(ts_args_type = "release: (value: number) => void")]
+@@ -108,12 +126,40 @@ pub fn register_main_object_release(env: Env, release: ReleaseCallback) -> napi:
+ }
+ 
+ #[napi]
+-pub fn register_loader_reference(owner: u32, ident: String, parallel: bool) -> bool {
++pub fn register_loader_reference(
++  owner: u32,
++  ident: String,
++  parallel: bool,
++  serialized: Option<Buffer>,
++) -> bool {
+   let parallel = parallel && !cfg!(target_family = "wasm");
+-  loader_runtime(owner).register_loader(ident, parallel);
++  let mut references = REFERENCES.lock().expect("loader references lock poisoned");
++  let references = references
++    .entry(owner)
++    .or_insert_with(|| LoaderReferences::new(owner));
++  if let Some(serialized) = serialized {
++    references
++      .serialized_options
++      .insert(ident.clone(), serialized.to_vec());
++  } else {
++    references.serialized_options.remove(&ident);
++  }
++  references.runtime.register_loader(ident, parallel);
+   parallel
+ }
+ 
++/// Read cached V8 bytes in the calling worker env, without a main-thread RPC.
++#[napi]
++pub fn get_serialized_loader_options(owner: u32, ident: String) -> Option<Buffer> {
++  REFERENCES
++    .lock()
++    .expect("loader references lock poisoned")
++    .get(&owner)?
++    .serialized_options
++    .get(&ident)
++    .map(|bytes| Buffer::from(bytes.clone()))
++}
++
+ #[napi]
+ pub fn release_loader_references(owner: u32) {
+   REFERENCES
+@@ -127,6 +173,7 @@ pub(super) fn loader_runtime(owner: u32) -> Arc<JsLoaderRuntime> {
+     .lock()
+     .expect("loader references lock poisoned")
+     .entry(owner)
+-    .or_insert_with(|| Arc::new(JsLoaderRuntime::new(owner)))
++    .or_insert_with(|| LoaderReferences::new(owner))
++    .runtime
+     .clone()
+ }
+diff --git a/crates/rspack_binding_api/src/plugins/js_loader/context.rs b/crates/rspack_binding_api/src/plugins/js_loader/context.rs
+index cabc6e677b..f9296e865f 100644
+--- a/crates/rspack_binding_api/src/plugins/js_loader/context.rs
++++ b/crates/rspack_binding_api/src/plugins/js_loader/context.rs
+@@ -7,7 +7,7 @@ use rspack_error::ToStringResultToRspackResultExt;
+ use rspack_loader_runner::State as LoaderState;
+ use rustc_hash::FxHashMap as HashMap;
+ 
+-use super::bridge::MainObjectHandle;
++use super::bridge::{MainObjectHandle, SerializedLoaderData};
+ use crate::{error::RspackError, module::ModuleObject};
+ 
+ #[napi(object)]
+@@ -168,7 +168,7 @@ pub struct JsLoaderContext {
+ 
+   /// Content maybe empty in pitching stage
+   pub content: Either3<String, Buffer, Null>,
+-  pub additional_data: Option<u32>,
++  pub additional_data: Option<Either<u32, Buffer>>,
+   pub hooks_only: bool,
+   pub bridge_handle: Option<u32>,
+   #[napi(js_name = "__internal__parseMeta")]
+@@ -204,10 +204,19 @@ impl JsLoaderContext {
+     cx: &mut LoaderContext<RunnerContext>,
+     hooks_only: bool,
+   ) -> rspack_error::Result<Self> {
+-    let additional_data = cx
+-      .additional_data()
+-      .and_then(|data| data.get::<MainObjectHandle>())
+-      .map(MainObjectHandle::handle);
++    let additional_data = (!hooks_only)
++      .then(|| cx.additional_data())
++      .flatten()
++      .and_then(|data| {
++        data
++          .get::<SerializedLoaderData>()
++          .map(|data| Either::B(Buffer::from(data.0.clone())))
++          .or_else(|| {
++            data
++              .get::<MainObjectHandle>()
++              .map(|handle| Either::A(handle.handle()))
++          })
++      });
+ 
+     let module = &cx.context.module;
+ 
+diff --git a/crates/rspack_binding_api/src/plugins/js_loader/result.rs b/crates/rspack_binding_api/src/plugins/js_loader/result.rs
+index 05d71d4c9c..85c5c9cbee 100644
+--- a/crates/rspack_binding_api/src/plugins/js_loader/result.rs
++++ b/crates/rspack_binding_api/src/plugins/js_loader/result.rs
+@@ -1,8 +1,11 @@
+-use napi::bindgen_prelude::Either3;
++use napi::bindgen_prelude::{Either, Either3};
+ use rspack_core::{AdditionalData, LoaderContext, RunnerContext};
+ use rspack_error::{Result, ToStringResultToRspackResultExt};
+ 
+-use super::{JsLoaderContext, bridge::MainObjectHandle};
++use super::{
++  JsLoaderContext,
++  bridge::{MainObjectHandle, SerializedLoaderData},
++};
+ 
+ pub(super) fn merge_loader_hooks(to: &mut LoaderContext<RunnerContext>, mut from: JsLoaderContext) {
+   to.cacheable = from.cacheable;
+@@ -36,13 +39,20 @@ pub(crate) fn merge_loader_context(
+   // Own returned handles before fallible conversion so errors also release them.
+   let additional_data = from.additional_data.take().map(|data| {
+     let mut additional = AdditionalData::default();
+-    let handle = to
+-      .additional_data()
+-      .and_then(|data| data.get::<MainObjectHandle>())
+-      .filter(|handle| handle.handle() == data)
+-      .cloned()
+-      .unwrap_or_else(|| MainObjectHandle::new(data));
+-    additional.insert(handle);
++    match data {
++      Either::A(data) => {
++        let handle = to
++          .additional_data()
++          .and_then(|data| data.get::<MainObjectHandle>())
++          .filter(|handle| handle.handle() == data)
++          .cloned()
++          .unwrap_or_else(|| MainObjectHandle::new(data));
++        additional.insert(handle);
++      }
++      Either::B(bytes) => {
++        additional.insert(SerializedLoaderData(bytes.to_vec()));
++      }
++    }
+     additional
+   });
+ 
+diff --git a/packages/rspack/src/browser/service.ts b/packages/rspack/src/browser/service.ts
+index d3b6e0d296..ccb4ce2b68 100644
+--- a/packages/rspack/src/browser/service.ts
++++ b/packages/rspack/src/browser/service.ts
+@@ -25,6 +25,9 @@ export function getMainObject(handle: number): unknown {
+   return values.get(handle);
+ }
+ 
++export const serializeAdditionalData = registerMainObject;
++export const deserializeAdditionalData = getMainObject;
++
+ export function getCompilerHandle(_compiler: Compiler): number {
+   return 0;
+ }
+diff --git a/packages/rspack/src/config/types.ts b/packages/rspack/src/config/types.ts
+index 1088fb5bac..4ddf5ff5ed 100644
+--- a/packages/rspack/src/config/types.ts
++++ b/packages/rspack/src/config/types.ts
+@@ -898,6 +898,8 @@ export type RuleSetLoaderWithOptions = {
+    * worker threads.
+    * - When set to `{ maxWorkers }`, you can explicitly define the maximum number of workers to use.
+    * - When set to `false` or omitted, the loader runs on the main thread.
++   * - Worker execution skips `NormalModule`'s `loader` hook, so properties added by that hook
++   * are unavailable to parallel loaders.
+    */
+   parallel?: boolean | { maxWorkers?: number };
+ 
+diff --git a/packages/rspack/src/loader-runner/index.ts b/packages/rspack/src/loader-runner/index.ts
+index fc53194450..7f0fe2fe71 100644
+--- a/packages/rspack/src/loader-runner/index.ts
++++ b/packages/rspack/src/loader-runner/index.ts
+@@ -56,8 +56,8 @@ import { ModuleError, ModuleWarning } from './ModuleError';
+ import { LoaderDependenciesState } from './dependencies';
+ import {
+   beginWorkerImport,
+-  getMainObject,
+-  registerMainObject,
++  deserializeAdditionalData,
++  serializeAdditionalData,
+   registerLoaderContext,
+ } from './service';
+ import {
+@@ -867,7 +867,7 @@ export async function runLoaders(
+             context.sourceMap = serializeObject(sourceMap);
+             context.additionalData = isNil(additionalData)
+               ? undefined
+-              : registerMainObject(additionalData);
++              : serializeAdditionalData(additionalData);
+             break;
+           }
+         }
+@@ -882,7 +882,7 @@ export async function runLoaders(
+         let sourceMapParsed = false;
+         let additionalData = isNil(context.additionalData)
+           ? undefined
+-          : getMainObject(context.additionalData);
++          : deserializeAdditionalData(context.additionalData);
+ 
+         while (loaderContext.loaderIndex >= loaderChainStart) {
+           const currentLoaderObject =
+@@ -929,7 +929,7 @@ export async function runLoaders(
+             ? undefined
+             : isNil(additionalData)
+               ? undefined
+-              : registerMainObject(additionalData);
++              : serializeAdditionalData(additionalData);
+ 
+         break;
+       }
+diff --git a/packages/rspack/src/loader-runner/service.ts b/packages/rspack/src/loader-runner/service.ts
+index eddc138781..ec980c8462 100644
+--- a/packages/rspack/src/loader-runner/service.ts
++++ b/packages/rspack/src/loader-runner/service.ts
+@@ -4,6 +4,7 @@ import {
+   prepareLoaderTask,
+   completeLoaderTaskHooks,
+   registerLoaderReference,
++  getSerializedLoaderOptions,
+   registerLoaderWorker,
+   registerMainObjectRelease,
+   releaseLoaderReferences,
+@@ -11,7 +12,6 @@ import {
+ } from '@rspack/binding';
+ import type { BuildInfo } from '@rspack/binding';
+ import type { Compiler } from '../Compiler';
+-import { runLoaders } from '.';
+ 
+ const require = createRequire(import.meta.url);
+ type Port = import('node:worker_threads').MessagePort;
+@@ -71,9 +71,46 @@ const parallelCompilers = new WeakSet<Compiler>();
+ 
+ const workerOptions = new Map<
+   number,
+-  { version: number; values: Map<string, object> }
++  { version: number; values: Map<string, unknown> }
+ >();
+ 
++function serializeLoaderValue(value: unknown): Buffer | undefined {
++  if (IS_BROWSER || process.env.WASM) return undefined;
++  const { serialize } = require('node:v8') as typeof import('node:v8');
++  try {
++    return serialize(value);
++  } catch {
++    // Leave functions and other non-serializable values on the existing bridge.
++    return undefined;
++  }
++}
++
++function deserializeLoaderValue(bytes: Buffer): unknown {
++  const { deserialize } = require('node:v8') as typeof import('node:v8');
++  return deserialize(bytes);
++}
++
++export function serializeAdditionalData(value: unknown): Buffer | number {
++  // V8 turns class instances into plain objects and drops prototype methods.
++  // Keep those roots on the existing bridge, outside this plain-data experiment.
++  if (
++    value !== null &&
++    typeof value === 'object' &&
++    Object.prototype.toString.call(value) === '[object Object]'
++  ) {
++    const prototype = Object.getPrototypeOf(value);
++    if (prototype !== null && prototype !== Object.prototype)
++      return registerMainObject(value);
++  }
++  return serializeLoaderValue(value) ?? registerMainObject(value);
++}
++
++export function deserializeAdditionalData(value: Buffer | number): unknown {
++  return typeof value === 'number'
++    ? getMainObject(value)
++    : deserializeLoaderValue(value);
++}
++
+ export function releaseWorkerCompiler(handle: number): void {
+   workerOptions.delete(handle);
+ }
+@@ -96,7 +133,25 @@ export function createWorkerCompiler(main: WorkerLoaderContext): Compiler {
+   const get = references.get;
+   const cache = cached.values;
+   references.get = (ident: string) => {
+-    if (!cache.has(ident)) cache.set(ident, get(ident));
++    if (!cache.has(ident)) {
++      const optionsIdent = ident.endsWith('$$parallelism')
++        ? ident.slice(0, -'$$parallelism'.length)
++        : ident;
++      const bytes = getSerializedLoaderOptions(
++        main.compilerHandle,
++        optionsIdent,
++      );
++      if (bytes) {
++        const value = deserializeLoaderValue(bytes) as {
++          options: unknown;
++          parallel: boolean | { maxWorkers?: number } | undefined;
++        };
++        cache.set(optionsIdent, value.options);
++        cache.set(`${optionsIdent}$$parallelism`, value.parallel);
++      } else {
++        cache.set(ident, get(ident));
++      }
++    }
+     return cache.get(ident);
+   };
+   return main.compiler;
+@@ -199,6 +254,10 @@ export function registerParallelLoader(
+     getCompilerHandle(compiler),
+     ident,
+     !!parallel,
++    serializeLoaderValue({
++      options: compiler.__internal__ruleSet.references.get(ident),
++      parallel,
++    }),
+   );
+   if (useWorker && !IS_BROWSER && !process.env.WASM) {
+     parallelCompilers.add(compiler);
+@@ -586,20 +645,24 @@ class ObjectBridge {
+       return;
+     }
+     if (message.operation === 'prepare') {
+-      const workerId = this.decode(message.args![0]) as number;
++      const taskId = this.decode(message.args![0]) as number;
+       void Promise.resolve()
+-        .then(() =>
+-          runLoaders(
++        .then(() => {
++          // Parallel loaders skip NormalModule's loader hook. Only prepare the
++          // main-owned API bridge; the worker constructs its loader context.
++          const context = prepareLoaderTask(taskId);
++          const handle = registerLoaderContext(
+             lookup(message.target) as Compiler,
+-            prepareLoaderTask(workerId),
+-          ),
+-        )
+-        .then((context) => {
+-          completeLoaderTaskHooks(workerId, context);
++            context._module!.buildInfo,
++            {},
++          );
++          context.bridgeHandle = handle;
++          completeLoaderTaskHooks(taskId, context);
++          this.activeTasks.add(handle);
+           this.port.postMessage({
+             type: 'response',
+             id: message.id,
+-            result: this.encode(undefined),
++            result: this.encode(lookup(handle)),
+           });
+         })
+         .catch((error: Error) => {
+@@ -772,13 +835,13 @@ export function setLoaderObjectBridge(port: Port, workerId: number): void {
+ 
+ export async function prepareWorkerTask(
+   mainHandle: number,
+-  workerId: number,
+-): Promise<void> {
+-  await bridge!.async({
++  taskId: number,
++): Promise<WorkerLoaderContext> {
++  return bridge!.async({
+     operation: 'prepare',
+     target: mainHandle,
+-    args: [bridge!.encode(workerId)],
+-  });
++    args: [bridge!.encode(taskId)],
++  }) as Promise<WorkerLoaderContext>;
+ }
+ 
+ export function clearWorkerLoaderContext(): void {
+diff --git a/packages/rspack/src/loader-runner/worker.ts b/packages/rspack/src/loader-runner/worker.ts
+index 44acf547a3..53c235e8b8 100644
+--- a/packages/rspack/src/loader-runner/worker.ts
++++ b/packages/rspack/src/loader-runner/worker.ts
+@@ -14,11 +14,9 @@ import {
+ import { runLoaders } from '.';
+ import { createWorkerModule } from './workerModule';
+ import {
+-  type WorkerLoaderContext,
+   prepareWorkerTask,
+   clearWorkerLoaderContext,
+   createWorkerCompiler,
+-  getMainObject,
+   setLoaderObjectBridge,
+   setWorkerImportScheduler,
+ } from './service';
+@@ -29,9 +27,8 @@ async function execute(task: JsLoaderTask): Promise<void> {
+   activeTasks++;
+   let module: ReturnType<typeof createWorkerModule> | undefined;
+   try {
+-    await prepareWorkerTask(task.mainObjectHandle, task.id);
++    const main = await prepareWorkerTask(task.mainObjectHandle, task.id);
+     const context = task.takeContext();
+-    const main = getMainObject<WorkerLoaderContext>(context.bridgeHandle!);
+     module = createWorkerModule(context._module!, main.buildInfo);
+     const result = await runLoaders(
+       createWorkerCompiler(main),
+diff --git a/tests/rspack-test/configCases/loader-parallel/function-options/index.js b/tests/rspack-test/configCases/loader-parallel/function-options/index.js
+index 1c8d48201c..c74d4c8003 100644
+--- a/tests/rspack-test/configCases/loader-parallel/function-options/index.js
++++ b/tests/rspack-test/configCases/loader-parallel/function-options/index.js
+@@ -7,8 +7,7 @@ it('should synchronously call option functions on the main thread', () => {
+     typed: [1, 2, 3],
+     url: 'https://rspack.dev/loader-options',
+     custom: 'custom:context',
+-    hook: 'hook:context',
+-    hookMainThread: true,
++    skippedHook: true,
+     worker: true,
+   });
+ });
+diff --git a/tests/rspack-test/configCases/loader-parallel/function-options/loader.js b/tests/rspack-test/configCases/loader-parallel/function-options/loader.js
+index 7681e9cf86..a295c2757c 100644
+--- a/tests/rspack-test/configCases/loader-parallel/function-options/loader.js
++++ b/tests/rspack-test/configCases/loader-parallel/function-options/loader.js
+@@ -16,8 +16,7 @@ module.exports = function () {
+     typed: [...options.typed],
+     url: options.url.href,
+     custom: this.customTransform(this.customValue),
+-    hook: this.hookTransform(this.hookValue),
+-    hookMainThread: this.hookMainThread,
++    skippedHook: this.hookTransform === undefined && this.hookValue === undefined,
+     worker: !isMainThread,
+   })}`;
+ };
+diff --git a/tests/rspack-test/configCases/loader-parallel/function-options/main-loader.js b/tests/rspack-test/configCases/loader-parallel/function-options/main-loader.js
+index b577d1d126..86f17c2b42 100644
+--- a/tests/rspack-test/configCases/loader-parallel/function-options/main-loader.js
++++ b/tests/rspack-test/configCases/loader-parallel/function-options/main-loader.js
+@@ -1,5 +1,7 @@
+ const expectedOptions = require('./main-options');
+ 
+ module.exports = function () {
++  if (!this.hookMainThread || this.hookTransform(this.hookValue) !== 'hook:context')
++    throw new Error('Main loader hook should still run');
+   return `module.exports = ${this.getOptions() === expectedOptions}`;
+ };
+diff --git a/tests/rspack-test/configCases/loader-parallel/native-module/loader.js b/tests/rspack-test/configCases/loader-parallel/native-module/loader.js
+index 90cfbd76a7..c46300aa55 100644
+--- a/tests/rspack-test/configCases/loader-parallel/native-module/loader.js
++++ b/tests/rspack-test/configCases/loader-parallel/native-module/loader.js
+@@ -17,7 +17,7 @@ module.exports = function () {
+   module.factoryMeta = { sideEffectFree: false };
+   module.matchResource = "worker-resource.js";
+   module.buildInfo.nativeWorker = true;
+-  assert.equal(module.buildInfo.fromHook(), "main hook");
++  assert.equal(module.buildInfo.fromBuildModule(), "main buildModule");
+   this.emitFile("worker-module.txt", "from native worker", undefined, {
+     immutable: true,
+     sourceFilename: "value.js"
+diff --git a/tests/rspack-test/configCases/loader-parallel/native-module/rspack.config.mjs b/tests/rspack-test/configCases/loader-parallel/native-module/rspack.config.mjs
+index 7cbb71cd4b..19743efa5c 100644
+--- a/tests/rspack-test/configCases/loader-parallel/native-module/rspack.config.mjs
++++ b/tests/rspack-test/configCases/loader-parallel/native-module/rspack.config.mjs
+@@ -21,13 +21,15 @@ export default {
+             expect(asset.info.immutable).toBe(true);
+             expect(asset.info.sourceFilename).toBe('value.js');
+           });
++          compilation.hooks.buildModule.tap('NativeWorkerModule', (module) => {
++            if (!module.resource?.endsWith('value.js')) return;
++            module.buildInfo.fromBuildModule = () => 'main buildModule';
++          });
+           rspack.NormalModule.getCompilationHooks(compilation).loader.tap(
+             'NativeWorkerModule',
+             (context, module) => {
+               if (!module.resource?.endsWith('value.js')) return;
+-              module.buildInfo.fromHook = () => 'main hook';
+-              // Extensions cannot replace the worker's native-backed facade.
+-              context._module = { replacedByMainHook: true };
++              throw new Error('Parallel loaders must skip the loader hook');
+             },
+           );
+         });
+diff --git a/website/docs/en/config/module-rules.mdx b/website/docs/en/config/module-rules.mdx
+index 67746ce62f..747b7d1375 100644
+--- a/website/docs/en/config/module-rules.mdx
++++ b/website/docs/en/config/module-rules.mdx
+@@ -900,7 +900,8 @@ When multiple loaders within the same rule have `parallel` enabled, Rspack execu
+ 
+ - Loader options must be an object. Function-valued options are supported and execute on the main thread.
+ - The native binding runs parallel loaders in workers. The WASI binding retains main-thread loader execution because separate WebAssembly instances cannot share the native task queue.
+-- Compiler and compilation APIs use proxies to access their main-thread implementations. Loader hooks also run on the main thread. `additionalData` retains main-thread object identity when passing through parallel and builtin loaders.
++- Compiler and compilation APIs use proxies to access their main-thread implementations. Worker loader execution skips `NormalModule.getCompilationHooks(compilation).loader`, including the pitch stage. Properties and methods added by this hook are unavailable to parallel loaders. Non-parallel loader segments still execute the hook on main.
++- Serializable loader options and `additionalData` use V8 serialization with bytes stored in Rust and deserialized in the consuming thread. This preserves cycles and shared references within a data graph, but not the original object's identity across threads. Options containing functions and non-serializable values retain the object bridge.
+ - `_module` exposes a limited API backed by the worker's native module. It supports resource and request properties, `identifier()`, `readableIdentifier()`, `nameForCondition()`, `originalSource()`, `size()`, `libIdent()`, `factoryMeta`, `matchResource`, and `emitFile()`. Compilation graph APIs such as `blocks`, `dependencies`, and `error` are unavailable. Use this object only while the loader is executing.
+ - `buildInfo`, including custom fields and assets queries, continues to use the main-thread object bridge. Files emitted by workers are stored in the native module and become available to the compilation.
+ 
+diff --git a/website/docs/zh/config/module-rules.mdx b/website/docs/zh/config/module-rules.mdx
+index e2d9bc7a89..6758fc1439 100644
+--- a/website/docs/zh/config/module-rules.mdx
++++ b/website/docs/zh/config/module-rules.mdx
+@@ -898,7 +898,8 @@ export default {
+ 
+ - loader 选项必须是对象。选项可以包含函数，函数在主线程执行。
+ - native binding 使用 worker 执行并行 loader。由于独立的 WebAssembly 实例无法共享 native task 队列，WASI binding 保留在主线程执行 loader 的兼容行为。
+-- compiler 和 compilation API 通过代理访问主线程实现，loader hook 也在主线程执行。`additionalData` 经过并行 loader 和 builtin loader 时，会保留主线程上的对象身份。
++- compiler 和 compilation API 通过代理访问主线程实现。worker 执行 loader 时跳过 `NormalModule.getCompilationHooks(compilation).loader`，pitch 阶段也会跳过。并行 loader 无法使用该 hook 添加的属性和方法。非并行 loader 段仍在主线程执行该 hook。
++- 可序列化的 loader options 和 `additionalData` 使用 V8 序列化，字节保存在 Rust 中，由消费数据的线程反序列化。数据图内部的循环引用和共享引用会保留，但不保留原对象跨线程的身份。含函数的 options 和不可序列化值仍使用对象桥。
+ - `_module` 提供由 worker 本地 native module 支持的受限 API，包括 resource 和 request 属性、`identifier()`、`readableIdentifier()`、`nameForCondition()`、`originalSource()`、`size()`、`libIdent()`、`factoryMeta`、`matchResource` 和 `emitFile()`。不提供 `blocks`、`dependencies`、`error` 等依赖 compilation 的 API。仅在 loader 执行期间使用此对象。
+ - `buildInfo`（包括自定义字段和 assets 查询）继续通过主线程对象桥访问。worker emit 的文件直接保存在 native module 中，供 compilation 后续使用。
+ 

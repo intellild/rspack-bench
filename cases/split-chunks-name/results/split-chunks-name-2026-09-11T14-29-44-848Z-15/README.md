@@ -17,7 +17,7 @@ Local worker build median: 692.61 ms, versus 782.94 ms for the local ordinary ca
 
 All 49 builds pass: seven validations, seven warmups, and 35 measured builds. Each build has exactly 10,000 loader-free JS modules, all extracted into the shared chunk, and exports the expected sum (49,995,000). Outputs are byte-identical across naming modes and repetitions within each version. Instrumentation is absent from measured callbacks.
 
-Local checkout: `/data00/home/jinzhixin/.codex/worktrees/a77f/rspack`, based on HEAD `bbb58b8516649f14c896399db802031151bb0057` with the implementation changes in [worktree.patch](worktree.patch). The compiled local version reports 2.2.1; hashes identify the actual core, native binding and worker entry.
+Local checkout: `~/.codex/worktrees/a77f/rspack`, based on HEAD `bbb58b8516649f14c896399db802031151bb0057` with the implementation changes in [worktree.patch](worktree.patch). The compiled local version reports 2.2.1; hashes identify the actual core, native binding and worker entry.
 
 - [report.md](report.md): phase timings, sample ranges, and callback microtask turns.
 - [summary.json](summary.json): measured distributions and comparisons.

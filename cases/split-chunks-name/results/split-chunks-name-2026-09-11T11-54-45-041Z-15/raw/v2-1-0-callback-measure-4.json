@@ -6,11 +6,11 @@
   "round": 4,
   "verify": false,
   "modules": 10000,
-  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+  "fixture": "~/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
   "fixtureSha256": "f8dac64c20398d8db844e703383d3c5f30f9e4f2a4697c9380c412e203b02eba",
-  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-name-2026-09-11T11-54-45-041Z-15/output/v2-1-0-callback-measure-4",
-  "statsFile": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-name-2026-09-11T11-54-45-041Z-15/stats/v2-1-0-callback-measure-4.json",
-  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-name-2026-09-11T11-54-45-041Z-15/raw/v2-1-0-callback-measure-4.json",
+  "output": "~/projects/rspack-bench/results/split-chunks-name-2026-09-11T11-54-45-041Z-15/output/v2-1-0-callback-measure-4",
+  "statsFile": "~/projects/rspack-bench/results/split-chunks-name-2026-09-11T11-54-45-041Z-15/stats/v2-1-0-callback-measure-4.json",
+  "resultFile": "~/projects/rspack-bench/results/split-chunks-name-2026-09-11T11-54-45-041Z-15/raw/v2-1-0-callback-measure-4.json",
   "timings": {
     "buildMs": 741.66666,
     "compilerSetupMs": 10.614185,
@@ -23,14 +23,14 @@
   "packageVersion": "2.1.0",
   "compiledVersion": "2.1.0",
   "loadedPaths": {
-    "core": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/index.js",
-    "binding": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.1.0/node_modules/@rspack/binding/binding.js",
-    "nativeBinding": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.1.0/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node"
+    "core": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/index.js",
+    "binding": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.1.0/node_modules/@rspack/binding/binding.js",
+    "nativeBinding": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.1.0/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node"
   },
   "artifacts": {
-    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/index.js": "58f125ccdaf373c66b870f45ddcb0631b7dab6e8769c4b780c00b05f0f755233",
-    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.1.0/node_modules/@rspack/binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
-    "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.1.0/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node": "3b68a1e171a9649a8f56294f5a610817dba644d428aa39212dd5078825a592fd"
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.1.0/node_modules/@rspack/core/dist/index.js": "58f125ccdaf373c66b870f45ddcb0631b7dab6e8769c4b780c00b05f0f755233",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.1.0/node_modules/@rspack/binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.1.0/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node": "3b68a1e171a9649a8f56294f5a610817dba644d428aa39212dd5078825a592fd"
   },
   "environment": {
     "node": "v24.20.0",
@@ -69,7 +69,7 @@
     "warnings": 0
   },
   "config": {
-    "context": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+    "context": "~/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
     "entry": "./module-00000.js",
     "mode": "development",
     "target": "node",
@@ -82,7 +82,7 @@
       "pureFunctions": false
     },
     "output": {
-      "path": "/data00/home/jinzhixin/projects/rspack-bench/results/split-chunks-name-2026-09-11T11-54-45-041Z-15/output/v2-1-0-callback-measure-4",
+      "path": "~/projects/rspack-bench/results/split-chunks-name-2026-09-11T11-54-45-041Z-15/output/v2-1-0-callback-measure-4",
       "filename": "[name].js",
       "publicPath": "",
       "pathinfo": false,
@@ -137,7 +137,7 @@
       "rules": [
         {
           "test": "/\\.js$/",
-          "include": "/data00/home/jinzhixin/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
+          "include": "~/projects/rspack-bench/results/noop-loader-2026-09-11T04-04-10-528Z-15/fixture",
           "type": "javascript/auto",
           "use": []
         }

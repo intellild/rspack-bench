@@ -1,5 +1,5 @@
 {
-  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-loader-large-files-2026-09-20T08-45-53-242Z-2631384/fixture",
+  "fixture": "~/projects/rspack-bench/results/babel-loader-large-files-2026-09-20T08-45-53-242Z-2631384/fixture",
   "fileHashes": {
     "module-00000.js": "27e76de28114303d21bedd76ee2e8898bc98c571070d616c492ed57adcf84699",
     "module-00001.js": "e2cbc8b128976c07d23383c9059f4c95405edd4c84a3769a27f862e966018950",

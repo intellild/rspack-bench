@@ -1,14 +1,14 @@
 $ pnpm run build:binding:release && pnpm run build:js
 $ pnpm --filter @rspack/binding run build:release
 $ node scripts/build.mjs --profile release
-Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-header --pipe "node /data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/node_binding/scripts/dts-header.mjs" --profile release --no-default-features --no-dts-cache --features plugin,info-level -- --config "target.'cfg(all())'.rustflags = [\"-Zlocation-detail=none\"]" -Zbuild-std=panic_abort,std
+Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-header --pipe "node ~/.codex/worktrees/bec7/rspack/crates/node_binding/scripts/dts-header.mjs" --profile release --no-default-features --no-dts-cache --features plugin,info-level -- --config "target.'cfg(all())'.rustflags = [\"-Zlocation-detail=none\"]" -Zbuild-std=panic_abort,std
 (node:2607384) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-   Compiling compiler_builtins v0.1.160 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins)
-   Compiling core v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core)
+   Compiling compiler_builtins v0.1.160 (~/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins)
+   Compiling core v0.0.0 (~/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core)
    Compiling libc v0.2.185
    Compiling object v0.37.3
-   Compiling std v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std)
+   Compiling std v0.0.0 (~/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std)
    Compiling proc-macro2 v1.0.106
    Compiling quote v1.0.45
    Compiling unicode-ident v1.0.14
@@ -155,7 +155,7 @@ Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-head
    Compiling lightningcss-derive v1.0.0-alpha.43
    Compiling thiserror-impl v2.0.18
    Compiling cranelift-assembler-x64 v0.123.13
-   Compiling rspack_cacheable_macros v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_cacheable_macros)
+   Compiling rspack_cacheable_macros v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_cacheable_macros)
    Compiling yoke v0.8.1
    Compiling tracing v0.1.44
    Compiling futures-macro v0.3.32
@@ -199,7 +199,7 @@ Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-head
    Compiling indoc v2.0.7
    Compiling hstr v4.0.1
    Compiling witx v0.9.1
-   Compiling rspack_macros v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_macros)
+   Compiling rspack_macros v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_macros)
    Compiling mime_guess v2.0.5
    Compiling async-recursion v1.1.1
    Compiling slotmap v1.1.1
@@ -208,16 +208,16 @@ Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-head
    Compiling swc_html_codegen_macros v1.0.1
    Compiling auto_impl v1.2.0
    Compiling libmimalloc-sys v0.1.44
-   Compiling rspack_binding_build v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_binding_build)
+   Compiling rspack_binding_build v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_binding_build)
    Compiling portable-atomic v1.13.1
    Compiling convert_case v0.11.0
    Compiling ctor v1.0.7
-   Compiling rspack_napi_macros v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_napi_macros)
+   Compiling rspack_napi_macros v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_napi_macros)
    Compiling swc_atoms v10.0.0
    Compiling cranelift-codegen-meta v0.123.13
    Compiling wiggle-generate v36.0.13
-   Compiling rspack_binding_api v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_binding_api)
-   Compiling rspack_node v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/node_binding)
+   Compiling rspack_binding_api v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_binding_api)
+   Compiling rspack_node v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/node_binding)
    Compiling napi-derive-backend v5.1.2
    Compiling icu_provider v2.1.1
    Compiling icu_properties v2.1.2
@@ -233,22 +233,22 @@ Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-head
    Compiling swc_ecma_ast v29.0.1
    Compiling swc_ecma_parser v45.1.3
    Compiling swc_ecma_quote_macros v45.0.1
-   Compiling rustc-std-workspace-core v1.99.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/rustc-std-workspace-core)
-   Compiling alloc v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc)
+   Compiling rustc-std-workspace-core v1.99.0 (~/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/rustc-std-workspace-core)
+   Compiling alloc v0.0.0 (~/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc)
    Compiling memchr v2.7.6
    Compiling adler2 v2.0.1
    Compiling rustc-demangle v0.1.27
-   Compiling panic_abort v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/panic_abort)
+   Compiling panic_abort v0.0.0 (~/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/panic_abort)
    Compiling rustc-literal-escaper v0.0.7
-   Compiling unwind v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/unwind)
-   Compiling rustc-std-workspace-alloc v1.99.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/rustc-std-workspace-alloc)
-   Compiling panic_unwind v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/panic_unwind)
+   Compiling unwind v0.0.0 (~/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/unwind)
+   Compiling rustc-std-workspace-alloc v1.99.0 (~/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/rustc-std-workspace-alloc)
+   Compiling panic_unwind v0.0.0 (~/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/panic_unwind)
    Compiling gimli v0.32.3
    Compiling hashbrown v0.17.0
-   Compiling std_detect v0.1.5 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std_detect)
+   Compiling std_detect v0.1.5 (~/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std_detect)
    Compiling miniz_oxide v0.8.9
    Compiling addr2line v0.25.1
-   Compiling proc_macro v0.0.0 (/data00/home/jinzhixin/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro)
+   Compiling proc_macro v0.0.0 (~/.rustup/toolchains/nightly-2026-04-16-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro)
    Compiling foldhash v0.2.0
    Compiling unty v0.0.4
    Compiling scopeguard v1.2.0
@@ -465,14 +465,14 @@ Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-head
    Compiling swc_transform_common v20.0.0
    Compiling swc_node_comments v27.0.0
    Compiling swc_error_reporters v28.0.0
-   Compiling rspack_sources v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_sources)
+   Compiling rspack_sources v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_sources)
    Compiling async-channel v2.5.0
    Compiling swc_experimental_ecma_visit v0.11.0
    Compiling bitfield v0.19.5
    Compiling oneshot v0.2.1
-   Compiling rspack_workspace v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_workspace)
+   Compiling rspack_workspace v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_workspace)
    Compiling pnp v0.12.11
-   Compiling rspack_dojang v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_dojang)
+   Compiling rspack_dojang v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_dojang)
    Compiling swc_experimental_ecma_parser v0.11.0
    Compiling fast-glob v1.1.0
    Compiling hex v0.4.3
@@ -484,7 +484,7 @@ Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-head
    Compiling swc_experimental_ecma_semantic v0.11.0
    Compiling swc_ecma_regexp_visit v0.15.0
    Compiling atomic_refcell v0.1.14
-   Compiling css-module-lexer v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/css-module-lexer)
+   Compiling css-module-lexer v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/css-module-lexer)
    Compiling swc_html_ast v26.0.0
    Compiling swc_html_utils v17.0.0
    Compiling inotify-sys v0.1.5
@@ -505,16 +505,16 @@ Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-head
    Compiling walkdir v2.5.0
    Compiling tracing-subscriber v0.3.23
    Compiling mimalloc v0.1.48
-   Compiling rspack_allocator v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_allocator)
+   Compiling rspack_allocator v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_allocator)
    Compiling notify v8.2.0
    Compiling indicatif v0.18.4
    Compiling swc_html v38.0.0
-   Compiling rspack_tracing v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_tracing)
+   Compiling rspack_tracing v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_tracing)
    Compiling futures-executor v0.3.32
    Compiling futures v0.3.32
-   Compiling rspack_tasks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_tasks)
+   Compiling rspack_tasks v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_tasks)
    Compiling tokio-util v0.7.19
-   Compiling rspack_parallel v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_parallel)
+   Compiling rspack_parallel v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_parallel)
    Compiling rspack-turbo-persistence v0.1.1
    Compiling swc_ecma_visit v29.0.0
    Compiling swc_plugin_proxy v30.0.0
@@ -548,7 +548,7 @@ Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-head
    Compiling cranelift-frontend v0.123.13
    Compiling cranelift-native v0.123.13
    Compiling wasmtime-internal-cranelift v36.0.13
-   Compiling rspack_browserslist v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_browserslist)
+   Compiling rspack_browserslist v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_browserslist)
    Compiling swc_ecma_compat_bugfixes v56.0.0
    Compiling swc_ecma_transforms_compat v57.0.2
    Compiling swc_ecma_transforms v63.0.0
@@ -557,19 +557,19 @@ Run command: napi build --platform --dts napi-binding.d.ts --no-js --no-dts-head
    Compiling swc_compiler_base v64.0.0
    Compiling swc_html_minifier v61.0.0
    Compiling swc v77.0.0
-   Compiling rspack_intern v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_intern)
-   Compiling rspack_swc_plugin_import v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/swc_plugin_import)
-   Compiling rspack_swc_plugin_ts_collector v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/swc_plugin_ts_collector)
-   Compiling rspack_cacheable v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_cacheable)
-   Compiling rspack_paths v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_paths)
-   Compiling rspack_location v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_location)
-   Compiling rspack_collections v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_collections)
-   Compiling rspack_error v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_error)
-   Compiling rspack_resolver v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_resolver)
-   Compiling rspack_regex v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_regex)
-   Compiling rspack_js_tasks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_js_tasks)
-   Compiling rspack_napi v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_napi)
-   Compiling rspack_hook v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_hook)
+   Compiling rspack_intern v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_intern)
+   Compiling rspack_swc_plugin_import v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/swc_plugin_import)
+   Compiling rspack_swc_plugin_ts_collector v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/swc_plugin_ts_collector)
+   Compiling rspack_cacheable v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_cacheable)
+   Compiling rspack_paths v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_paths)
+   Compiling rspack_location v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_location)
+   Compiling rspack_collections v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_collections)
+   Compiling rspack_error v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_error)
+   Compiling rspack_resolver v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_resolver)
+   Compiling rspack_regex v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_regex)
+   Compiling rspack_js_tasks v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_js_tasks)
+   Compiling rspack_napi v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_napi)
+   Compiling rspack_hook v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_hook)
 warning: field `count` is never read
   --> crates/rspack_napi/src/js_values/value_ref.rs:13:14
    |
@@ -582,13 +582,13 @@ warning: field `count` is never read
    = note: requested on the command line with `-W dead-code`
 
 warning: `rspack_napi` (lib) generated 1 warning
-   Compiling rspack_util v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_util)
-   Compiling rspack_fs v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_fs)
-   Compiling rspack_hash v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_hash)
-   Compiling rspack_javascript_compiler v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_javascript_compiler)
-   Compiling rspack_watcher v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_watcher)
-   Compiling rspack_loader_runner v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_runner)
-   Compiling rspack_storage v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_storage)
+   Compiling rspack_util v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_util)
+   Compiling rspack_fs v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_fs)
+   Compiling rspack_hash v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_hash)
+   Compiling rspack_javascript_compiler v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_javascript_compiler)
+   Compiling rspack_watcher v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_watcher)
+   Compiling rspack_loader_runner v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_loader_runner)
+   Compiling rspack_storage v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_storage)
 warning: method `children` is never used
   --> crates/rspack_loader_runner/src/chain.rs:91:6
    |
@@ -601,58 +601,58 @@ warning: method `children` is never used
    = note: requested on the command line with `-W dead-code`
 
 warning: `rspack_loader_runner` (lib) generated 1 warning
-   Compiling rspack_core v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_core)
-   Compiling rspack_ids v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_ids)
-   Compiling rspack_plugin_asset v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_asset)
-   Compiling rspack_plugin_split_chunks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_split_chunks)
-   Compiling rspack_plugin_json v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_json)
-   Compiling rspack_plugin_remove_duplicate_modules v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_remove_duplicate_modules)
-   Compiling rspack_plugin_real_content_hash v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_real_content_hash)
-   Compiling rspack_plugin_html v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_html)
-   Compiling rspack_loader_lightningcss v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_lightningcss)
-   Compiling rspack_plugin_ensure_chunk_conditions v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_ensure_chunk_conditions)
-   Compiling rspack_plugin_size_limits v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_size_limits)
-   Compiling rspack_plugin_case_sensitive v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_case_sensitive)
-   Compiling rspack_plugin_progress v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_progress)
-   Compiling rspack_plugin_wasm v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_wasm)
-   Compiling rspack_plugin_merge_duplicate_chunks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_merge_duplicate_chunks)
-   Compiling rspack_plugin_no_emit_on_errors v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_no_emit_on_errors)
-   Compiling rspack_plugin_worker v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_worker)
-   Compiling rspack_loader_swc v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_swc)
-   Compiling rspack_plugin_banner v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_banner)
-   Compiling rspack_plugin_circular_dependencies v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_circular_dependencies)
-   Compiling rspack_plugin_remove_empty_chunks v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_remove_empty_chunks)
-   Compiling rspack_plugin_lightning_css_minimizer v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_lightning_css_minimizer)
-   Compiling rspack_loader_react_refresh v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_react_refresh)
-   Compiling rspack_plugin_dynamic_entry v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_dynamic_entry)
-   Compiling rspack_plugin_module_replacement v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_module_replacement)
-   Compiling rspack_plugin_ignore v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_ignore)
-   Compiling rspack_plugin_entry v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_entry)
-   Compiling rspack_plugin_copy v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_copy)
-   Compiling rspack_plugin_schemes v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_schemes)
-   Compiling rspack_loader_preact_refresh v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_loader_preact_refresh)
-   Compiling rspack_plugin_limit_chunk_count v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_limit_chunk_count)
-   Compiling rspack_plugin_runtime_chunk v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_runtime_chunk)
-   Compiling rspack_plugin_javascript v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_javascript)
-   Compiling rspack_plugin_runtime v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_runtime)
-   Compiling rspack_plugin_devtool v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_devtool)
-   Compiling rspack_plugin_lazy_compilation v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_lazy_compilation)
-   Compiling rspack_plugin_rstest v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rstest)
-   Compiling rspack_plugin_swc_js_minimizer v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_swc_js_minimizer)
-   Compiling rspack_plugin_rsc v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rsc)
-   Compiling rspack_plugin_rsdoctor v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rsdoctor)
-   Compiling rspack_plugin_css v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_css)
-   Compiling rspack_plugin_mf v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_mf)
-   Compiling rspack_plugin_extract_css v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_extract_css)
-   Compiling rspack_plugin_sri v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_sri)
-   Compiling rspack_plugin_externals v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_externals)
-   Compiling rspack_plugin_module_info_header v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_module_info_header)
-   Compiling rspack_plugin_css_chunking v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_css_chunking)
-   Compiling rspack_plugin_hmr v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_hmr)
-   Compiling rspack_plugin_rslib v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rslib)
-   Compiling rspack_plugin_dll v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_dll)
-   Compiling rspack_plugin_esm_library v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_esm_library)
-   Compiling rspack_plugin_library v0.102.5 (/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/rspack_plugin_library)
+   Compiling rspack_core v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_core)
+   Compiling rspack_ids v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_ids)
+   Compiling rspack_plugin_asset v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_asset)
+   Compiling rspack_plugin_split_chunks v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_split_chunks)
+   Compiling rspack_plugin_json v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_json)
+   Compiling rspack_plugin_remove_duplicate_modules v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_remove_duplicate_modules)
+   Compiling rspack_plugin_real_content_hash v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_real_content_hash)
+   Compiling rspack_plugin_html v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_html)
+   Compiling rspack_loader_lightningcss v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_loader_lightningcss)
+   Compiling rspack_plugin_ensure_chunk_conditions v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_ensure_chunk_conditions)
+   Compiling rspack_plugin_size_limits v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_size_limits)
+   Compiling rspack_plugin_case_sensitive v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_case_sensitive)
+   Compiling rspack_plugin_progress v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_progress)
+   Compiling rspack_plugin_wasm v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_wasm)
+   Compiling rspack_plugin_merge_duplicate_chunks v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_merge_duplicate_chunks)
+   Compiling rspack_plugin_no_emit_on_errors v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_no_emit_on_errors)
+   Compiling rspack_plugin_worker v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_worker)
+   Compiling rspack_loader_swc v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_loader_swc)
+   Compiling rspack_plugin_banner v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_banner)
+   Compiling rspack_plugin_circular_dependencies v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_circular_dependencies)
+   Compiling rspack_plugin_remove_empty_chunks v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_remove_empty_chunks)
+   Compiling rspack_plugin_lightning_css_minimizer v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_lightning_css_minimizer)
+   Compiling rspack_loader_react_refresh v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_loader_react_refresh)
+   Compiling rspack_plugin_dynamic_entry v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_dynamic_entry)
+   Compiling rspack_plugin_module_replacement v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_module_replacement)
+   Compiling rspack_plugin_ignore v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_ignore)
+   Compiling rspack_plugin_entry v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_entry)
+   Compiling rspack_plugin_copy v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_copy)
+   Compiling rspack_plugin_schemes v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_schemes)
+   Compiling rspack_loader_preact_refresh v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_loader_preact_refresh)
+   Compiling rspack_plugin_limit_chunk_count v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_limit_chunk_count)
+   Compiling rspack_plugin_runtime_chunk v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_runtime_chunk)
+   Compiling rspack_plugin_javascript v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_javascript)
+   Compiling rspack_plugin_runtime v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_runtime)
+   Compiling rspack_plugin_devtool v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_devtool)
+   Compiling rspack_plugin_lazy_compilation v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_lazy_compilation)
+   Compiling rspack_plugin_rstest v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rstest)
+   Compiling rspack_plugin_swc_js_minimizer v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_swc_js_minimizer)
+   Compiling rspack_plugin_rsc v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rsc)
+   Compiling rspack_plugin_rsdoctor v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rsdoctor)
+   Compiling rspack_plugin_css v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_css)
+   Compiling rspack_plugin_mf v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_mf)
+   Compiling rspack_plugin_extract_css v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_extract_css)
+   Compiling rspack_plugin_sri v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_sri)
+   Compiling rspack_plugin_externals v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_externals)
+   Compiling rspack_plugin_module_info_header v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_module_info_header)
+   Compiling rspack_plugin_css_chunking v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_css_chunking)
+   Compiling rspack_plugin_hmr v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_hmr)
+   Compiling rspack_plugin_rslib v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_rslib)
+   Compiling rspack_plugin_dll v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_dll)
+   Compiling rspack_plugin_esm_library v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_esm_library)
+   Compiling rspack_plugin_library v0.102.5 (~/.codex/worktrees/bec7/rspack/crates/rspack_plugin_library)
     Finished `release` profile [optimized] target(s) in 19m 10s
 $ pnpm --filter "@rspack/core" build && pnpm --parallel --filter "@rspack/*" --filter "create-rspack" --filter "!@rspack/core" build
 $ rs lib
@@ -712,7 +712,7 @@ packages/rspack-test-tools build: 86 files generated in dist, total: 429.9 kB (c
 packages/rspack-test-tools build: 87 files generated in dist, total: 265.2 kB (esm)
 packages/rspack-test-tools build: Done
 packages/rspack-browser build: info    build started...
-packages/rspack-browser build: warn    The resolved outDir /data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack-browser/dist is outside the project root /data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack, please check your tsconfig file.
+packages/rspack-browser build: warn    The resolved outDir ~/.codex/worktrees/bec7/rspack/packages/rspack-browser/dist is outside the project root ~/.codex/worktrees/bec7/rspack/packages/rspack, please check your tsconfig file.
 packages/rspack-browser build: start   generating declaration files... (esm)
 packages/rspack-browser build: ready   built in 0.12s (iife)
 packages/rspack-browser build: ready   built in 0.19s (esm)

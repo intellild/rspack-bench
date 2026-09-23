@@ -1,0 +1,29 @@
+$ rs lib
+Rslib v1.0.1
+
+info    build started...
+ready   built in 0.09s (esm1)
+ready   built in 0.09s (esm2)
+start   generating declaration files... (esm0)
+ready   built in 0.14s (esm3)
+ready   built in 0.27s (esm0)
+ready   declaration files generated with tsgo in 0.65 s (esm0)
+
+File (esm0)     Size       
+dist/l~0.js     1.4 kB  
+dist/index.js   739.0 kB
+
+       Total:   740.5 kB
+
+File (esm1)                Size     
+dist/cssExtractLoader.js   7.5 kB
+
+File (esm2)             Size     
+dist/cssExtractHmr.js   4.3 kB
+
+File (esm3)      Size       
+dist/l~3.js      1.2 kB  
+dist/worker.js   108.7 kB
+
+        Total:   109.9 kB
+

@@ -1,0 +1,260 @@
+{
+  "version": "v2-2-6",
+  "parallel": true,
+  "id": "v2-2-6-parallel-on-warmup-0",
+  "phase": "warmup",
+  "round": 0,
+  "verify": false,
+  "modules": 10000,
+  "workers": 8,
+  "expectedChecksum": 4343860000,
+  "fixture": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T11-37-49-482Z-2750617/fixture",
+  "fixtureSha256": "6043756fccffbd36994176474fc7f5fc6d633722548fee1c0af31c3457f05979",
+  "output": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T11-37-49-482Z-2750617/output/v2-2-6-parallel-on-warmup-0",
+  "statsDirectory": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T11-37-49-482Z-2750617/stats/v2-2-6-parallel-on-warmup-0",
+  "auditDirectory": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T11-37-49-482Z-2750617/audit/v2-2-6-parallel-on-warmup-0",
+  "resultFile": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T11-37-49-482Z-2750617/raw/v2-2-6-parallel-on-warmup-0.json",
+  "packageVersion": "2.2.6",
+  "compiledVersion": "2.2.6",
+  "artifacts": {
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.2.6/node_modules/@rspack/binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.2.6/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node": "e9b7ac5ba0c71b33123cc06cb89411499f81870f6f238dd8f5849c4a095db538",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.6/node_modules/@rspack/core/dist/cssExtractHmr.js": "84519bfc003effe519e926b16420642d87de06bef2b76f1ec89c7d945429ae77",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.6/node_modules/@rspack/core/dist/cssExtractLoader.js": "fc407a4dcf6760a84b11acfa85994b25f9a0ebe932fdef10973b096d68b453bf",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.6/node_modules/@rspack/core/dist/index.js": "45fb5fa861e16854fa9d38964296c1e3c729da01512fed8e43817086def7ecac",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.6/node_modules/@rspack/core/dist/l~0.js": "47a8a92d2fffc8a72850de33bc19fd2feb0517a661ec3ad0dd63fc6ecc126550",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.6/node_modules/@rspack/core/dist/l~3.js": "47a8a92d2fffc8a72850de33bc19fd2feb0517a661ec3ad0dd63fc6ecc126550",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.6/node_modules/@rspack/core/dist/moduleFederationDefaultRuntime.js": "b4b90f429a990768956e9efb1d2a19f362dbef3915a4d402379e918d2a835082",
+    "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.6/node_modules/@rspack/core/dist/worker.js": "389ba110267e11291ef4ba2d6e200d61a9b122fb07f5a0f5bcbf046266027bfc"
+  },
+  "dependencies": {
+    "babel-loader": {
+      "version": "10.1.1",
+      "entry": "~/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@2.2.6/node_modules/babel-loader/lib/index.js",
+      "sha256": "8155bcb44c0309254de8d44c8b15be22ad025554b025c3e71bdd50cdf4a77a39"
+    },
+    "@babel/core": {
+      "version": "7.29.7",
+      "entry": "~/projects/rspack-bench/node_modules/.pnpm/@babel+core@7.29.7/node_modules/@babel/core/lib/index.js",
+      "sha256": "dba868255b447218cd421b30fb5289c118f265817088e7106053cf962057dd26"
+    },
+    "css-loader": {
+      "version": "7.1.5",
+      "entry": "~/projects/rspack-bench/node_modules/.pnpm/css-loader@7.1.5_@rspack+core@2.2.6/node_modules/css-loader/dist/cjs.js",
+      "sha256": "56124fb0cf9070e90851369a1824da2b3ed047af5cbef63680e6dba29da900e7"
+    }
+  },
+  "loadedPaths": {
+    "core": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.6/node_modules/@rspack/core/dist/index.js",
+    "binding": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding@2.2.6/node_modules/@rspack/binding/binding.js",
+    "native": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+binding-linux-x64-gnu@2.2.6/node_modules/@rspack/binding-linux-x64-gnu/rspack.linux-x64-gnu.node",
+    "loader": "~/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@2.2.6/node_modules/babel-loader/lib/index.js"
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "linux",
+    "arch": "x64",
+    "release": "5.15.120.bsk.3-amd64",
+    "cpu": "Intel(R) Xeon(R) Platinum 8336C CPU @ 2.30GHz",
+    "cpus": 32,
+    "availableParallelism": 32,
+    "loadAverage": [
+      6.2,
+      6.84,
+      5.65
+    ],
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=8192",
+      "RSPACK_LOADER_WORKER_THREADS": "8",
+      "RAYON_NUM_THREADS": null,
+      "UV_THREADPOOL_SIZE": null,
+      "RSPACK_NUM_THREADS": null
+    }
+  },
+  "status": "passed",
+  "compilerSetupMs": 12.850725,
+  "setupAndColdBuildMs": 98579.803017,
+  "builds": [
+    {
+      "state": "cold",
+      "timings": {
+        "buildMs": 98566.952292,
+        "makeMs": 74601.535033,
+        "finishMakeMs": 155.29609,
+        "sealMs": 22598.981036,
+        "emitMs": 1162.033102
+      },
+      "validation": {
+        "modules": 10000,
+        "builtModules": 10000,
+        "cssModules": 10000,
+        "cssProxies": 10000,
+        "cssSha256": "723fabfc8f822a64dade27a0f643f3af4c44480d69a653cc57aab5d15d8ab1f5",
+        "audit": null,
+        "evaluatedOutput": null,
+        "outputSha256": "1bc1714012e949fcfbb50deb5bf8e44b46a953c66435514acb0a1ae6387abc21",
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "state": "warm",
+      "timings": {
+        "buildMs": 97452.311459,
+        "makeMs": 73758.985089,
+        "finishMakeMs": 165.652217,
+        "sealMs": 22247.240499,
+        "emitMs": 1259.781408
+      },
+      "validation": {
+        "modules": 10000,
+        "builtModules": 10000,
+        "cssModules": 10000,
+        "cssProxies": 10000,
+        "cssSha256": "723fabfc8f822a64dade27a0f643f3af4c44480d69a653cc57aab5d15d8ab1f5",
+        "audit": null,
+        "evaluatedOutput": null,
+        "outputSha256": "1bc1714012e949fcfbb50deb5bf8e44b46a953c66435514acb0a1ae6387abc21",
+        "errors": 0,
+        "warnings": 0
+      }
+    }
+  ],
+  "failures": [],
+  "config": {
+    "context": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T11-37-49-482Z-2750617/fixture",
+    "entry": "./module-00000.js",
+    "mode": "development",
+    "target": [
+      "web",
+      "es2020"
+    ],
+    "devtool": false,
+    "cache": false,
+    "incremental": false,
+    "lazyCompilation": false,
+    "experiments": {
+      "newCache": false,
+      "pureFunctions": false
+    },
+    "output": {
+      "path": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T11-37-49-482Z-2750617/output/v2-2-6-parallel-on-warmup-0",
+      "filename": "main.cjs",
+      "publicPath": "",
+      "pathinfo": false,
+      "library": {
+        "type": "commonjs2"
+      },
+      "uniqueName": "babel-css-extract-bench",
+      "clean": false
+    },
+    "optimization": {
+      "minimize": false,
+      "minimizer": [],
+      "concatenateModules": false,
+      "splitChunks": false,
+      "runtimeChunk": false,
+      "moduleIds": "natural",
+      "chunkIds": "natural",
+      "usedExports": false,
+      "sideEffects": false,
+      "providedExports": false,
+      "innerGraph": false,
+      "mangleExports": false,
+      "inlineExports": false,
+      "removeEmptyChunks": false,
+      "mergeDuplicateChunks": false,
+      "realContentHash": false,
+      "avoidEntryIife": false,
+      "nodeEnv": false,
+      "emitOnErrors": false
+    },
+    "module": {
+      "rules": [
+        {
+          "test": "/\\.js$/",
+          "include": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T11-37-49-482Z-2750617/fixture",
+          "type": "javascript/auto",
+          "use": [
+            {
+              "loader": "~/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@2.2.6/node_modules/babel-loader/lib/index.js",
+              "parallel": true,
+              "cache": false,
+              "options": {
+                "babelrc": false,
+                "configFile": false,
+                "cacheDirectory": false,
+                "sourceMaps": false,
+                "presets": [],
+                "plugins": [],
+                "comments": false,
+                "compact": false,
+                "minified": false
+              }
+            }
+          ]
+        },
+        {
+          "test": "/\\.module\\.css$/",
+          "type": "javascript/auto",
+          "use": [
+            {
+              "loader": "~/projects/rspack-bench/node_modules/.pnpm/@rspack+core@2.2.6/node_modules/@rspack/core/dist/cssExtractLoader.js",
+              "parallel": false,
+              "cache": false
+            },
+            {
+              "loader": "~/projects/rspack-bench/node_modules/.pnpm/css-loader@7.1.5_@rspack+core@2.2.6/node_modules/css-loader/dist/cjs.js",
+              "parallel": false,
+              "cache": false,
+              "options": {
+                "modules": {
+                  "localIdentName": "scoped_[local]",
+                  "namedExport": true,
+                  "exportLocalsConvention": "as-is"
+                },
+                "import": false,
+                "url": false,
+                "sourceMap": false,
+                "esModule": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "plugins": [
+      "CssExtractRspackPlugin",
+      "BenchmarkClock"
+    ],
+    "stats": "none",
+    "infrastructureLogging": {
+      "level": "error"
+    }
+  },
+  "effectiveCache": false,
+  "effectiveNewCache": false,
+  "effectiveOptimization": {
+    "minimize": false,
+    "minimizer": [],
+    "concatenateModules": false,
+    "splitChunks": false,
+    "runtimeChunk": false,
+    "moduleIds": "natural",
+    "chunkIds": "natural",
+    "usedExports": false,
+    "sideEffects": false,
+    "providedExports": false,
+    "innerGraph": false,
+    "mangleExports": false,
+    "inlineExports": false,
+    "removeEmptyChunks": false,
+    "mergeDuplicateChunks": false,
+    "realContentHash": false,
+    "avoidEntryIife": false,
+    "nodeEnv": false,
+    "emitOnErrors": false
+  },
+  "processMs": 223031.554401,
+  "executionOrder": 2
+}

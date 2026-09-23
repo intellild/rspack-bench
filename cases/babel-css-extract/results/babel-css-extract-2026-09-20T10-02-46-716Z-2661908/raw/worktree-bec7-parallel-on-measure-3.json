@@ -8,47 +8,47 @@
   "modules": 10000,
   "workers": 8,
   "expectedChecksum": 4343860000,
-  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/fixture",
+  "fixture": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/fixture",
   "fixtureSha256": "6043756fccffbd36994176474fc7f5fc6d633722548fee1c0af31c3457f05979",
-  "output": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/output/worktree-bec7-parallel-on-measure-3",
-  "statsDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/stats/worktree-bec7-parallel-on-measure-3",
-  "auditDirectory": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/audit/worktree-bec7-parallel-on-measure-3",
-  "resultFile": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/raw/worktree-bec7-parallel-on-measure-3.json",
+  "output": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/output/worktree-bec7-parallel-on-measure-3",
+  "statsDirectory": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/stats/worktree-bec7-parallel-on-measure-3",
+  "auditDirectory": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/audit/worktree-bec7-parallel-on-measure-3",
+  "resultFile": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/raw/worktree-bec7-parallel-on-measure-3.json",
   "packageVersion": "2.2.5",
   "compiledVersion": "2.2.5",
   "artifacts": {
-    "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/node_binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
-    "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/node_binding/rspack.linux-x64-gnu.node": "b3a2f5eacc20b5de4d1e4ef448393b5e24fc23ec0e188b72b2ccaec64ccc087f",
-    "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack/dist/cssExtractHmr.js": "84519bfc003effe519e926b16420642d87de06bef2b76f1ec89c7d945429ae77",
-    "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack/dist/cssExtractLoader.js": "fc407a4dcf6760a84b11acfa85994b25f9a0ebe932fdef10973b096d68b453bf",
-    "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack/dist/index.js": "630f87ace7beb8c06cff1d8028d4fecf507933ab174eda0a86abcbac03e4827a",
-    "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack/dist/l~0.js": "47a8a92d2fffc8a72850de33bc19fd2feb0517a661ec3ad0dd63fc6ecc126550",
-    "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack/dist/l~3.js": "b23f6e1c11d1edce3aa2deb6508f3e115c30cd71cbc9329580e1527bdab8ebdf",
-    "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack/dist/moduleFederationDefaultRuntime.js": "b4b90f429a990768956e9efb1d2a19f362dbef3915a4d402379e918d2a835082",
-    "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack/dist/worker.js": "a84b06a788cef3797db0a039f5b6e1ffdde11957b87043eb4025e1fcd3b80144"
+    "~/.codex/worktrees/bec7/rspack/crates/node_binding/binding.js": "327116b6bf67ae56f3aad7a9f6195c3d7577fe40bc76772f9cc6bffbcde2bcb8",
+    "~/.codex/worktrees/bec7/rspack/crates/node_binding/rspack.linux-x64-gnu.node": "b3a2f5eacc20b5de4d1e4ef448393b5e24fc23ec0e188b72b2ccaec64ccc087f",
+    "~/.codex/worktrees/bec7/rspack/packages/rspack/dist/cssExtractHmr.js": "84519bfc003effe519e926b16420642d87de06bef2b76f1ec89c7d945429ae77",
+    "~/.codex/worktrees/bec7/rspack/packages/rspack/dist/cssExtractLoader.js": "fc407a4dcf6760a84b11acfa85994b25f9a0ebe932fdef10973b096d68b453bf",
+    "~/.codex/worktrees/bec7/rspack/packages/rspack/dist/index.js": "630f87ace7beb8c06cff1d8028d4fecf507933ab174eda0a86abcbac03e4827a",
+    "~/.codex/worktrees/bec7/rspack/packages/rspack/dist/l~0.js": "47a8a92d2fffc8a72850de33bc19fd2feb0517a661ec3ad0dd63fc6ecc126550",
+    "~/.codex/worktrees/bec7/rspack/packages/rspack/dist/l~3.js": "b23f6e1c11d1edce3aa2deb6508f3e115c30cd71cbc9329580e1527bdab8ebdf",
+    "~/.codex/worktrees/bec7/rspack/packages/rspack/dist/moduleFederationDefaultRuntime.js": "b4b90f429a990768956e9efb1d2a19f362dbef3915a4d402379e918d2a835082",
+    "~/.codex/worktrees/bec7/rspack/packages/rspack/dist/worker.js": "a84b06a788cef3797db0a039f5b6e1ffdde11957b87043eb4025e1fcd3b80144"
   },
   "dependencies": {
     "babel-loader": {
       "version": "10.1.1",
-      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+bec7+rspack+packages+rspack/node_modules/babel-loader/lib/index.js",
+      "entry": "~/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+bec7+rspack+packages+rspack/node_modules/babel-loader/lib/index.js",
       "sha256": "8155bcb44c0309254de8d44c8b15be22ad025554b025c3e71bdd50cdf4a77a39"
     },
     "@babel/core": {
       "version": "7.29.7",
-      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/@babel+core@7.29.7/node_modules/@babel/core/lib/index.js",
+      "entry": "~/projects/rspack-bench/node_modules/.pnpm/@babel+core@7.29.7/node_modules/@babel/core/lib/index.js",
       "sha256": "dba868255b447218cd421b30fb5289c118f265817088e7106053cf962057dd26"
     },
     "css-loader": {
       "version": "7.1.5",
-      "entry": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/css-loader@7.1.5_@rspack+core@..+.codex+worktrees+bec7+rspack+packages+rspack/node_modules/css-loader/dist/cjs.js",
+      "entry": "~/projects/rspack-bench/node_modules/.pnpm/css-loader@7.1.5_@rspack+core@..+.codex+worktrees+bec7+rspack+packages+rspack/node_modules/css-loader/dist/cjs.js",
       "sha256": "56124fb0cf9070e90851369a1824da2b3ed047af5cbef63680e6dba29da900e7"
     }
   },
   "loadedPaths": {
-    "core": "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack/dist/index.js",
-    "binding": "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/node_binding/binding.js",
-    "native": "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/crates/node_binding/rspack.linux-x64-gnu.node",
-    "loader": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+bec7+rspack+packages+rspack/node_modules/babel-loader/lib/index.js"
+    "core": "~/.codex/worktrees/bec7/rspack/packages/rspack/dist/index.js",
+    "binding": "~/.codex/worktrees/bec7/rspack/crates/node_binding/binding.js",
+    "native": "~/.codex/worktrees/bec7/rspack/crates/node_binding/rspack.linux-x64-gnu.node",
+    "loader": "~/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+bec7+rspack+packages+rspack/node_modules/babel-loader/lib/index.js"
   },
   "environment": {
     "node": "v24.20.0",
@@ -122,7 +122,7 @@
   ],
   "failures": [],
   "config": {
-    "context": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/fixture",
+    "context": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/fixture",
     "entry": "./module-00000.js",
     "mode": "development",
     "target": [
@@ -138,7 +138,7 @@
       "pureFunctions": false
     },
     "output": {
-      "path": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/output/worktree-bec7-parallel-on-measure-3",
+      "path": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/output/worktree-bec7-parallel-on-measure-3",
       "filename": "main.cjs",
       "publicPath": "",
       "pathinfo": false,
@@ -173,11 +173,11 @@
       "rules": [
         {
           "test": "/\\.js$/",
-          "include": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/fixture",
+          "include": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/fixture",
           "type": "javascript/auto",
           "use": [
             {
-              "loader": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+bec7+rspack+packages+rspack/node_modules/babel-loader/lib/index.js",
+              "loader": "~/projects/rspack-bench/node_modules/.pnpm/babel-loader@10.1.1_@babel+core@7.29.7_@rspack+core@..+.codex+worktrees+bec7+rspack+packages+rspack/node_modules/babel-loader/lib/index.js",
               "parallel": true,
               "cache": false,
               "options": {
@@ -199,12 +199,12 @@
           "type": "javascript/auto",
           "use": [
             {
-              "loader": "/data00/home/jinzhixin/.codex/worktrees/bec7/rspack/packages/rspack/dist/cssExtractLoader.js",
+              "loader": "~/.codex/worktrees/bec7/rspack/packages/rspack/dist/cssExtractLoader.js",
               "parallel": false,
               "cache": false
             },
             {
-              "loader": "/data00/home/jinzhixin/projects/rspack-bench/node_modules/.pnpm/css-loader@7.1.5_@rspack+core@..+.codex+worktrees+bec7+rspack+packages+rspack/node_modules/css-loader/dist/cjs.js",
+              "loader": "~/projects/rspack-bench/node_modules/.pnpm/css-loader@7.1.5_@rspack+core@..+.codex+worktrees+bec7+rspack+packages+rspack/node_modules/css-loader/dist/cjs.js",
               "parallel": false,
               "cache": false,
               "options": {

@@ -1,6 +1,6 @@
 # Babel loader overhead
 
-Compares Rspack 2.2.3 and `/data00/home/jinzhixin/.codex/worktrees/0385/rspack` with no loader versus `babel-loader@10.1.1` and `@babel/core@7.29.7`.
+Compares Rspack 2.2.3 and `~/.codex/worktrees/0385/rspack` with no loader versus `babel-loader@10.1.1` and `@babel/core@7.29.7`.
 
 ```bash
 pnpm install --frozen-lockfile

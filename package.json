@@ -18,7 +18,11 @@
     "bench:mixed-loader-chain": "zx cases/mixed-loader-chain/bench.mjs",
     "bench:babel-loader-large-files": "zx cases/babel-loader-large-files/bench.mjs",
     "bench:babel-css-extract": "zx cases/babel-css-extract/bench.mjs",
-    "bench:placeholder-memory": "node cases/placeholder-memory/bench.mjs"
+    "bench:babel-builtin-css": "zx cases/babel-builtin-css/bench.mjs",
+    "bench:placeholder-memory": "node cases/placeholder-memory/bench.mjs",
+    "privacy:check": "python3 scripts/privacy.py --check",
+    "privacy:fix": "python3 scripts/privacy.py --write",
+    "test:privacy": "python3 -m unittest discover -s scripts -p \"test_*.py\""
   },
   "devDependencies": {
     "zx": "8.8.5",

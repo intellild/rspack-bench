@@ -1,6 +1,6 @@
 # splitChunks.name callback benchmark
 
-Compares Rspack 2.1.0, 2.2.3, and the compiled checkout at `/data00/home/jinzhixin/.codex/worktrees/a77f/rspack`, selected through separate pnpm workspace packages.
+Compares Rspack 2.1.0, 2.2.3, and the compiled checkout at `~/.codex/worktrees/a77f/rspack`, selected through separate pnpm workspace packages.
 
 ```bash
 pnpm install --frozen-lockfile

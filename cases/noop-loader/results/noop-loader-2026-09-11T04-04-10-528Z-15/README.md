@@ -4,7 +4,7 @@
 pnpm bench:noop-loader --modules 10000 --runs 5
 ```
 
-The local group uses `/data00/home/jinzhixin/.codex/worktrees/0385/rspack`, with a clean worktree at `0c244ef4114d0209bea0e40a684b6fd777609562`. Actual compiled JS and native artifacts are identified by the hashes in the worker records.
+The local group uses `~/.codex/worktrees/0385/rspack`, with a clean worktree at `0c244ef4114d0209bea0e40a684b6fd777609562`. Actual compiled JS and native artifacts are identified by the hashes in the worker records.
 
 | Version | No loader, median | Noop, median | Loader overhead | Amortized per module |
 |---|---:|---:|---:|---:|

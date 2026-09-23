@@ -2,7 +2,7 @@
 
 `pnpm bench:babel-loader-parallel-cache --modules 10000 --runs 5`
 
-The existing 10,000-module fixture is reused. Local means `/data00/home/jinzhixin/.codex/worktrees/a77f/rspack`, whose compiled artifact reports 2.2.1. Every sample starts a fresh process/compiler, then rebuilds all 10,000 modules in the same compiler with unchanged content. Default parallelism is 31 workers.
+The existing 10,000-module fixture is reused. Local means `~/.codex/worktrees/a77f/rspack`, whose compiled artifact reports 2.2.1. Every sample starts a fresh process/compiler, then rebuilds all 10,000 modules in the same compiler with unchanged content. Default parallelism is 31 workers.
 
 Only the new Rspack loader cache is enabled: `newCache.loader: true` with `module`, `codeGeneration`, `devtool`, and `minimize` all false. `use.cache` is toggled per group. Its memory backend stays enabled for 2.2.3/local; legacy caching is off in 2.1.0, which does not support loader `use.cache`. Babel cacheDirectory, babelrc and configFile are false. Development mode, disabled optimizations and incremental:false apply throughout.
 

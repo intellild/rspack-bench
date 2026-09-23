@@ -1,5 +1,5 @@
 {
-  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/fixture",
+  "fixture": "~/projects/rspack-bench/results/less-loader-2026-09-11T04-19-17-597Z-15/fixture",
   "fileHashes": {
     "style-00000.less": "6c99cd7e43b4e6a884b255fa10efa057c9dcbd83fe5d9d380cebe5fa9e11d93b",
     "style-00000.css": "20e4ae994ba6338dda741b98b4fc6ca8435ed1a637951ec5da0f6e09c3b8c6a9",

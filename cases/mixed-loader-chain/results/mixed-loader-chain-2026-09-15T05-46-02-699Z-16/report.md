@@ -33,16 +33,16 @@ Failed pairs are retained and excluded from timing distributions. Consult failur
 
 - worktree-a77f-parallel-warmup-0:   × Module build failed (from ../../../cases/mixed-loader-chain/loaders/right.cjs):
   ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped
-        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3903:69
-        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3907:18)
+        │     at file://~/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3903:69
+        │     at runWorkerLoop (file://~/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3907:18)
 - worktree-a77f-mixed-measure-2:   × Module build failed (from ../../../cases/mixed-loader-chain/loaders/middle.cjs):
   ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped
-        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3903:69
-        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3907:18)
+        │     at file://~/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3903:69
+        │     at runWorkerLoop (file://~/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3907:18)
 - worktree-a77f-mixed-measure-4:   × Module build failed (from ../../../cases/mixed-loader-chain/loaders/middle.cjs):
   ╰─▶   × Error: The original reference that WeakReference<rspack_binding_api::compilation::JsCompilation> is pointing to is dropped
-        │     at file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3903:69
-        │     at runWorkerLoop (file:///data00/home/jinzhixin/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3907:18)
+        │     at file://~/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3903:69
+        │     at runWorkerLoop (file://~/.codex/worktrees/a77f/rspack/packages/rspack/dist/worker.js:3907:18)
 
 | Validation group | Cold calls per loader | Warm calls per loader | Resources with correct order (cold / warm) |
 |---|---|---|---|

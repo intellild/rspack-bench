@@ -1,5 +1,5 @@
 {
-  "fixture": "/data00/home/jinzhixin/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/fixture",
+  "fixture": "~/projects/rspack-bench/results/babel-css-extract-2026-09-20T10-02-46-716Z-2661908/fixture",
   "fileHashes": {
     "module-00000.js": "c4453e45f68ebc934e22ab331f6bbc500e2b50d89a9234a1e20cf1e044ba8ef7",
     "module-00001.js": "df5e1d919499577522f36692827834be325d5614e551b159f90e43efb3f4dc16",
