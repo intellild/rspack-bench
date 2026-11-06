@@ -1,0 +1,18 @@
+{
+  "handwritten": "6385c5177b0b7cfc0eb790cd4a514b092bdc0e7f",
+  "regex-automata": "29974fad70619b0fad124cc9478c65d53778b970",
+  "profile": "release",
+  "target": "x86_64-unknown-linux-gnu",
+  "releaseProfile": {
+    "codegen-units": 1,
+    "debug": false,
+    "lto": "fat",
+    "opt-level": 3,
+    "panic": "abort",
+    "strip": true
+  },
+  "toolchain": "rustc 1.97.0-nightly (e8e4541ff 2026-04-15)\nbinary: rustc\ncommit-hash: e8e4541ff19649d95afab52fdde2c2eaa6829965\ncommit-date: 2026-04-15\nhost: x86_64-unknown-linux-gnu\nrelease: 1.97.0-nightly\nLLVM version: 22.1.2\n",
+  "node": "v24.20.0",
+  "benchmarkAffinity": "8-11",
+  "benchmarkRayonThreads": 4
+}
